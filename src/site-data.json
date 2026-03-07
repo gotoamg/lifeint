@@ -1,0 +1,1430 @@
+{
+  "hero": {
+    "config": {
+      "layout": {
+        "height": "custom",
+        "maxWidth": 1200,
+        "fullWidth": true,
+        "contentAlign": "center",
+        "customHeight": {
+          "mobile": 400,
+          "tablet": 500,
+          "desktop": 600
+        },
+        "verticalAlign": "middle"
+      },
+      "slider": {
+        "loop": true,
+        "enabled": false,
+        "autoplay": true,
+        "keyboardNav": true,
+        "pauseOnHover": true,
+        "autoplaySpeed": 5000,
+        "swipeOnMobile": true,
+        "transitionSpeed": 600
+      },
+      "slides": [
+        {
+          "id": "slide-1769758870838-clin69h9v",
+          "title": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
+          "subtitle": "Serving Christ Through Healthcare",
+          "description": "",
+          "overlayColor": "#000000",
+          "primaryButton": {
+            "link": "#contact",
+            "text": "Get Started Today"
+          },
+          "overlayOpacity": 50,
+          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg",
+          "secondaryButton": {
+            "link": "#about",
+            "text": "Learn More"
+          },
+          "backgroundPosition": {
+            "x": 25,
+            "y": 10
+          }
+        },
+        {
+          "id": "slide-1770122616767-h8vuf8tkq",
+          "title": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
+          "subtitle": "Serving Christ Through Healthcare",
+          "description": "",
+          "overlayColor": "#000000",
+          "primaryButton": {
+            "link": "#contact",
+            "text": "Get Started"
+          },
+          "overlayOpacity": 50,
+          "backgroundImage": "",
+          "backgroundVideo": "\"C:\\Users\\USER\\Downloads\\WhatsApp Video 2022-07-29 at 6.59.00 AM.mp4\"",
+          "secondaryButton": {
+            "link": "#about",
+            "text": "Learn More"
+          }
+        }
+      ],
+      "animation": {
+        "textAnimation": "fade",
+        "transitionType": "fade",
+        "textAnimationDelay": 200
+      },
+      "navigation": {
+        "showDots": true,
+        "showArrows": true,
+        "dotPosition": "bottom-center",
+        "arrowPosition": "inside"
+      },
+      "responsive": {
+        "heights": {
+          "mobile": 400,
+          "tablet": 500,
+          "desktop": 600
+        },
+        "fontSizes": {
+          "mobile": {
+            "title": "2rem",
+            "subtitle": "1rem",
+            "description": "0.875rem"
+          },
+          "tablet": {
+            "title": "3rem",
+            "subtitle": "1.25rem",
+            "description": "1rem"
+          },
+          "desktop": {
+            "title": "4rem",
+            "subtitle": "1.5rem",
+            "description": "1.125rem"
+          }
+        },
+        "hideTextOnMobile": false
+      },
+      "performance": {
+        "lazyLoadImages": true,
+        "pauseWhenHidden": true,
+        "preloadFirstSlide": true
+      }
+    },
+    "heading": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
+    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg",
+    "heroImages": [
+      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg"
+    ],
+    "primaryCTA": "Get Started Today",
+    "subheading": "Serving Christ Through Healthcare",
+    "imageOverlay": 50,
+    "secondaryCTA": "Learn More",
+    "sliderInterval": 5000
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "home",
+      "title": "Home",
+      "isHome": true,
+      "sections": [
+        {
+          "body": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
+          "title": "About Luke's International Fellowship & Enrichment - LIFE",
+          "images": [
+            "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
+          ]
+        },
+        {
+          "body": "To share the gospel of Jesus Christ through healthcare. It aims to strengthen healthcare professionals in their walk with God, equip them with the skills of an Evangelist, and provide opportunities to be an effective witness of Jesus Christ.",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
+          "title": "Our Mission",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "hero-split"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Get Started"
+        },
+        {
+          "type": "services",
+          "items": [
+            {
+              "name": "Medical Missions",
+              "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+              "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+            },
+            {
+              "name": "Spiritual Fellowship",
+              "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
+              "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+            },
+            {
+              "name": "Medical Education",
+              "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
+              "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+            }
+          ],
+          "title": "Our Campaigns",
+          "settings": {
+            "gap": 6,
+            "fullWidth": true,
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
+            "paddingTop": "medium",
+            "columnLayout": "3"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Some glimpses of our medical mission",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
+          ],
+          "settings": {
+            "galleryStyle": "grid"
+          }
+        },
+        {
+          "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+          "type": "cta",
+          "title": "Support us",
+          "settings": {
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#1E293B"
+            },
+            "layoutVariant": "cta-centered"
+          },
+          "buttonLink": "#donate",
+          "buttonText": "Let me donate!"
+        },
+        {
+          "body": "Duncan Hospital experience",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
+          "title": "Blog Insights",
+          "settings": {
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            }
+          }
+        },
+        {
+          "type": "faq",
+          "items": [
+            {
+              "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
+              "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
+            },
+            {
+              "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
+              "question": "How can I get started?"
+            },
+            {
+              "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
+              "question": "What makes you different?"
+            }
+          ],
+          "title": "Frequently Asked Questions"
+        },
+        {
+          "body": "Ready for a hand with Luke's International Fellowship & Enrichment - LIFE? We'd love to hear from you.",
+          "type": "contact",
+          "title": "Get In Touch",
+          "settings": {
+            "anchorId": "contact"
+          },
+          "buttonText": "Send Message"
+        }
+      ],
+      "createdAt": "2026-02-03T07:41:55.321Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-03T07:41:55.321Z"
+    },
+    {
+      "id": "page-1770188410594",
+      "slug": "who-we-are",
+      "title": "Who we are",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Luke’s International Fellowship and Enrichment, Inc is a nonprofit corporation of Christian health care professionals that is organized exclusively for religious, educational, and charitable purposes as defined under 501(c)(3) of the Internal Revenue Code. The purpose of this organization is to bring healing to the body and Spirit by delivering medical care and sharing the good news of the gospel of Jesus Christ. We seek to accomplish these ends by mobilizing resources and medical expertise both in the United States and around the world with a special focus on the South Asian subcontinent.The objectives of this corporation are to foster the spiritual growth of Christian health care professionals, promote the development of health care professionals to be effective witnesses of Jesus Christ, conduct and support short and long term medical missions both locally and internationally, provide continuing medical education for healthcare medical professionals germane to the objectives of this corporation,promote public health efforts directly and by dissemination of medical literature both independently and in collaboration with other like-minded institutions, provide networking opportunities for like-minded individuals to greater fulfill the objectives of LIFE.The individual and summative effect of these objectives will be to improve the health and health awareness of those we serve and to fulfill the Great Commission as directed by Jesus Christ.",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_7403.jpg",
+          "title": "About Us",
+          "settings": {
+            "fullWidth": true,
+            "hideTitle": true,
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#FFFFFF"
+            },
+            "customHtml": "<div class=\"antialiased bg-white overflow-hidden\">\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <div class=\"relative py-20 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto\">\n        \n        <div class=\"absolute top-0 right-0 -translate-y-12 translate-x-24 blur-3xl opacity-10 pointer-events-none\">\n            <div class=\"aspect-[1200/800] w-[60rem] bg-gradient-to-tr from-[#3B82F6] to-[#F59E0B]\"></div>\n        </div>\n\n        <div class=\"grid lg:grid-cols-2 gap-16 items-center\">\n            \n            <div class=\"relative group\">\n                <div class=\"absolute -inset-4 bg-gradient-to-r from-[#3B82F6] to-[#64748B] rounded-[2.5rem] opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500\"></div>\n                <div class=\"relative overflow-hidden rounded-[2rem] shadow-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5]\">\n                    <img src=\"https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_7403.jpg\" alt=\"LIFE Mission\" class=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\">\n                    <div class=\"absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 to-transparent\"></div>\n                </div>\n                \n                <div class=\"absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px] border-l-4 border-[#3B82F6] animate-bounce-slow\">\n                    <p class=\"text-[#0F172A] font-bold text-lg leading-tight\">Mobilizing resources for global healing.</p>\n                </div>\n            </div>\n\n            \n            <div class=\"relative flex flex-col space-y-8\">\n                <div>\n                    <span class=\"inline-block py-1 px-4 rounded-full bg-blue-50 text-[#3B82F6] text-sm font-bold tracking-wider uppercase mb-4 border border-blue-100\">\n                        Our Mission\n                    </span>\n                    <h2 class=\"text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-[1.1]\">\n                        About Us\n                    </h2>\n                </div>\n\n                <div class=\"space-y-6\">\n                    <p class=\"text-lg leading-relaxed text-[#64748B] font-medium border-l-4 border-[#F59E0B] pl-6 italic\">\n                        Luke’s International Fellowship and Enrichment, Inc is a nonprofit corporation of Christian health care professionals that is organized exclusively for religious, educational, and charitable purposes as defined under 501(c)(3) of the Internal Revenue Code.\n                    </p>\n\n                    <div class=\"prose prose-slate max-w-none\">\n                        <p class=\"text-[#0F172A]/80 leading-relaxed text-base\">\n                            The purpose of this organization is to bring healing to the body and Spirit by delivering medical care and sharing the good news of the gospel of Jesus Christ. We seek to accomplish these ends by mobilizing resources and medical expertise both in the United States and around the world with a special focus on the South Asian subcontinent.The objectives of this corporation are to foster the spiritual growth of Christian health care professionals, promote the development of health care professionals to be effective witnesses of Jesus Christ, conduct and support short and long term medical missions both locally and internationally, provide continuing medical education for healthcare medical professionals germane to the objectives of this corporation,promote public health efforts directly and by dissemination of medical literature both independently and in collaboration with other like-minded institutions, provide networking opportunities for like-minded individuals to greater fulfill the objectives of LIFE.The individual and summative effect of these objectives will be to improve the health and health awareness of those we serve and to fulfill the Great Commission as directed by Jesus Christ.\n                        </p>\n                    </div>\n                </div>\n\n                <div class=\"flex flex-wrap gap-4 pt-4\">\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Medical Excellence</span>\n                    </div>\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Spiritual Witness</span>\n                    </div>\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Global Outreach</span>\n                    </div>\n                </div>\n\n                <div class=\"pt-6\">\n                    <button class=\"bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95\">\n                        Partner with Our Mission\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <style>\n        @keyframes bounce-slow {\n            0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8,0,1,1); }\n            50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }\n        }\n        .animate-bounce-slow {\n            animation: bounce-slow 4s infinite;\n        }\n    </style>\n</div>",
+            "layoutVariant": "ai-custom"
+          },
+          "imageWidth": "100%",
+          "imageHeight": "100%"
+        }
+      ],
+      "createdAt": "2026-02-04T07:00:10.594Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T04:51:15.353Z"
+    },
+    {
+      "id": "page-1770189983392",
+      "slug": "our-mission",
+      "title": "Our Mission",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "LIFE aims to strengthen Christian health care professionals in their walk with God, equip them with the skills to be an evangelist for Christ in healthcare, and provide opportunities for them to be an effective witness of Jesus Christ.",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_101509.jpg",
+          "title": "The Mission of LIFE is to share the gospel of Jesus Christ through Healthcare",
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Gallery",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%206.03.55%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2011.02.50%20PM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%205.54.19%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.21%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2012.37.25%20AM%20(1).jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.15.58%20AM%20(1).jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2356.JPG",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%2010.00.50%20AM%20(1).jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2372.JPG",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2691.jpg",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4815%20(1).jpg"
+          ],
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "paddingTop": "small",
+            "layoutVariant": "gallery-carousel",
+            "paddingBottom": "small"
+          }
+        },
+        {
+          "type": "marquee",
+          "title": "Premium Quality • Expert Service • Outstanding Results"
+        },
+        {
+          "body": "We Believe:\n· In one God eternally existing in three persons:\nFather, Son, and Holy Spirit.\n· That Jesus Christ is the only begotten Son of\nthe Father, conceived of the Holy Ghost, and born of the Virgin Mary. That\nJesus was crucified, buried, and raised from the dead; that He ascended to\nheaven and is today at the right hand of the Father as the Intercessor.\n· In the personality of the Holy Spirit, and that\nas promised, He came down from Heaven on the day of Pentecost, to dwell\npermanently in each believer, and that He is the efficient power for godly\nliving, Christian service, and spiritual worship.\n· In the Divine inspiration and authority of the\nHoly Scriptures.\n· That all have sinned and come short of the glory\nof God.\n· That justification and sanctification of the\nbeliever through the finished work of Christ.\n· In water baptism by immersion, and all who repent\nshould be baptized in the name of the Father, and of the Son and of the Holy\nSpirit.\n· In the Lord’s Supper.\n· In the baptism of the Holy Spirit for believers.\n· In Divine healing provided for all in the\natonement.\n· That God wonderfully and immutably creates each\nperson as male or female. These two distinct, complementary genders together\nreflect the image and nature of God. Rejection of one’s biological sex is a\nrejection of the image of God within that person.\n· In a marriage between one man and one woman in a\nsingle, exclusive union. We believe that God intends sexual intimacy to occur\nonly between a man and a woman who are married to each other. \n· We believe that\nGod has commanded that no intimate sexual activity be engaged in outside of\nmarriage between a man and a woman.\n· That all human life is sacred and created in His\nimage. That human life is of priceless worth in all its dimensions, including\npre-born babies, the aged, the physically or mentally challenged, and every\nother stage or condition from conception through natural death, That we are\ntherefore called to defend, protect and value all human life.\n· That any form of sexual immorality (including\nadultery, fornication, homosexual behavior, bisexual conduct, bestiality,\nincest, and use of pornography) is sinful and offensive to God.\n· In the second coming of Jesus Christ.\n· In the bodily resurrection; eternal life for the\nrighteous and eternal punishment for the wicked.\n· In the millennial reign of Jesus Christ and in\nthe new heavens and new earth.\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202026-02-04%20at%204.48.07%20PM.jpeg",
+          "title": "Statement of Faith",
+          "settings": {
+            "gap": 6,
+            "fullWidth": true,
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
+            "paddingTop": "small",
+            "paddingBottom": "small"
+          }
+        }
+      ],
+      "createdAt": "2026-02-04T07:26:23.392Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-04T07:26:23.392Z"
+    },
+    {
+      "id": "page-1770204458989",
+      "slug": "our-leadership",
+      "title": "Our Leadership",
+      "isHome": false,
+      "sections": [
+        {
+          "type": "team",
+          "title": "Executive committee",
+          "settings": {
+            "gap": 6,
+            "fullWidth": true,
+            "isVisible": true,
+            "paddingTop": "small",
+            "columnLayout": "4",
+            "paddingBottom": "small"
+          },
+          "teamMembers": [
+            {
+              "bio": "",
+              "name": "James Samuel, MD",
+              "role": "President",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Joseph Kuruvilla, DO",
+              "role": "Vice President",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Joseph Kuruvilla, DO",
+              "role": "Secretary",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Tony Joseph, MD",
+              "role": "Joint Secretary",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Tony Joseph, MD",
+              "role": "Treasurer",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "type": "team",
+          "title": "Board of Directors",
+          "settings": {
+            "isVisible": true,
+            "paddingTop": "none",
+            "layoutVariant": "team-grid",
+            "paddingBottom": "none"
+          },
+          "teamMembers": [
+            {
+              "bio": "",
+              "name": "Benson Abraham, MD",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Neal Varughese, MD",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": " Elsa Vadakekut, DO",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Annie George, RN, DNP",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Justin Joy, PA",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Stanley Abraham, DO",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Jason James, PharmD",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Stephen Mathew, MD",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Jones Thomas, MD",
+              "role": "-",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "type": "team",
+          "title": "Prayer Coordinator",
+          "settings": {
+            "isVisible": true,
+            "paddingTop": "none",
+            "layoutVariant": "team-grid",
+            "paddingBottom": "none"
+          },
+          "teamMembers": [
+            {
+              "bio": "",
+              "name": "Sis. Anitha Satish",
+              "role": "-",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "type": "team",
+          "title": "Board of Advisors",
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "paddingTop": "none",
+            "columnLayout": "4",
+            "layoutVariant": "team-grid",
+            "paddingBottom": "none"
+          },
+          "teamMembers": [
+            {
+              "bio": "",
+              "name": "Pastor. Bethel Johnson",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Pastor. Satish Kumar",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Renny Abraham, MD",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Pastor. David York, Esq",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Pastor. K J Kuriakose",
+              "role": "-",
+              "image": ""
+            },
+            {
+              "bio": "",
+              "name": "Philip Finny, MD",
+              "role": "-",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "type": "team",
+          "title": "Accounts Management",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "team-grid"
+          },
+          "teamMembers": [
+            {
+              "bio": "",
+              "name": "Bro. Johnson Thomas",
+              "role": "-",
+              "image": ""
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-02-04T11:27:38.989Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T20:19:54.783Z"
+    },
+    {
+      "id": "page-1770317475199",
+      "slug": "wayanad---india",
+      "title": "Wayanad - India",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<b>Institutions:</b>\nWayanad Community Hospital&nbsp;\n<b>Specialty:</b>\nCommunity Medicine, Primary Care, Paediatrics\n<b>Accessibility:</b>\nCapital\n<b>Stay:</b>\nRetreat Camp - On premises\n<b>Medical Clearance:</b>\nNational Medical Council, Approved NGO, or Medical Institution\n<b>Established:</b>\n2022\n<b>Mission Liason:</b>\nDr. Tony Joseph\n<b>Local Liason:</b>\nDr. Muralidar\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/river-6972165_1920.jpg",
+          "title": "Details",
+          "settings": {
+            "hideTitle": true,
+            "isVisible": true
+          }
+        }
+      ],
+      "createdAt": "2026-02-05T18:51:15.199Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-05T18:51:15.199Z"
+    },
+    {
+      "id": "page-1770751381657",
+      "slug": "uttarakhand---india",
+      "title": "Uttarakhand - India",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Institutions:\nHerbertpur Christian Hospital, Landour Community Hospital\nSpeciality:\nCommunity Medicine, Primary Care, Paediatrics\nAccessibility:\n~3 Hrs from Delhi\nStay:\nRetreat Camp - On Premises\nMedical Clearance:\nNational Medical Council, approved NGO, or Medical Institution\nEstablished:\n1936; 1931\nMission Liason:\nDr. Tony George\nLocal Liason:\nDr. Philip Finny\nURL: \nhttps://hch-eha.in/\n& \nhttps://eha-health.org/hospitals/landour-community-hospital\n ",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/lake-7568092_1920.jpg",
+          "title": "Details",
+          "settings": {
+            "hideTitle": true,
+            "isVisible": true
+          }
+        }
+      ],
+      "createdAt": "2026-02-10T19:23:01.657Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-10T19:23:01.657Z"
+    },
+    {
+      "id": "page-1770920950322",
+      "slug": "bihar---india",
+      "title": "Bihar - India",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Institutions:\nThe Duncan Hospital\nSpecialty:\nObstetrics, Gynaecology, Neonatology,  Paediatrics, Intensive Care, Community Medicine\nAccessibility:\n~4.5Hrs from Patna\nStay:\nRetreat Camp - On Premises\nMedical Clearance:\nNational Medical Council, approved NGO, or Medical Institution\nEstablished:\n1930\nMission Liason:\nDr. Tony George\nLocal Liason:\nDr. Prabhu Joseph\nURL:\nhttps://duncanhospital-eha.org/\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/village-7757251_1920.jpg",
+          "title": "Details",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-02-12T18:29:10.322Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-12T18:29:10.322Z"
+    },
+    {
+      "id": "page-1770923334162",
+      "slug": "dominican-republic",
+      "title": "Dominican Republic",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<font color=\"#000000\" size=\"3\"><b>Institutions:</b>\nWord of Life\n<b>Specialty:</b>\nCommunity Medicine, Primary Care, Paediatric\n<b>Accessibility:</b>\nCapital\n<b>Stay:</b>\nRetreat Camp - On Premises\n<b>Medical Clearance:</b>\nColegio Medico Dominicano\n<b>Established:</b>\n1994\n<b>Mission Liason:</b>\nDr. Tony George\n<b>Local Liason:</b>\nMarcelo Diaz\n<b>URL:</b>\n<a href=\"https://give.wol.org/location/dominicanrepublic\" target=\"_blank\" rel=\"noopener noreferrer\">https://give.wol.org/location/dominicanrepublic</a></font>\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/santo-domingo-6531384_1920.jpg",
+          "title": "Details",
+          "settings": {
+            "hideTitle": true,
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-02-12T19:08:54.162Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-12T19:08:54.162Z"
+    },
+    {
+      "id": "page-1770924055949",
+      "slug": "kenya",
+      "title": "Kenya",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<font size=\"3\" color=\"#000000\"><b>Institutions:</b>\nTenweck Hospital\n<b>Specialty:</b>\nOrthopaedic Sports&nbsp;\n<b>Accessibility:</b>\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lu3-mAcJnV4?si=ze_P7UhrjhrhFqhY\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\nMajor Roads; 4.5hrs from Jomo Kenyatta International Airport, Nairobi, Kenya\n<b>Stay:&nbsp;</b>\nHostel or Hotel – On Premises&nbsp;\n<b>Medical clearance:&nbsp;</b>\nKenya Medical Practitioners and Dentist Council\n<b>Established:</b>\n1937&nbsp;\n<b>Mission Liaison:&nbsp;</b>\nDr. Stephen Matthew\n<b>URL:&nbsp;</b>\n<a href=\"https://tenwekhosp.org\" target=\"_blank\" rel=\"noopener noreferrer\">https://tenwekhosp.org&nbsp;</a></font>",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/group-3137670_1920.jpg",
+          "title": "Details",
+          "settings": {
+            "hideTitle": true,
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-02-12T19:20:55.949Z",
+      "isVisible": true,
+      "updatedAt": "2026-02-12T19:20:55.949Z"
+    },
+    {
+      "id": "page-1772092110554",
+      "slug": "giving",
+      "title": "Giving",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Donate via PayPal or Credit Card. Please see link on our webpage.<div><br></div><div><a href=\"https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE\"><b>Donate</b></a>\n\nOr\n\nGive directly through your Bank using Zelle.\n\nSend your gift to:\n<b><a href=\"life.org.financials@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">life.org.financials@gmail.com</a>\n&nbsp;</b>\n\n<b>Donations to Lukes International Fellowship and Enrichmentare tax-deductible and exempt from federal income tax as a registered 501(c)(3).</b>\n&nbsp;&nbsp;</div>",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2372.JPG",
+          "title": "Giving",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-02-26T07:48:30.554Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T18:52:01.580Z"
+    },
+    {
+      "id": "page-1772094981541",
+      "slug": "covid-19-relief",
+      "title": "Covid-19 Relief",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "As you may have heard, India is amid a crisis of the second wave of Covid which is 3.5 times higher than the peak of the first wave. The whole medical infrastructure has collapsed and India is in dire need of resources like oxygen concentrators that provide portable oxygen to all those affected by Covid 19. Many are dying due to a severe shortage in oxygen at hospitals and will benefit from 5 to 10 liters per minute (LPM) of oxygen supply.\n \n\nWe, at Luke’s International Fellowship and Enrichment (LIFE) have decided to partner with an organization called Friends of Agape based in Colorado Springs, CO that will help provide for these immediate oxygen needs through your generous giving.\n\n\nSometimes, we are not sure of how to make an impact around us with the resources we have. Supporting this cause is a great way to make sure that our light is “like a city on a hilltop that cannot be hidden. No one lights a lamp and then puts it under a basket. Instead, a lamp is placed on a stand, where it gives light to everyone in the house. In the same way, let your good deeds shine for all to see, so that everyone will praise your Heavenly Father” Matt 5:14-16. A little help will go a long way as we request that you prayerfully give to this cause to help alleviate the pain and desperation of our fellow brothers and sisters in India at this time. We hope that your small gesture of giving will be the light that turns India to Jesus!\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/mufid-majnun-J12RfFH-2ZE-unsplash.webp",
+          "title": "",
+          "settings": {
+            "fullWidth": false,
+            "isVisible": true,
+            "paddingTop": "none",
+            "layoutVariant": "about-image-left"
+          }
+        },
+        {
+          "type": "features",
+          "items": [
+            {
+              "name": "Goal",
+              "description": "$20,000"
+            },
+            {
+              "name": "Raised",
+              "description": "$11,850"
+            },
+            {
+              "name": "To Go",
+              "description": "$8,150"
+            }
+          ],
+          "title": "Our Numbers",
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "columnLayout": "4",
+            "layoutVariant": "stats-cards"
+          }
+        },
+        {
+          "body": "Join us to help India by donating today!",
+          "type": "cta",
+          "title": "Support Our Cause",
+          "settings": {
+            "anchorId": "",
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#475569"
+            },
+            "layoutVariant": "cta-centered"
+          },
+          "buttonLink": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
+          "buttonText": "Yes, I want to donate!"
+        }
+      ],
+      "createdAt": "2026-02-26T08:36:21.541Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T18:52:09.367Z"
+    },
+    {
+      "id": "page-1772119844018",
+      "slug": "contact",
+      "title": "Contact",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Phone: (203)918-7574\nE-mail: orglife2020@gmail.com\n",
+          "type": "about",
+          "title": "Get in touch!",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "about-centered"
+          }
+        }
+      ],
+      "createdAt": "2026-02-26T15:30:44.018Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T18:52:16.992Z"
+    },
+    {
+      "id": "page-1772121036901",
+      "slug": "reach-kenya---2024",
+      "title": "Reach Kenya - 2024",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Come, join this opportunity to learn open heart evaluation, management, and surgical techniques with world-renowned Christian mentors!\n \nWhen: February 8-21, 2024\nWhere: Tenwek Hospital, Bomet, Kenya\nWho: This trip is open to surgical residents, fellows, and attendings\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-2.webp",
+          "title": "Cardiothoracic Surgery Mission Trip",
+          "settings": {
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
+            "layoutVariant": "hero-split",
+            "paddingBottom": "small"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Get Started"
+        },
+        {
+          "type": "gallery",
+          "title": "Our Gallery",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-1.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-3.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-4.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/6297f5e2-79d4-47b3-b4c4-598427391781%20(1).webp"
+          ],
+          "settings": {
+            "paddingTop": "small"
+          }
+        }
+      ],
+      "createdAt": "2026-02-26T15:50:36.901Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T19:31:20.464Z"
+    },
+    {
+      "id": "page-1772122019952",
+      "slug": "reach-kenya---2023",
+      "title": "Reach Kenya - 2023",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "This mission trip was a collaboration with Samaritans Purse in Bomet, Kenya. The hospital's busy services are Orthopedics, Cardiothoracic surgery, General surgery, Critical Care, and In-patient medicine/Pediatric\n\nWhen: Sept 8-17, 2023\nWhere: Tenwek Hospital, Bomet, Kenya\nWho: Trip was opened for Physicians, Fellows, Residents, and Physician Assistants\nCost: $3,500\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/6297f5e2-79d4-47b3-b4c4-598427391781%20(1).webp",
+          "title": "Impacted Kenya!",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "hero-centered",
+            "paddingBottom": "none"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Get Started"
+        },
+        {
+          "type": "gallery",
+          "title": "Our Gallery",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-2.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-1.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-3.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-4.webp"
+          ],
+          "settings": {
+            "paddingTop": "small"
+          }
+        }
+      ],
+      "createdAt": "2026-02-26T16:06:59.952Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T19:31:26.240Z"
+    },
+    {
+      "id": "page-1772123310006",
+      "slug": "reach-kenya---2022",
+      "title": "Reach Kenya - 2022",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "",
+          "type": "video",
+          "title": "Video Story of Kenya Mission Trip!",
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#FFFFFF"
+            }
+          },
+          "videoUrl": "https://www.youtube.com/embed/DEl5NMYsyAA?start=134"
+        }
+      ],
+      "createdAt": "2026-02-26T16:28:30.006Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T19:31:32.209Z"
+    },
+    {
+      "id": "page-1772126458831",
+      "slug": "reach-cambodia---2022",
+      "title": "Reach Cambodia - 2022",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "Over the course of four days, we successfully treated over 600 patients. Additionally, we treated 30 abandoned children performed x-ray guided pain procedures, assisted with spine surgery, observed  open-heart surgery, lectured to university medical students and faculty and taught medical students, but above all, we brought the gospel of Christ to the unreached.\n\nHis name be glorified! Christ is All!\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2693_5-scaled.webp",
+          "title": "Reaching the unreached",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Gallery",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG-20220806-WA0000.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-28-at-4.42.18-AM.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG-20220806-WA0001.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/Copy-of-WhatsApp-Image-2022-07-26-at-5.16.18-AM.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/PXL_20220727_040824731-1-scaled.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-12.37.25-AM.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/PXL_20220727_065755893.PORTRAIT-scaled.webp",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-25-at-7.15.58-AM-1.webp"
+          ],
+          "settings": {
+            "isVisible": true,
+            "paddingTop": "small",
+            "layoutVariant": "gallery-carousel"
+          }
+        },
+        {
+          "body": "https://www.youtube.com/embed/qWb3cIgjgKc",
+          "type": "video",
+          "title": "Watch Our Story",
+          "settings": {
+            "isVisible": true
+          },
+          "videoUrl": "https://www.youtube.com/embed/qWb3cIgjgKc"
+        }
+      ],
+      "createdAt": "2026-02-26T17:20:58.831Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T19:31:38.615Z"
+    },
+    {
+      "id": "page-1772130564816",
+      "slug": "reach-india---2023",
+      "title": "Reach India - 2023",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "This India Missions trip will be from October 12-24th. It’ll be a collaborative effort with ICPF and their hospital in Wayanad. Services are adults and paediatric primary care clinics with accommodation on site. The team is looking for 20 professionals to join this trip.\n\nWhen: October 12-24th, 2023\nWhere: Wayanad, India\nCost: $1,200 for travel + $1,000 for accommodation, transportation, and food ($2,200 total)\n\n",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/India-Hosptial-768x433.webp",
+          "title": "Join us in impacting India!",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "about-image-left",
+            "paddingBottom": "small"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "India Missions Hospital in Wayanad, Kerala",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-12-at-12.47.50-PM-1-768x543.webp"
+          ],
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "paddingTop": "small",
+            "columnLayout": "2-1",
+            "layoutVariant": "gallery-masonry"
+          }
+        }
+      ],
+      "createdAt": "2026-02-26T18:29:24.816Z",
+      "hideTitle": true,
+      "isVisible": true,
+      "updatedAt": "2026-03-06T19:31:45.276Z"
+    },
+    {
+      "id": "page-1772821181772",
+      "slug": "cambodia",
+      "title": "Cambodia",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<p><font color=\"#000000\" size=\"3\"><b>Institutions:<br></b>Jeremiah's Hope<br><b>Specialty:<br></b>Cardiothoracic Surgery; Orthopedic Spine; Pediatric Cardiology<br><b>Accessibility:<br></b>Major Roads: ~30mins from Phnom Penh International Airport, Phnom Penh, Cambodia</font></p><div><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\"><b>Stay: </b><o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\">Hostel or Hotel – On Premises<o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\"><b>Medical Clearance: </b><o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\">Medical Council of Cambodia<o:p></o:p></font></p><p class=\"MsoNormal\"><b><font color=\"#000000\" size=\"3\">Established: </font></b></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\">2004<o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\"><b>Mission Liaison:</b><o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\">Dr. Joe Kuruvilla<o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\"><b>Local Liaison:</b><o:p></o:p></font></p><p class=\"MsoNormal\"><font color=\"#000000\" size=\"3\">Dr. Sokchan Sim<o:p></o:p></font></p><p class=\"MsoNormal\"><b><font color=\"#000000\" size=\"3\">URL:</font></b></p><p class=\"MsoNormal\"><font color=\"#000000\" style=\"\" size=\"3\">Please Google – Jeremiahs hope, Cambodia</font></p></div>",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/vicky-t-EY3tC81nFt0-unsplash.jpg",
+          "title": "About Us",
+          "settings": {
+            "hideTitle": true,
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-03-06T18:19:41.772Z",
+      "isVisible": true,
+      "updatedAt": "2026-03-06T18:19:41.772Z"
+    }
+  ],
+  "footer": {
+    "links": [
+      {
+        "href": "/privacy",
+        "label": "Privacy Policy"
+      },
+      {
+        "href": "/terms",
+        "label": "Terms of Service"
+      }
+    ],
+    "copyright": "© 2026 Luke's International Fellowship & Enrichment - LIFE. All rights reserved.",
+    "companyName": "Luke's International Fellowship & Enrichment - LIFE",
+    "contactInfo": {
+      "email": "orglife2020@gmail.com",
+      "phone": " (203) 918-7574",
+      "address": " P.O. Box 322 Wilmington, MA 01887"
+    },
+    "description": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving ...",
+    "socialLinks": [
+      {
+        "url": "#",
+        "platform": "facebook"
+      },
+      {
+        "url": "#",
+        "platform": "instagram"
+      },
+      {
+        "url": "#",
+        "platform": "linkedin"
+      }
+    ]
+  },
+  "header": {
+    "logo": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/Untitled%20design%20(4)%20(1)%20(2).png",
+    "height": "default",
+    "logoLink": "/",
+    "navItems": [
+      {
+        "href": "/hero",
+        "type": "section",
+        "label": "Home"
+      },
+      {
+        "href": "#",
+        "type": "external",
+        "label": "About",
+        "newTab": true,
+        "children": [
+          {
+            "href": "/who-we-are",
+            "type": "page",
+            "label": "Who We Are"
+          },
+          {
+            "href": "/our-leadership",
+            "type": "page",
+            "label": "Our Leadership"
+          },
+          {
+            "href": "/our-mission",
+            "type": "page",
+            "label": "Our Mission"
+          }
+        ]
+      },
+      {
+        "href": "#",
+        "type": "external",
+        "label": "Fundraising",
+        "newTab": true,
+        "children": [
+          {
+            "href": "/giving",
+            "type": "page",
+            "label": "Giving"
+          },
+          {
+            "href": "/covid-19-relief",
+            "type": "page",
+            "label": "Covid-19 Relief"
+          }
+        ]
+      },
+      {
+        "href": "/our-mission",
+        "type": "page",
+        "label": "Missions",
+        "children": [
+          {
+            "href": "#",
+            "type": "external",
+            "label": "Get Involved!",
+            "newTab": true
+          },
+          {
+            "href": "#",
+            "type": "external",
+            "label": "Strategic Collaboration",
+            "newTab": true,
+            "children": [
+              {
+                "href": "/wayanad---india",
+                "type": "page",
+                "label": "Wayanad - India"
+              }
+            ]
+          },
+          {
+            "href": "#",
+            "type": "external",
+            "label": "Current Focus",
+            "newTab": true,
+            "children": [
+              {
+                "href": "/wayanad---india",
+                "type": "page",
+                "label": "Wayanad - India"
+              },
+              {
+                "href": "/uttarakhand---india",
+                "type": "page",
+                "label": "Uttarakhand - India"
+              },
+              {
+                "href": "/bihar---india",
+                "type": "page",
+                "label": "Bihar - India"
+              },
+              {
+                "href": "/dominican-republic",
+                "type": "page",
+                "label": "Dominican Republic"
+              },
+              {
+                "href": "/kenya",
+                "type": "page",
+                "label": "Kenya"
+              },
+              {
+                "href": "/cambodia",
+                "type": "page",
+                "label": "Cambodia"
+              }
+            ]
+          },
+          {
+            "href": "#",
+            "type": "external",
+            "label": "Past Trips",
+            "newTab": true,
+            "children": [
+              {
+                "href": "/reach-kenya---2024",
+                "type": "page",
+                "label": "REACH Kenya - 2024"
+              },
+              {
+                "href": "/reach-kenya---2023",
+                "type": "page",
+                "label": "REACH Kenya - 2023"
+              },
+              {
+                "href": "/reach-kenya---2022",
+                "type": "page",
+                "label": "REACH Kenya - 2022"
+              },
+              {
+                "href": "/reach-cambodia---2022",
+                "type": "page",
+                "label": "REACH Cambodia - 2022"
+              },
+              {
+                "href": "/reach-india---2023",
+                "type": "page",
+                "label": "REACH India - 2023"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "href": "/contact",
+        "type": "page",
+        "label": "Contact"
+      }
+    ],
+    "settings": {
+      "height": "tall",
+      "layout": "centered",
+      "shadow": "lg",
+      "ctaStyle": "filled",
+      "fontSize": "lg",
+      "isSticky": true,
+      "paddingX": 24,
+      "paddingY": 8,
+      "showLogo": true,
+      "alignment": "center",
+      "fullWidth": true,
+      "linkStyle": "normal",
+      "textColor": "#FFFFFF",
+      "background": {
+        "type": "solid",
+        "color": "#0F0F0F",
+        "opacity": 100
+      },
+      "fontFamily": "Inter",
+      "hoverColor": "#000000",
+      "linkWeight": "bold",
+      "borderColor": "#E5E7EB",
+      "ctaPosition": "right",
+      "hoverEffect": "scale",
+      "itemSpacing": 24,
+      "stickyStyle": "always",
+      "borderBottom": false,
+      "logoPosition": "left",
+      "menuTemplate": "bold-navigation",
+      "submenuStyle": {
+        "preset": "glassmorphism",
+        "shadow": "md",
+        "animation": "slide-down",
+        "showIcons": true,
+        "background": "blur",
+        "borderRadius": "lg",
+        "showDescriptions": true
+      },
+      "animationType": "slide",
+      "showCtaButton": true,
+      "hamburgerStyle": "bars",
+      "activeIndicator": "underline",
+      "dropdownHoverBg": "#374151",
+      "mobileMenuStyle": "dropdown",
+      "mobileBreakpoint": "lg",
+      "scrollTransition": true,
+      "animationDuration": 250,
+      "dropdownTextColor": "#E5E7EB",
+      "scrolledBackground": {
+        "type": "solid",
+        "color": "#1F2937",
+        "opacity": 95,
+        "blurAmount": 12
+      }
+    },
+    "ctaButton": {
+      "href": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
+      "text": "Let me donate!"
+    },
+    "logoDimensions": {
+      "width": "auto",
+      "height": 52,
+      "objectFit": "contain"
+    }
+  },
+  "styling": {
+    "toneOfVoice": "professional",
+    "suggestedColors": [
+      "#dc2626",
+      "#ffffff",
+      "#1f2937",
+      "#f3f4f6"
+    ]
+  },
+  "sections": [
+    {
+      "body": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
+      "title": "About Luke's International Fellowship & Enrichment - LIFE",
+      "images": [
+        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
+      ]
+    },
+    {
+      "body": "To share the gospel of Jesus Christ through healthcare. It aims to strengthen healthcare professionals in their walk with God, equip them with the skills of an Evangelist, and provide opportunities to be an effective witness of Jesus Christ.",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
+      "title": "Our Mission",
+      "settings": {
+        "isVisible": true,
+        "layoutVariant": "hero-split"
+      },
+      "buttonLink": "#contact",
+      "buttonText": "Get Started"
+    },
+    {
+      "type": "services",
+      "items": [
+        {
+          "name": "Medical Missions",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+        },
+        {
+          "name": "Spiritual Fellowship",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
+          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+        },
+        {
+          "name": "Medical Education",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
+          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+        }
+      ],
+      "title": "Our Campaigns",
+      "settings": {
+        "gap": 6,
+        "fullWidth": true,
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#F1F5F9"
+        },
+        "paddingTop": "medium",
+        "columnLayout": "3"
+      }
+    },
+    {
+      "type": "gallery",
+      "title": "Some glimpses of our medical mission",
+      "images": [
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
+      ],
+      "settings": {
+        "galleryStyle": "grid"
+      }
+    },
+    {
+      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+      "type": "cta",
+      "title": "Support us",
+      "settings": {
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#1E293B"
+        },
+        "layoutVariant": "cta-centered"
+      },
+      "buttonLink": "#donate",
+      "buttonText": "Let me donate!"
+    },
+    {
+      "body": "Duncan Hospital experience",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
+      "title": "Blog Insights",
+      "settings": {
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#F1F5F9"
+        }
+      }
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
+          "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
+        },
+        {
+          "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
+          "question": "How can I get started?"
+        },
+        {
+          "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
+          "question": "What makes you different?"
+        }
+      ],
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "body": "Ready for a hand with Luke's International Fellowship & Enrichment - LIFE? We'd love to hear from you.",
+      "type": "contact",
+      "title": "Get In Touch",
+      "settings": {
+        "anchorId": "contact"
+      },
+      "buttonText": "Send Message"
+    }
+  ],
+  "globalStyles": {
+    "colors": {
+      "text": "#0F172A",
+      "muted": "#94A3B8",
+      "accent": "#F59E0B",
+      "primary": "#3B82F6",
+      "secondary": "#64748B",
+      "background": "#FFFFFF"
+    },
+    "buttons": {
+      "size": "md",
+      "shape": "rounded",
+      "style": "solid"
+    },
+    "spacing": "comfortable",
+    "typography": {
+      "scale": {
+        "h1": "48px",
+        "h2": "36px",
+        "h3": "24px",
+        "h4": "20px",
+        "body": "16px",
+        "small": "14px"
+      },
+      "bodyFont": "DM Sans",
+      "lineHeight": "normal",
+      "headingFont": "Montserrat",
+      "letterSpacing": "normal"
+    },
+    "borderRadius": "md"
+  },
+  "chatSeedContent": [
+    {
+      "answer": "Luke's International Fellowship & Enrichment - LIFE is a nonprofit business that We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving ",
+      "question": "What does Luke's International Fellowship & Enrichment - LIFE do?"
+    },
+    {
+      "answer": "We are available Monday through Friday, 9 AM to 6 PM. Feel free to leave a message anytime!",
+      "question": "What are your business hours?"
+    },
+    {
+      "answer": "You can reach us through the contact form on this page, or call us directly at the number provided.",
+      "question": "How can I contact you?"
+    }
+  ]
+}
