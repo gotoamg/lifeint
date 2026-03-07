@@ -444,7 +444,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 <span className="text-xl sm:text-2xl font-bold truncate max-w-[180px] sm:max-w-none" style={{ color: 'inherit' }}>{header.logoText || businessName}</span>
               )}
             </div>
-            <div className={cn(bpClasses.show, 'items-center gap-6 order-[4]', isCenteredLayout && 'flex-1 justify-center')}>
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
               {header.megaMenuItems && header.megaMenuItems.length > 0 ? (
                 <nav className="flex items-center gap-1">
                   {header.megaMenuItems.map((item: any) =>
@@ -473,8 +473,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   ))}
                 </nav>
               ) : null}
-              {header.ctaButton && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button>)}
             </div>
+            {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="order-4"><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px] order-4">{header.ctaButton.text}</Button>)}
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
