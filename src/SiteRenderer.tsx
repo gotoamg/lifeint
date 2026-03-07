@@ -421,8 +421,21 @@ export function SiteRenderer({ content, businessName }: { content: any; business
       {header && (
         <header className={cn('z-50 transition-all', getStickyClass(), getHeightClass(), getShadowClass(), headerSettings.borderBottom && 'border-b border-border')}
           style={{ ...getHeaderBackgroundStyle(), color: getHeaderTextColor(), transitionDuration: (headerSettings.animationDuration || 300) + 'ms' }}>
-          <div className={cn('container mx-auto flex items-center px-6 sm:px-8', isCenteredLayout ? 'justify-between' : 'justify-between')}>
-            <div className="flex-shrink-0">
+          <div className={cn('container mx-auto flex items-center px-6 sm:px-8',
+              headerSettings.layout === 'centered' ? 'justify-center gap-8' :
+              headerSettings.alignment === 'left' ? 'justify-start gap-8' :
+              headerSettings.alignment === 'center' ? 'justify-center gap-8' :
+              headerSettings.alignment === 'right' ? 'justify-end gap-8' :
+              'justify-between'
+            )}>
+            <div className={cn(
+              "flex-shrink-0",
+              headerSettings.layout === 'centered' && 'order-[3] mx-auto',
+              headerSettings.showLogo === false && 'hidden',
+              (headerSettings.logoPosition || 'left') === 'left' && 'order-2',
+              headerSettings.logoPosition === 'center' && 'order-[3] mx-auto',
+              headerSettings.logoPosition === 'right' && 'order-[5]',
+            )}>
               {header.logo ? (
                 <div style={{ height: getHeaderLogoHeight() + 'px' }}>
                   <img src={header.logo} alt={businessName} style={{ height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'left center', transform: 'scale(1.18)', transformOrigin: 'left center', display: 'block' }} />
@@ -431,7 +444,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 <span className="text-xl sm:text-2xl font-bold truncate max-w-[180px] sm:max-w-none" style={{ color: 'inherit' }}>{header.logoText || businessName}</span>
               )}
             </div>
-            <div className={cn(bpClasses.show, 'items-center gap-6', isCenteredLayout && 'flex-1 justify-center')}>
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-[4]', isCenteredLayout && 'flex-1 justify-center')}>
               {header.megaMenuItems && header.megaMenuItems.length > 0 ? (
                 <nav className="flex items-center gap-1">
                   {header.megaMenuItems.map((item: any) =>
