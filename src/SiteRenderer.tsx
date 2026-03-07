@@ -448,13 +448,13 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </div>
             <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
               {header.megaMenuItems && header.megaMenuItems.length > 0 ? (
-                <nav className="flex items-center gap-1">
+              <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
                   {header.megaMenuItems.map((item: any) =>
                     item.type === 'simple-dropdown' && item.children?.length > 0 ? (
                       <SimpleDropdown key={item.id} item={item} headerSettings={headerSettings} onNavigate={(href: string) => { if (href.startsWith('/')) onNavigate(href.slice(1)); else if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); else window.location.href = href; }} linkClasses={getLinkClasses()} textColor={getHeaderTextColor()} />
                     ) : (
                       <a key={item.id} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
-                        className={cn('px-4 py-2.5 rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
+                        className={cn('rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
                         {item.icon && <DynamicIcon name={item.icon} className="w-4 h-4 mr-1 inline" />}
                         {item.label}
                       </a>
@@ -462,13 +462,13 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   )}
                 </nav>
               ) : header.navItems ? (
-                <nav className="flex items-center gap-1">
+                <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
                   {header.navItems.map((item: any, i: number) => (
                     item.children?.length > 0 ? (
                       <SimpleDropdown key={i} item={item} headerSettings={headerSettings} onNavigate={(href: string) => { if (href.startsWith('/')) onNavigate(href.slice(1)); else if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); else window.location.href = href; }} linkClasses={getLinkClasses()} textColor={getHeaderTextColor()} />
                     ) : (
                       <a key={i} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
-                        className={cn('px-4 py-2.5 rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
+                        className={cn('rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
                         {item.label}
                       </a>
                     )
