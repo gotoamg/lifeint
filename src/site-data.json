@@ -1185,7 +1185,7 @@
       "layout": "centered",
       "shadow": "lg",
       "ctaStyle": "filled",
-      "fontSize": "lg",
+      "fontSize": "xl",
       "isSticky": true,
       "paddingX": 32,
       "paddingY": 16,
@@ -1208,7 +1208,7 @@
       "itemSpacing": 24,
       "stickyStyle": "always",
       "borderBottom": false,
-      "logoPosition": "right",
+      "logoPosition": "left",
       "menuTemplate": "bold-navigation",
       "submenuStyle": {
         "preset": "glassmorphism",
