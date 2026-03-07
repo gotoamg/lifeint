@@ -403,7 +403,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   // Header helpers
   const getStickyClass = () => { if (!headerSettings.isSticky) return 'relative'; if (headerSettings.stickyStyle === 'scroll-up') return scrollDirection === 'up' ? 'sticky top-0' : 'relative -translate-y-full'; if (headerSettings.stickyStyle === 'after-hero') return isScrolled ? 'fixed top-0 w-full' : 'absolute top-0 w-full'; return 'sticky top-0'; };
   const getHeightClass = () => ({ compact: 'py-2', tall: 'py-6', normal: 'py-4' }[headerSettings.height] || 'py-4');
-  const getHeaderLogoHeight = () => ({ compact: 56, tall: 96, normal: 80 }[headerSettings.height] || 80);
+  const getHeaderLogoHeight = () => { if (header?.logoDimensions?.height) return header.logoDimensions.height; return ({ compact: 56, tall: 96, normal: 80 }[headerSettings.height] || 80); };
   const getShadowClass = () => { if (isScrolled) return 'shadow-lg'; return ''; };
   const getActiveBackground = () => { const defaultBg = { type: 'solid', color: '#1F2937', opacity: 100 }; return isScrolled && headerSettings.scrollTransition && headerSettings.scrolledBackground ? (headerSettings.scrolledBackground || defaultBg) : (headerSettings.background || defaultBg); };
   const getHeaderBackgroundStyle = () => { const bg = getActiveBackground(); const opacity = (bg.opacity ?? 100) / 100; if (bg.type === 'transparent') return { backgroundColor: 'transparent' }; if (bg.type === 'gradient') { const angle = bg.gradientDirection === 'vertical' ? '180deg' : bg.gradientDirection === 'diagonal' ? '135deg' : '90deg'; return { background: 'linear-gradient(' + angle + ', ' + hexToRgba(bg.gradientFrom || '#1F2937', opacity) + ', ' + hexToRgba(bg.gradientTo || '#374151', opacity) + ')' }; } if (bg.type === 'blur') return { backgroundColor: hexToRgba(bg.color || '#1F2937', opacity), backdropFilter: 'blur(' + (bg.blurAmount || 12) + 'px)', WebkitBackdropFilter: 'blur(' + (bg.blurAmount || 12) + 'px)' }; return { backgroundColor: hexToRgba(bg.color || '#1F2937', opacity) }; };
@@ -419,9 +419,11 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     <div className="min-h-screen site-theme-scope" style={scopedThemeStyles}>
       {/* Header */}
       {header && (
-        <header className={cn('z-50 transition-all', getStickyClass(), getHeightClass(), getShadowClass(), headerSettings.borderBottom && 'border-b border-border')}
+        <header className={cn('z-50 transition-all', getStickyClass(), getShadowClass(), headerSettings.borderBottom && 'border-b border-border')}
           style={{ ...getHeaderBackgroundStyle(), color: getHeaderTextColor(), transitionDuration: (headerSettings.animationDuration || 300) + 'ms' }}>
-          <div className={cn('container mx-auto flex items-center px-6 sm:px-8',
+          <div className="container mx-auto" style={{ padding: (headerSettings.paddingY ?? 8) + 'px ' + (headerSettings.paddingX ?? 24) + 'px' }}>
+          <div className={cn('flex items-center',
+              ({ compact: 'h-14', tall: 'h-24', normal: 'h-20' }[headerSettings.height] || 'h-20'),
               headerSettings.layout === 'centered' ? 'justify-center gap-8' :
               headerSettings.alignment === 'left' ? 'justify-start gap-8' :
               headerSettings.alignment === 'center' ? 'justify-center gap-8' :
@@ -478,6 +480,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
+          </div>
           </div>
         </header>
       )}
