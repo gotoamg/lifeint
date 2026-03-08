@@ -254,17 +254,39 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
           const alignH = { left: 'items-start text-left', center: 'items-center text-center', right: 'items-end text-right' }[layout.contentAlign || 'center'];
           const alignV = { top: 'justify-start pt-24', middle: 'justify-center', bottom: 'justify-end pb-24' }[layout.verticalAlign || 'middle'];
 
+          const scopeClass = 'hero-slide-' + (slide.id || index);
+          const d = responsive.fontSizes?.desktop || {};
+          const t = responsive.fontSizes?.tablet || {};
+          const m = responsive.fontSizes?.mobile || {};
+          const heroFontBlock = [
+            '.' + scopeClass + ' .hero-title { font-size: ' + (d.title || '4rem') + '; }',
+            '.' + scopeClass + ' .hero-subtitle { font-size: ' + (d.subtitle || '1.5rem') + '; }',
+            '.' + scopeClass + ' .hero-description { font-size: ' + (d.description || '1.125rem') + '; }',
+            '@media (max-width: 1023px) {',
+            '  .' + scopeClass + ' .hero-title { font-size: ' + (t.title || '2.5rem') + '; }',
+            '  .' + scopeClass + ' .hero-subtitle { font-size: ' + (t.subtitle || '1.25rem') + '; }',
+            '  .' + scopeClass + ' .hero-description { font-size: ' + (t.description || '1rem') + '; }',
+            '}',
+            '@media (max-width: 767px) {',
+            '  .' + scopeClass + ' .hero-title { font-size: ' + (m.title || '2rem') + '; }',
+            '  .' + scopeClass + ' .hero-subtitle { font-size: ' + (m.subtitle || '1.125rem') + '; }',
+            '  .' + scopeClass + ' .hero-description { font-size: ' + (m.description || '0.875rem') + '; }',
+            '}',
+          ].join('
+');
+
           return (
-            <div key={slide.id || index} className={cn('absolute inset-0 will-change-transform transition-all', transitionClass, isActive ? 'z-10' : 'z-0')} style={{ transitionDuration: (slider.transitionSpeed || 600) + 'ms' }}>
+            <div key={slide.id || index} className={cn('absolute inset-0 will-change-transform transition-all', transitionClass, isActive ? 'z-10' : 'z-0', scopeClass)} style={{ transitionDuration: (slider.transitionSpeed || 600) + 'ms' }}>
+              <style dangerouslySetInnerHTML={{ __html: heroFontBlock }} />
               {slide.backgroundImage && (
                 <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: 'url(' + slide.backgroundImage + ')', backgroundPosition: slide.backgroundPosition ? slide.backgroundPosition.x + '% ' + slide.backgroundPosition.y + '%' : 'center center' }} />
               )}
               <div className="absolute inset-0" style={overlayStyle} />
               <div className={cn('relative z-10 flex flex-col h-full px-4 sm:px-6 lg:px-8', alignH, alignV)} style={{ maxWidth: layout.maxWidth ? layout.maxWidth + 'px' : undefined, margin: '0 auto' }}>
                 <div className={cn('max-w-4xl', isActive ? 'animate-fade-in' : 'opacity-0 translate-y-4')} style={{ animationDelay: (animation.textAnimationDelay || 200) + 'ms', animationFillMode: 'both' }}>
-                  {slide.title && <h1 className="font-bold text-white mb-4 leading-tight" style={{ fontSize: responsive.fontSizes?.desktop?.title || '4rem', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{slide.title}</h1>}
-                  {slide.subtitle && <p className="text-white/90 mb-6" style={{ fontSize: responsive.fontSizes?.desktop?.subtitle || '1.5rem', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{slide.subtitle}</p>}
-                  {slide.description && <p className="text-white/80 mb-8 max-w-2xl" style={{ fontSize: responsive.fontSizes?.desktop?.description || '1.125rem' }}>{slide.description}</p>}
+                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{slide.title}</h1>}
+                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{slide.subtitle}</p>}
+                  {slide.description && <p className="hero-description text-white/80 mb-8 max-w-2xl">{slide.description}</p>}
                   {(slide.primaryButton || slide.secondaryButton) && (
                     <div className={cn('flex flex-wrap gap-4', layout.contentAlign === 'center' && 'justify-center', layout.contentAlign === 'right' && 'justify-end')}>
                       {slide.primaryButton && <a href={slide.primaryButton.link || '#'} className="inline-flex items-center justify-center h-11 rounded-md px-8 text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90">{slide.primaryButton.text}</a>}
@@ -507,11 +529,30 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                         </AccordionTrigger>
                         <AccordionContent className="pb-4">
                           <div className="space-y-1 pl-4">
-                            {item.children.map((child: any, ci: number) => (
-                              <a key={ci} href={child.href} onClick={(e: any) => handleNavClick(e, child.href)} className="block py-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity">
-                                {child.icon && <DynamicIcon name={child.icon} className="w-4 h-4 mr-2 inline" />}{child.label}
-                              </a>
-                            ))}
+                            {item.children.map((child: any, ci: number) => 
+                              child.children?.length > 0 ? (
+                                <Accordion key={ci} type="single" collapsible className="w-full">
+                                  <AccordionItem value={'sub-' + child.id + '-' + ci} className="border-b border-white/5">
+                                    <AccordionTrigger className="py-2.5 text-sm font-medium hover:no-underline opacity-80 hover:opacity-100">
+                                      <span className="flex items-center gap-2">{child.icon && <DynamicIcon name={child.icon} className="w-4 h-4" />}{child.label}</span>
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pb-2">
+                                      <div className="space-y-1 pl-4">
+                                        {child.children.map((grandchild: any, gci: number) => (
+                                          <a key={gci} href={grandchild.href} onClick={(e: any) => handleNavClick(e, grandchild.href)} className="block py-2 text-sm opacity-70 hover:opacity-100 transition-opacity">
+                                            {grandchild.icon && <DynamicIcon name={grandchild.icon} className="w-3.5 h-3.5 mr-2 inline" />}{grandchild.label}
+                                          </a>
+                                        ))}
+                                      </div>
+                                    </AccordionContent>
+                                  </AccordionItem>
+                                </Accordion>
+                              ) : (
+                                <a key={ci} href={child.href} onClick={(e: any) => handleNavClick(e, child.href)} className="block py-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity">
+                                  {child.icon && <DynamicIcon name={child.icon} className="w-4 h-4 mr-2 inline" />}{child.label}
+                                </a>
+                              )
+                            )}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
@@ -533,11 +574,30 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                         </AccordionTrigger>
                         <AccordionContent className="pb-4">
                           <div className="space-y-1 pl-4">
-                            {item.children.map((child: any, ci: number) => (
-                              <a key={ci} href={child.href} onClick={(e: any) => handleNavClick(e, child.href)} className="block py-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity">
-                                {child.label}
-                              </a>
-                            ))}
+                            {item.children.map((child: any, ci: number) =>
+                              child.children?.length > 0 ? (
+                                <Accordion key={ci} type="single" collapsible className="w-full">
+                                  <AccordionItem value={'navsub-' + i + '-' + ci} className="border-b border-white/5">
+                                    <AccordionTrigger className="py-2.5 text-sm font-medium hover:no-underline opacity-80 hover:opacity-100">
+                                      <span className="flex items-center gap-2">{child.label}</span>
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pb-2">
+                                      <div className="space-y-1 pl-4">
+                                        {child.children.map((grandchild: any, gci: number) => (
+                                          <a key={gci} href={grandchild.href} onClick={(e: any) => handleNavClick(e, grandchild.href)} className="block py-2 text-sm opacity-70 hover:opacity-100 transition-opacity">
+                                            {grandchild.label}
+                                          </a>
+                                        ))}
+                                      </div>
+                                    </AccordionContent>
+                                  </AccordionItem>
+                                </Accordion>
+                              ) : (
+                                <a key={ci} href={child.href} onClick={(e: any) => handleNavClick(e, child.href)} className="block py-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity">
+                                  {child.label}
+                                </a>
+                              )
+                            )}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
@@ -574,6 +634,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
         const isImageBg = section.settings?.background?.type === 'image';
         const textClass = isImageBg ? 'text-white' : '';
         const sectionId = section.settings?.anchorId || section.anchorId || slugify(section.title) || (section.type + '-' + index);
+
+
 
         switch (section.type) {
           case 'about': {
@@ -997,6 +1059,30 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             );
           }
         }
+        return null;
+      }).map((el: any, index: number) => {
+        if (!el) return null;
+        const section = activeSections[index];
+        const ro = section?.settings?.responsiveOverrides;
+        if (!ro) return el;
+        const scope = 'section-font-' + index;
+        const rules: string[] = [];
+        if (ro.desktop?.headingFontSize) rules.push('.' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.desktop.headingFontSize + ' !important; }');
+        if (ro.desktop?.bodyFontSize) rules.push('.' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.desktop.bodyFontSize + ' !important; }');
+        if (ro.tablet?.headingFontSize || ro.tablet?.bodyFontSize) {
+          rules.push('@media (max-width: 1023px) {');
+          if (ro.tablet?.headingFontSize) rules.push('  .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.tablet.headingFontSize + ' !important; }');
+          if (ro.tablet?.bodyFontSize) rules.push('  .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.tablet.bodyFontSize + ' !important; }');
+          rules.push('}');
+        }
+        if (ro.mobile?.headingFontSize || ro.mobile?.bodyFontSize) {
+          rules.push('@media (max-width: 767px) {');
+          if (ro.mobile?.headingFontSize) rules.push('  .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.mobile.headingFontSize + ' !important; }');
+          if (ro.mobile?.bodyFontSize) rules.push('  .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.mobile.bodyFontSize + ' !important; }');
+          rules.push('}');
+        }
+        if (rules.length === 0) return el;
+        return <div key={'font-wrap-' + index} className={scope}><style dangerouslySetInnerHTML={{ __html: rules.join('\n') }} />{el}</div>;
       })}
 
       {/* Footer */}
