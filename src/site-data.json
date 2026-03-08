@@ -41,8 +41,8 @@
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 27,
-            "y": 10
+            "x": 48,
+            "y": 97
           }
         },
         {
@@ -83,7 +83,7 @@
         },
         "fontSizes": {
           "mobile": {
-            "title": "2rem",
+            "title": "2.5rem",
             "subtitle": "1rem",
             "description": "0.875rem"
           },
