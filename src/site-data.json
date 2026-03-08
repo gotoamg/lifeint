@@ -41,7 +41,7 @@
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 25,
+            "x": 27,
             "y": 10
           }
         },
@@ -241,13 +241,16 @@
           "title": "Frequently Asked Questions"
         },
         {
-          "body": "Ready for a hand with Luke's International Fellowship & Enrichment - LIFE? We'd love to hear from you.",
+          "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
           "type": "contact",
           "title": "Get In Touch",
           "settings": {
             "anchorId": "contact"
           },
-          "buttonText": "Send Message"
+          "buttonText": "Send Message",
+          "contactEmail": "orglife2020@gmail.com",
+          "contactPhone": "(203)918-7574",
+          "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
         }
       ],
       "createdAt": "2026-02-03T07:41:55.321Z",
@@ -1373,13 +1376,16 @@
       "title": "Frequently Asked Questions"
     },
     {
-      "body": "Ready for a hand with Luke's International Fellowship & Enrichment - LIFE? We'd love to hear from you.",
+      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
       "type": "contact",
       "title": "Get In Touch",
       "settings": {
         "anchorId": "contact"
       },
-      "buttonText": "Send Message"
+      "buttonText": "Send Message",
+      "contactEmail": "orglife2020@gmail.com",
+      "contactPhone": "(203)918-7574",
+      "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
     }
   ],
   "globalStyles": {
