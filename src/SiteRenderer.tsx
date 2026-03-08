@@ -272,7 +272,7 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
             '  .' + scopeClass + ' .hero-subtitle { font-size: ' + (m.subtitle || '1.125rem') + '; }',
             '  .' + scopeClass + ' .hero-description { font-size: ' + (m.description || '0.875rem') + '; }',
             '}',
-          ].join('\n');
+          ].join(' ');
 
           return (
             <div key={slide.id || index} className={cn('absolute inset-0 will-change-transform transition-all', transitionClass, isActive ? 'z-10' : 'z-0', scopeClass)} style={{ transitionDuration: (slider.transitionSpeed || 600) + 'ms' }}>
@@ -1081,7 +1081,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
           rules.push('}');
         }
         if (rules.length === 0) return el;
-        return <div key={'font-wrap-' + index} className={scope}><style dangerouslySetInnerHTML={{ __html: rules.join('\n') }} />{el}</div>;
+        return <div key={'font-wrap-' + index} className={scope}><style dangerouslySetInnerHTML={{ __html: rules.join(' ') }} />{el}</div>;
       })}
 
       {/* Footer */}
