@@ -1388,6 +1388,12 @@
       "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
     }
   ],
+  "githubConfig": {
+    "branch": "main",
+    "repoName": "lifeint",
+    "isPrivate": false,
+    "isRootDeploy": true
+  },
   "globalStyles": {
     "colors": {
       "text": "#0F172A",
