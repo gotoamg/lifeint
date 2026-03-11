@@ -35,14 +35,14 @@
             "text": ""
           },
           "overlayOpacity": 50,
-          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg",
+          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg",
           "secondaryButton": {
-            "link": "#whoweare",
+            "link": "https://www.lifeint.org/#",
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 46,
-            "y": 31
+            "x": 50,
+            "y": 50
           }
         },
         {
@@ -107,9 +107,9 @@
       }
     },
     "heading": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
-    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg",
+    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg",
     "heroImages": [
-      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg"
+      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg"
     ],
     "primaryCTA": "Get Started Today",
     "subheading": "Serving Christ Through Healthcare",
@@ -125,25 +125,29 @@
       "isHome": true,
       "sections": [
         {
-          "body": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.",
+          "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
           "title": "About Luke's International Fellowship & Enrichment - LIFE",
           "images": [
             "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
-          ]
+          ],
+          "settings": {
+            "fullWidth": true,
+            "textAlign": "left"
+          }
         },
         {
-          "body": "<div style=\"text-align: left;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It aims to strengthen healthcare professionals in their walk with God, equip them with the skills of an Evangelist, and provide opportunities to be an effective witness of Jesus Christ.</span></div>",
+          "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
           "type": "about",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
           "title": "Our Mission",
           "settings": {
+            "fullWidth": true,
             "isVisible": true,
-            "layoutVariant": "hero-split"
-          },
-          "buttonLink": "#contact",
-          "buttonText": "Get Started"
+            "textAlign": "left",
+            "layoutVariant": "about-image-left"
+          }
         },
         {
           "type": "services",
@@ -207,7 +211,7 @@
             "layoutVariant": "cta-centered"
           },
           "buttonLink": "#donate",
-          "buttonText": "Let me donate!"
+          "buttonText": "Donate!"
         },
         {
           "body": "Duncan Hospital experience",
@@ -1259,60 +1263,136 @@
   },
   "sections": [
     {
-      "body": "As you may have heard, India is amid a crisis of the second wave of Covid which is 3.5 times higher than the peak of the first wave. The whole medical infrastructure has collapsed and India is in dire need of resources like oxygen concentrators that provide portable oxygen to all those affected by Covid 19. Many are dying due to a severe shortage in oxygen at hospitals and will benefit from 5 to 10 liters per minute (LPM) of oxygen supply.\n \n\nWe, at Luke’s International Fellowship and Enrichment (LIFE) have decided to partner with an organization called Friends of Agape based in Colorado Springs, CO that will help provide for these immediate oxygen needs through your generous giving.\n\n\nSometimes, we are not sure of how to make an impact around us with the resources we have. Supporting this cause is a great way to make sure that our light is “like a city on a hilltop that cannot be hidden. No one lights a lamp and then puts it under a basket. Instead, a lamp is placed on a stand, where it gives light to everyone in the house. In the same way, let your good deeds shine for all to see, so that everyone will praise your Heavenly Father” Matt 5:14-16. A little help will go a long way as we request that you prayerfully give to this cause to help alleviate the pain and desperation of our fellow brothers and sisters in India at this time. We hope that your small gesture of giving will be the light that turns India to Jesus!\n",
+      "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
       "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/mufid-majnun-J12RfFH-2ZE-unsplash.webp",
-      "title": "",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
+      "title": "About Luke's International Fellowship & Enrichment - LIFE",
+      "images": [
+        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
+      ],
       "settings": {
-        "fullWidth": false,
+        "fullWidth": true,
+        "textAlign": "left"
+      }
+    },
+    {
+      "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
+      "title": "Our Mission",
+      "settings": {
+        "fullWidth": true,
         "isVisible": true,
-        "paddingTop": "none",
+        "textAlign": "left",
         "layoutVariant": "about-image-left"
       }
     },
     {
-      "type": "features",
+      "type": "services",
       "items": [
         {
-          "name": "Goal",
-          "description": "$20,000"
+          "name": "Medical Missions",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
         },
         {
-          "name": "Raised",
-          "description": "$11,850"
+          "name": "Spiritual Fellowship",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
+          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
         },
         {
-          "name": "To Go",
-          "description": "$8,150"
+          "name": "Medical Education",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
+          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
         }
       ],
-      "title": "Our Numbers",
+      "title": "Our Campaigns",
       "settings": {
+        "gap": 6,
         "fullWidth": true,
         "isVisible": true,
         "background": {
-          "type": "gradient",
-          "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+          "type": "color",
+          "value": "#F1F5F9"
         },
-        "columnLayout": "4",
-        "layoutVariant": "stats-cards"
+        "paddingTop": "medium",
+        "columnLayout": "3"
       }
     },
     {
-      "body": "Join us to help India by donating today!",
-      "type": "cta",
-      "title": "Support Our Cause",
+      "type": "gallery",
+      "title": "Some glimpses of our medical mission",
+      "images": [
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
+      ],
       "settings": {
-        "anchorId": "",
+        "galleryStyle": "grid"
+      }
+    },
+    {
+      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+      "type": "cta",
+      "title": "Support us",
+      "settings": {
         "isVisible": true,
         "background": {
           "type": "color",
-          "value": "#475569"
+          "value": "#1E293B"
         },
         "layoutVariant": "cta-centered"
       },
-      "buttonLink": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
-      "buttonText": "Yes, I want to donate!"
+      "buttonLink": "#donate",
+      "buttonText": "Donate!"
+    },
+    {
+      "body": "Duncan Hospital experience",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
+      "title": "Blog Insights",
+      "settings": {
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#F1F5F9"
+        }
+      }
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
+          "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
+        },
+        {
+          "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
+          "question": "How can I get started?"
+        },
+        {
+          "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
+          "question": "What makes you different?"
+        }
+      ],
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
+      "type": "contact",
+      "title": "Get In Touch",
+      "settings": {
+        "anchorId": "contact"
+      },
+      "buttonText": "Send Message",
+      "contactEmail": "orglife2020@gmail.com",
+      "contactPhone": "(203)918-7574",
+      "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
     }
   ],
   "githubConfig": {
