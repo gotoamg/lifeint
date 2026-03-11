@@ -41,8 +41,8 @@
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 48,
-            "y": 97
+            "x": 53,
+            "y": 12
           }
         },
         {
@@ -275,9 +275,7 @@
             "background": {
               "type": "color",
               "value": "#FFFFFF"
-            },
-            "customHtml": "<div class=\"antialiased bg-white overflow-hidden\">\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <div class=\"relative py-20 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto\">\n        \n        <div class=\"absolute top-0 right-0 -translate-y-12 translate-x-24 blur-3xl opacity-10 pointer-events-none\">\n            <div class=\"aspect-[1200/800] w-[60rem] bg-gradient-to-tr from-[#3B82F6] to-[#F59E0B]\"></div>\n        </div>\n\n        <div class=\"grid lg:grid-cols-2 gap-16 items-center\">\n            \n            <div class=\"relative group\">\n                <div class=\"absolute -inset-4 bg-gradient-to-r from-[#3B82F6] to-[#64748B] rounded-[2.5rem] opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500\"></div>\n                <div class=\"relative overflow-hidden rounded-[2rem] shadow-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5]\">\n                    <img src=\"https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_7403.jpg\" alt=\"LIFE Mission\" class=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\">\n                    <div class=\"absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 to-transparent\"></div>\n                </div>\n                \n                <div class=\"absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px] border-l-4 border-[#3B82F6] animate-bounce-slow\">\n                    <p class=\"text-[#0F172A] font-bold text-lg leading-tight\">Mobilizing resources for global healing.</p>\n                </div>\n            </div>\n\n            \n            <div class=\"relative flex flex-col space-y-8\">\n                <div>\n                    <span class=\"inline-block py-1 px-4 rounded-full bg-blue-50 text-[#3B82F6] text-sm font-bold tracking-wider uppercase mb-4 border border-blue-100\">\n                        Our Mission\n                    </span>\n                    <h2 class=\"text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-[1.1]\">\n                        About Us\n                    </h2>\n                </div>\n\n                <div class=\"space-y-6\">\n                    <p class=\"text-lg leading-relaxed text-[#64748B] font-medium border-l-4 border-[#F59E0B] pl-6 italic\">\n                        Luke’s International Fellowship and Enrichment, Inc is a nonprofit corporation of Christian health care professionals that is organized exclusively for religious, educational, and charitable purposes as defined under 501(c)(3) of the Internal Revenue Code.\n                    </p>\n\n                    <div class=\"prose prose-slate max-w-none\">\n                        <p class=\"text-[#0F172A]/80 leading-relaxed text-base\">\n                            The purpose of this organization is to bring healing to the body and Spirit by delivering medical care and sharing the good news of the gospel of Jesus Christ. We seek to accomplish these ends by mobilizing resources and medical expertise both in the United States and around the world with a special focus on the South Asian subcontinent.The objectives of this corporation are to foster the spiritual growth of Christian health care professionals, promote the development of health care professionals to be effective witnesses of Jesus Christ, conduct and support short and long term medical missions both locally and internationally, provide continuing medical education for healthcare medical professionals germane to the objectives of this corporation,promote public health efforts directly and by dissemination of medical literature both independently and in collaboration with other like-minded institutions, provide networking opportunities for like-minded individuals to greater fulfill the objectives of LIFE.The individual and summative effect of these objectives will be to improve the health and health awareness of those we serve and to fulfill the Great Commission as directed by Jesus Christ.\n                        </p>\n                    </div>\n                </div>\n\n                <div class=\"flex flex-wrap gap-4 pt-4\">\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Medical Excellence</span>\n                    </div>\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Spiritual Witness</span>\n                    </div>\n                    <div class=\"flex items-center space-x-2 text-[#0F172A]\">\n                        <svg class=\"w-6 h-6 text-[#3B82F6]\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\"></path>\n                        </svg>\n                        <span class=\"font-semibold text-sm\">Global Outreach</span>\n                    </div>\n                </div>\n\n                <div class=\"pt-6\">\n                    <button class=\"bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-blue-200 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95\">\n                        Partner with Our Mission\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <style>\n        @keyframes bounce-slow {\n            0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8,0,1,1); }\n            50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }\n        }\n        .animate-bounce-slow {\n            animation: bounce-slow 4s infinite;\n        }\n    </style>\n</div>",
-            "layoutVariant": "ai-custom"
+            }
           },
           "imageWidth": "100%",
           "imageHeight": "100%"
@@ -610,11 +608,12 @@
       "isHome": false,
       "sections": [
         {
-          "body": "Institutions:\nThe Duncan Hospital\nSpecialty:\nObstetrics, Gynaecology, Neonatology,  Paediatrics, Intensive Care, Community Medicine\nAccessibility:\n~4.5Hrs from Patna\nStay:\nRetreat Camp - On Premises\nMedical Clearance:\nNational Medical Council, approved NGO, or Medical Institution\nEstablished:\n1930\nMission Liason:\nDr. Tony George\nLocal Liason:\nDr. Prabhu Joseph\nURL:\nhttps://duncanhospital-eha.org/\n",
+          "body": "<b>Institutions:</b>\nThe Duncan Hospital\n<b>Specialty:</b>\nObstetrics, Gynaecology, Neonatology,&nbsp; Paediatrics, Intensive Care, Community Medicine\n<b>Accessibility:</b>\n~4.5Hrs from Patna\n<b>Stay:</b>\nRetreat Camp - On Premises\n<b>Medical Clearance:</b>\nNational Medical Council, approved NGO, or Medical Institution\n<b>Established:</b>\n1930\n<b>Mission Liason:</b>\nDr. Tony George\n<b>Local Liason:</b>\nDr. Prabhu Joseph\n<b>URL:</b>\nhttps://duncanhospital-eha.org/\n",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/village-7757251_1920.jpg",
-          "title": "Details",
+          "title": "",
           "settings": {
+            "hideTitle": true,
             "isVisible": true,
             "layoutVariant": "about-image-left"
           }
@@ -1260,132 +1259,60 @@
   },
   "sections": [
     {
-      "body": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.",
+      "body": "As you may have heard, India is amid a crisis of the second wave of Covid which is 3.5 times higher than the peak of the first wave. The whole medical infrastructure has collapsed and India is in dire need of resources like oxygen concentrators that provide portable oxygen to all those affected by Covid 19. Many are dying due to a severe shortage in oxygen at hospitals and will benefit from 5 to 10 liters per minute (LPM) of oxygen supply.\n \n\nWe, at Luke’s International Fellowship and Enrichment (LIFE) have decided to partner with an organization called Friends of Agape based in Colorado Springs, CO that will help provide for these immediate oxygen needs through your generous giving.\n\n\nSometimes, we are not sure of how to make an impact around us with the resources we have. Supporting this cause is a great way to make sure that our light is “like a city on a hilltop that cannot be hidden. No one lights a lamp and then puts it under a basket. Instead, a lamp is placed on a stand, where it gives light to everyone in the house. In the same way, let your good deeds shine for all to see, so that everyone will praise your Heavenly Father” Matt 5:14-16. A little help will go a long way as we request that you prayerfully give to this cause to help alleviate the pain and desperation of our fellow brothers and sisters in India at this time. We hope that your small gesture of giving will be the light that turns India to Jesus!\n",
       "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
-      "title": "About Luke's International Fellowship & Enrichment - LIFE",
-      "images": [
-        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
-      ]
-    },
-    {
-      "body": "<div style=\"text-align: left;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It aims to strengthen healthcare professionals in their walk with God, equip them with the skills of an Evangelist, and provide opportunities to be an effective witness of Jesus Christ.</span></div>",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
-      "title": "Our Mission",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/mufid-majnun-J12RfFH-2ZE-unsplash.webp",
+      "title": "",
       "settings": {
+        "fullWidth": false,
         "isVisible": true,
-        "layoutVariant": "hero-split"
-      },
-      "buttonLink": "#contact",
-      "buttonText": "Get Started"
+        "paddingTop": "none",
+        "layoutVariant": "about-image-left"
+      }
     },
     {
-      "type": "services",
+      "type": "features",
       "items": [
         {
-          "name": "Medical Missions",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+          "name": "Goal",
+          "description": "$20,000"
         },
         {
-          "name": "Spiritual Fellowship",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+          "name": "Raised",
+          "description": "$11,850"
         },
         {
-          "name": "Medical Education",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+          "name": "To Go",
+          "description": "$8,150"
         }
       ],
-      "title": "Our Campaigns",
+      "title": "Our Numbers",
       "settings": {
-        "gap": 6,
         "fullWidth": true,
         "isVisible": true,
         "background": {
-          "type": "color",
-          "value": "#F1F5F9"
+          "type": "gradient",
+          "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
         },
-        "paddingTop": "medium",
-        "columnLayout": "3"
+        "columnLayout": "4",
+        "layoutVariant": "stats-cards"
       }
     },
     {
-      "type": "gallery",
-      "title": "Some glimpses of our medical mission",
-      "images": [
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
-      ],
-      "settings": {
-        "galleryStyle": "grid"
-      }
-    },
-    {
-      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+      "body": "Join us to help India by donating today!",
       "type": "cta",
-      "title": "Support us",
+      "title": "Support Our Cause",
       "settings": {
+        "anchorId": "",
         "isVisible": true,
         "background": {
           "type": "color",
-          "value": "#1E293B"
+          "value": "#475569"
         },
         "layoutVariant": "cta-centered"
       },
-      "buttonLink": "#donate",
-      "buttonText": "Let me donate!"
-    },
-    {
-      "body": "Duncan Hospital experience",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
-      "title": "Blog Insights",
-      "settings": {
-        "isVisible": true,
-        "background": {
-          "type": "color",
-          "value": "#F1F5F9"
-        }
-      }
-    },
-    {
-      "type": "faq",
-      "items": [
-        {
-          "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
-          "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
-        },
-        {
-          "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
-          "question": "How can I get started?"
-        },
-        {
-          "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
-          "question": "What makes you different?"
-        }
-      ],
-      "title": "Frequently Asked Questions"
-    },
-    {
-      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
-      "type": "contact",
-      "title": "Get In Touch",
-      "settings": {
-        "anchorId": "contact"
-      },
-      "buttonText": "Send Message",
-      "contactEmail": "orglife2020@gmail.com",
-      "contactPhone": "(203)918-7574",
-      "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
+      "buttonLink": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
+      "buttonText": "Yes, I want to donate!"
     }
   ],
   "githubConfig": {
