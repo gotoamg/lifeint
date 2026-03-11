@@ -336,14 +336,15 @@
           "title": "Premium Quality • Expert Service • Outstanding Results"
         },
         {
-          "body": "We Believe:\n· In one God eternally existing in three persons:\nFather, Son, and Holy Spirit.\n· That Jesus Christ is the only begotten Son of\nthe Father, conceived of the Holy Ghost, and born of the Virgin Mary. That\nJesus was crucified, buried, and raised from the dead; that He ascended to\nheaven and is today at the right hand of the Father as the Intercessor.\n· In the personality of the Holy Spirit, and that\nas promised, He came down from Heaven on the day of Pentecost, to dwell\npermanently in each believer, and that He is the efficient power for godly\nliving, Christian service, and spiritual worship.\n· In the Divine inspiration and authority of the\nHoly Scriptures.\n· That all have sinned and come short of the glory\nof God.\n· That justification and sanctification of the\nbeliever through the finished work of Christ.\n· In water baptism by immersion, and all who repent\nshould be baptized in the name of the Father, and of the Son and of the Holy\nSpirit.\n· In the Lord’s Supper.\n· In the baptism of the Holy Spirit for believers.\n· In Divine healing provided for all in the\natonement.\n· That God wonderfully and immutably creates each\nperson as male or female. These two distinct, complementary genders together\nreflect the image and nature of God. Rejection of one’s biological sex is a\nrejection of the image of God within that person.\n· In a marriage between one man and one woman in a\nsingle, exclusive union. We believe that God intends sexual intimacy to occur\nonly between a man and a woman who are married to each other. \n· We believe that\nGod has commanded that no intimate sexual activity be engaged in outside of\nmarriage between a man and a woman.\n· That all human life is sacred and created in His\nimage. That human life is of priceless worth in all its dimensions, including\npre-born babies, the aged, the physically or mentally challenged, and every\nother stage or condition from conception through natural death, That we are\ntherefore called to defend, protect and value all human life.\n· That any form of sexual immorality (including\nadultery, fornication, homosexual behavior, bisexual conduct, bestiality,\nincest, and use of pornography) is sinful and offensive to God.\n· In the second coming of Jesus Christ.\n· In the bodily resurrection; eternal life for the\nrighteous and eternal punishment for the wicked.\n· In the millennial reign of Jesus Christ and in\nthe new heavens and new earth.\n",
+          "body": "<div style=\"text-align: center;\"><b style=\"color: rgb(0, 0, 0); font-size: medium; font-family: inherit;\">We Believe:</b></div><ul><li><font size=\"3\" color=\"#000000\"><b>In one God eternally existing in three persons: Father, Son, and Holy Spirit. </b></font></li></ul><div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus Christ is the only begotten Son of the Father, conceived of the Holy Ghost, and born of the Virgin Mary. </b></font></li></ul></div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus was crucified, buried, and raised from the dead; that He ascended to heaven and is today at the right hand of the Father as the Intercessor.</b></font></li></ul></div><div><font size=\"3\" color=\"#000000\"><b><ul><li>In the personality of the Holy Spirit, and that as promised, He came down from Heaven on the day of Pentecost, to dwell permanently in each believer, and that He is the efficient power for godly living, Christian service, and spiritual worship.</li></ul><ul><li>In the Divine inspiration and authority of the Holy Scriptures.\n</li><li>That all have sinned and come short of the glory of God.         \n</li><li>That justification and sanctification of the believer through the finished work of Christ.\n</li><li>In water baptism by immersion, and all who repent should be baptized in the name of the Father, and of the Son and of the Holy Spirit.</li><li>In the Lord’s Supper.</li><li>In the baptism of the Holy Spirit for believers.</li><li>In Divine healing provided for all in the atonement.</li><li>That God wonderfully and immutably creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God. Rejection of one’s biological sex is a rejection of the image of God within that person.</li><li>In a marriage between one man and one woman in a single, exclusive union. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other.&nbsp;</li><li>We believe that God has commanded that no intimate sexual activity be engaged in outside of marriage between a man and a woman.</li><li>That all human life is sacred and created in His image. That human life is of priceless worth in all its dimensions, including pre-born babies, the aged, the physically or mentally challenged, and every other stage or condition from conception through natural death, That we are therefore called to defend, protect and value all human life.</li><li>That any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God.</li><li>In the second coming of Jesus Christ.</li><li>In the bodily resurrection; eternal life for the righteous and eternal punishment for the wicked.</li><li>In the millennial reign of Jesus Christ and in</li></ul><ul style=\"\"><li style=\"\">the new heavens and new earth.</li></ul></b></font><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"></span></div></div>",
           "type": "about",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202026-02-04%20at%204.48.07%20PM.jpeg",
-          "title": "Statement of Faith",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+          "title": "                    Statement of Faith",
           "settings": {
             "gap": 6,
             "fullWidth": true,
             "isVisible": true,
+            "textAlign": "left",
             "background": {
               "type": "color",
               "value": "#F1F5F9"
@@ -1264,198 +1265,61 @@
   },
   "sections": [
     {
-      "type": "team",
-      "title": "Executive committee",
+      "body": "LIFE aims to strengthen Christian health care professionals in their walk with God, equip them with the skills to be an evangelist for Christ in healthcare, and provide opportunities for them to be an effective witness of Jesus Christ.",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_101509.jpg",
+      "title": "The Mission of LIFE is to share the gospel of Jesus Christ through Healthcare",
+      "settings": {
+        "fullWidth": true,
+        "isVisible": true
+      }
+    },
+    {
+      "type": "gallery",
+      "title": "Gallery",
+      "images": [
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%206.03.55%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2011.02.50%20PM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%205.54.19%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.21%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2012.37.25%20AM%20(1).jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.15.58%20AM%20(1).jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2356.JPG",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%2010.00.50%20AM%20(1).jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2372.JPG",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2691.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4815%20(1).jpg"
+      ],
+      "settings": {
+        "fullWidth": true,
+        "isVisible": true,
+        "paddingTop": "small",
+        "layoutVariant": "gallery-carousel",
+        "paddingBottom": "small"
+      }
+    },
+    {
+      "type": "marquee",
+      "title": "Premium Quality • Expert Service • Outstanding Results"
+    },
+    {
+      "body": "<div style=\"text-align: center;\"><b style=\"color: rgb(0, 0, 0); font-size: medium; font-family: inherit;\">We Believe:</b></div><ul><li><font size=\"3\" color=\"#000000\"><b>In one God eternally existing in three persons: Father, Son, and Holy Spirit. </b></font></li></ul><div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus Christ is the only begotten Son of the Father, conceived of the Holy Ghost, and born of the Virgin Mary. </b></font></li></ul></div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus was crucified, buried, and raised from the dead; that He ascended to heaven and is today at the right hand of the Father as the Intercessor.</b></font></li></ul></div><div><font size=\"3\" color=\"#000000\"><b><ul><li>In the personality of the Holy Spirit, and that as promised, He came down from Heaven on the day of Pentecost, to dwell permanently in each believer, and that He is the efficient power for godly living, Christian service, and spiritual worship.</li></ul><ul><li>In the Divine inspiration and authority of the Holy Scriptures.\n</li><li>That all have sinned and come short of the glory of God.         \n</li><li>That justification and sanctification of the believer through the finished work of Christ.\n</li><li>In water baptism by immersion, and all who repent should be baptized in the name of the Father, and of the Son and of the Holy Spirit.</li><li>In the Lord’s Supper.</li><li>In the baptism of the Holy Spirit for believers.</li><li>In Divine healing provided for all in the atonement.</li><li>That God wonderfully and immutably creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God. Rejection of one’s biological sex is a rejection of the image of God within that person.</li><li>In a marriage between one man and one woman in a single, exclusive union. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other.&nbsp;</li><li>We believe that God has commanded that no intimate sexual activity be engaged in outside of marriage between a man and a woman.</li><li>That all human life is sacred and created in His image. That human life is of priceless worth in all its dimensions, including pre-born babies, the aged, the physically or mentally challenged, and every other stage or condition from conception through natural death, That we are therefore called to defend, protect and value all human life.</li><li>That any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God.</li><li>In the second coming of Jesus Christ.</li><li>In the bodily resurrection; eternal life for the righteous and eternal punishment for the wicked.</li><li>In the millennial reign of Jesus Christ and in</li></ul><ul style=\"\"><li style=\"\">the new heavens and new earth.</li></ul></b></font><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"></span></div></div>",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+      "title": "                    Statement of Faith",
       "settings": {
         "gap": 6,
         "fullWidth": true,
         "isVisible": true,
+        "textAlign": "left",
+        "background": {
+          "type": "color",
+          "value": "#F1F5F9"
+        },
         "paddingTop": "small",
-        "columnLayout": "4",
         "paddingBottom": "small"
-      },
-      "teamMembers": [
-        {
-          "bio": "",
-          "name": "James Samuel, MD",
-          "role": "President",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Joseph Kuruvilla, DO",
-          "role": "Vice President",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Tony George, MD",
-          "role": "Secretary",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Tony Joseph, MD",
-          "role": "Joint Secretary",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Sini Poulose, MD",
-          "role": "Treasurer",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "type": "team",
-      "title": "Board of Directors",
-      "settings": {
-        "isVisible": true,
-        "paddingTop": "none",
-        "layoutVariant": "team-grid",
-        "paddingBottom": "none"
-      },
-      "teamMembers": [
-        {
-          "bio": "",
-          "name": "Benson Abraham, MD",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Neal Varughese, MD",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": " Elsa Vadakekut, DO",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Annie George, RN, DNP",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Justin Joy, PA",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Stanley Abraham, DO",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Jason James, PharmD",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Stephen Mathew, MD",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Jones Thomas, MD",
-          "role": "-",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "type": "team",
-      "title": "Prayer Coordinator",
-      "settings": {
-        "isVisible": true,
-        "paddingTop": "none",
-        "layoutVariant": "team-grid",
-        "paddingBottom": "none"
-      },
-      "teamMembers": [
-        {
-          "bio": "",
-          "name": "Sis. Anitha Satish",
-          "role": "-",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "type": "team",
-      "title": "Board of Advisors",
-      "settings": {
-        "fullWidth": true,
-        "isVisible": true,
-        "paddingTop": "none",
-        "columnLayout": "4",
-        "layoutVariant": "team-grid",
-        "paddingBottom": "none"
-      },
-      "teamMembers": [
-        {
-          "bio": "",
-          "name": "Pastor. Bethel Johnson",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Pastor. Satish Kumar",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Renny Abraham, MD",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Pastor. David York, Esq",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Pastor. K J Kuriakose",
-          "role": "-",
-          "image": ""
-        },
-        {
-          "bio": "",
-          "name": "Philip Finny, MD",
-          "role": "-",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "type": "team",
-      "title": "Accounts Management",
-      "settings": {
-        "isVisible": true,
-        "layoutVariant": "team-grid"
-      },
-      "teamMembers": [
-        {
-          "bio": "",
-          "name": "Bro. Johnson Thomas",
-          "role": "-",
-          "image": ""
-        }
-      ]
+      }
     }
   ],
   "githubConfig": {
