@@ -31,18 +31,18 @@
           "description": "",
           "overlayColor": "#000000",
           "primaryButton": {
-            "link": "#contact",
-            "text": "Get Started Today"
+            "link": "",
+            "text": ""
           },
           "overlayOpacity": 50,
           "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-27-at-1.13.16-AM.jpeg",
           "secondaryButton": {
-            "link": "#about",
+            "link": "#whoweare",
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 53,
-            "y": 12
+            "x": 46,
+            "y": 31
           }
         },
         {
