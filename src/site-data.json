@@ -1061,9 +1061,10 @@
             "label": "Our Leadership"
           },
           {
-            "href": "/our-mission",
-            "type": "page",
-            "label": "Our Mission"
+            "href": "#",
+            "type": "external",
+            "label": "Our Mission",
+            "newTab": true
           }
         ]
       },
