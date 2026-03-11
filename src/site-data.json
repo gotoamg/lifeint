@@ -41,8 +41,8 @@
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 51,
-            "y": 20
+            "x": 50,
+            "y": 41
           }
         },
         {
@@ -354,8 +354,9 @@
         }
       ],
       "createdAt": "2026-02-04T07:26:23.392Z",
+      "hideTitle": true,
       "isVisible": true,
-      "updatedAt": "2026-02-04T07:26:23.392Z"
+      "updatedAt": "2026-03-11T08:06:50.609Z"
     },
     {
       "id": "page-1770204458989",
@@ -389,7 +390,7 @@
             },
             {
               "bio": "",
-              "name": "Joseph Kuruvilla, DO",
+              "name": "Tony George, MD",
               "role": "Secretary",
               "image": ""
             },
@@ -401,7 +402,7 @@
             },
             {
               "bio": "",
-              "name": "Tony Joseph, MD",
+              "name": "Sini Poulose, MD",
               "role": "Treasurer",
               "image": ""
             }
@@ -1263,136 +1264,198 @@
   },
   "sections": [
     {
-      "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
-      "title": "About Luke's International Fellowship & Enrichment - LIFE",
-      "images": [
-        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
-      ],
-      "settings": {
-        "fullWidth": true,
-        "textAlign": "left"
-      }
-    },
-    {
-      "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
-      "title": "Our Mission",
-      "settings": {
-        "fullWidth": true,
-        "isVisible": true,
-        "textAlign": "left",
-        "layoutVariant": "about-image-left"
-      }
-    },
-    {
-      "type": "services",
-      "items": [
-        {
-          "name": "Medical Missions",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
-        },
-        {
-          "name": "Spiritual Fellowship",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
-        },
-        {
-          "name": "Medical Education",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
-        }
-      ],
-      "title": "Our Campaigns",
+      "type": "team",
+      "title": "Executive committee",
       "settings": {
         "gap": 6,
         "fullWidth": true,
         "isVisible": true,
-        "background": {
-          "type": "color",
-          "value": "#F1F5F9"
+        "paddingTop": "small",
+        "columnLayout": "4",
+        "paddingBottom": "small"
+      },
+      "teamMembers": [
+        {
+          "bio": "",
+          "name": "James Samuel, MD",
+          "role": "President",
+          "image": ""
         },
-        "paddingTop": "medium",
-        "columnLayout": "3"
-      }
+        {
+          "bio": "",
+          "name": "Joseph Kuruvilla, DO",
+          "role": "Vice President",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Tony George, MD",
+          "role": "Secretary",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Tony Joseph, MD",
+          "role": "Joint Secretary",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Sini Poulose, MD",
+          "role": "Treasurer",
+          "image": ""
+        }
+      ]
     },
     {
-      "type": "gallery",
-      "title": "Some glimpses of our medical mission",
-      "images": [
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
-      ],
-      "settings": {
-        "galleryStyle": "grid"
-      }
-    },
-    {
-      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
-      "type": "cta",
-      "title": "Support us",
+      "type": "team",
+      "title": "Board of Directors",
       "settings": {
         "isVisible": true,
-        "background": {
-          "type": "color",
-          "value": "#1E293B"
-        },
-        "layoutVariant": "cta-centered"
+        "paddingTop": "none",
+        "layoutVariant": "team-grid",
+        "paddingBottom": "none"
       },
-      "buttonLink": "#donate",
-      "buttonText": "Donate!"
+      "teamMembers": [
+        {
+          "bio": "",
+          "name": "Benson Abraham, MD",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Neal Varughese, MD",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": " Elsa Vadakekut, DO",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Annie George, RN, DNP",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Justin Joy, PA",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Stanley Abraham, DO",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Jason James, PharmD",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Stephen Mathew, MD",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Jones Thomas, MD",
+          "role": "-",
+          "image": ""
+        }
+      ]
     },
     {
-      "body": "Duncan Hospital experience",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
-      "title": "Blog Insights",
+      "type": "team",
+      "title": "Prayer Coordinator",
       "settings": {
         "isVisible": true,
-        "background": {
-          "type": "color",
-          "value": "#F1F5F9"
-        }
-      }
-    },
-    {
-      "type": "faq",
-      "items": [
-        {
-          "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
-          "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
-        },
-        {
-          "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
-          "question": "How can I get started?"
-        },
-        {
-          "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
-          "question": "What makes you different?"
-        }
-      ],
-      "title": "Frequently Asked Questions"
-    },
-    {
-      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
-      "type": "contact",
-      "title": "Get In Touch",
-      "settings": {
-        "anchorId": "contact"
+        "paddingTop": "none",
+        "layoutVariant": "team-grid",
+        "paddingBottom": "none"
       },
-      "buttonText": "Send Message",
-      "contactEmail": "orglife2020@gmail.com",
-      "contactPhone": "(203)918-7574",
-      "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
+      "teamMembers": [
+        {
+          "bio": "",
+          "name": "Sis. Anitha Satish",
+          "role": "-",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "title": "Board of Advisors",
+      "settings": {
+        "fullWidth": true,
+        "isVisible": true,
+        "paddingTop": "none",
+        "columnLayout": "4",
+        "layoutVariant": "team-grid",
+        "paddingBottom": "none"
+      },
+      "teamMembers": [
+        {
+          "bio": "",
+          "name": "Pastor. Bethel Johnson",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Pastor. Satish Kumar",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Renny Abraham, MD",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Pastor. David York, Esq",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Pastor. K J Kuriakose",
+          "role": "-",
+          "image": ""
+        },
+        {
+          "bio": "",
+          "name": "Philip Finny, MD",
+          "role": "-",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "title": "Accounts Management",
+      "settings": {
+        "isVisible": true,
+        "layoutVariant": "team-grid"
+      },
+      "teamMembers": [
+        {
+          "bio": "",
+          "name": "Bro. Johnson Thomas",
+          "role": "-",
+          "image": ""
+        }
+      ]
     }
   ],
   "githubConfig": {
@@ -1427,7 +1490,7 @@
       },
       "bodyFont": "DM Sans",
       "lineHeight": "normal",
-      "headingFont": "Montserrat",
+      "headingFont": "DM Sans",
       "letterSpacing": "normal"
     },
     "borderRadius": "md"
