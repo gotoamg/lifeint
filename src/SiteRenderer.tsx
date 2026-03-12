@@ -945,7 +945,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   )}
                   {(section.title || section.body) && (
                     <ScrollReveal animation="fade-up" delay={200}>
-                      <div className="text-center">
+                      <div className={(() => { const a = section.settings?.textAlign || 'left'; return a === 'center' ? 'text-center' : a === 'right' ? 'text-right' : 'text-left'; })()}>
                         {section.title && !section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + textClass}>{section.title}</h2>}
                         {section.body && <div className={'text-base sm:text-lg leading-relaxed ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} />}
                       </div>
@@ -1032,8 +1032,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             return (
               <section key={index} id={sectionId} className="py-12 sm:py-16 px-4 sm:px-6 bg-background" style={bgStyle}>
                 <div className="container mx-auto max-w-4xl">
-                  {section.title && !section.settings?.hideTitle && <ScrollReveal animation="blur-in"><h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 ' + textClass}>{section.title}</h2></ScrollReveal>}
-                  {section.body && <ScrollReveal animation="fade-up" delay={100}><div className={'text-base sm:text-lg leading-relaxed text-center max-w-2xl mx-auto ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} /></ScrollReveal>}
+                  {section.title && !section.settings?.hideTitle && <ScrollReveal animation="blur-in"><h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + textClass}>{section.title}</h2></ScrollReveal>}
+                  {section.body && <ScrollReveal animation="fade-up" delay={100}><div className={'text-base sm:text-lg leading-relaxed ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} /></ScrollReveal>}
                   {section.image && <ScrollReveal animation="fade-up" delay={200}><div className="mt-8"><img src={section.image} alt={section.title || ''} className="rounded-xl shadow-lg w-full h-auto object-cover" /></div></ScrollReveal>}
                 </div>
               </section>
