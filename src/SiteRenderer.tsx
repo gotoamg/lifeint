@@ -484,13 +484,21 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               'justify-between'
             )}>
             <div className={cn(
-              "flex-shrink-0",
+              "flex-shrink-0 cursor-pointer",
               headerSettings.layout === 'centered' && 'order-[3] mx-auto',
               headerSettings.showLogo === false && 'hidden',
               (headerSettings.logoPosition || 'left') === 'left' && 'order-2',
               headerSettings.logoPosition === 'center' && 'order-[3] mx-auto',
               headerSettings.logoPosition === 'right' && 'order-[5]',
-            )}>
+            )} onClick={() => {
+              if (header.logoLink && header.logoLink.startsWith('http')) {
+                window.open(header.logoLink, '_blank', 'noopener,noreferrer');
+              } else if (header.logoLink) {
+                onNavigate && onNavigate(header.logoLink.replace(/^//, ''));
+              } else {
+                onNavigate && onNavigate('home');
+              }
+            }}>
               {header.logo ? (
                 <div style={{ height: getHeaderLogoHeight() + 'px' }}>
                   <img src={header.logo} alt={businessName} style={{ height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'left center', transform: 'scale(1.18)', transformOrigin: 'left center', display: 'block' }} />
