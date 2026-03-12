@@ -30,11 +30,19 @@
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
           "overlayColor": "#000000",
+          "primaryButton": {
+            "link": "",
+            "text": ""
+          },
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
+          "secondaryButton": {
+            "link": "https://www.lifeint.org/#",
+            "text": "Learn More"
+          },
           "backgroundPosition": {
-            "x": 29,
-            "y": 22
+            "x": 47,
+            "y": 45
           }
         },
         {
@@ -104,7 +112,7 @@
       "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
-    "primaryCTA": "",
+    "primaryCTA": "Get Started Today",
     "subheading": "Serving Christ Through Healthcare",
     "imageOverlay": 50,
     "secondaryCTA": "Learn More",
@@ -1141,10 +1149,9 @@
         ]
       },
       {
-        "href": "#",
-        "type": "external",
+        "href": "/our-mission",
+        "type": "page",
         "label": "Missions",
-        "newTab": true,
         "children": [
           {
             "href": "#",
