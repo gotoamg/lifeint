@@ -11,12 +11,15 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "allowJs": true,
     "paths": {
       "@/*": [
         "./src/*"

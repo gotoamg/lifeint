@@ -491,10 +491,11 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               headerSettings.logoPosition === 'center' && 'order-[3] mx-auto',
               headerSettings.logoPosition === 'right' && 'order-[5]',
             )} onClick={() => {
-              if (header.logoLink && header.logoLink.startsWith('http')) {
-                window.open(header.logoLink, '_blank', 'noopener,noreferrer');
-              } else if (header.logoLink) {
-                onNavigate && onNavigate(header.logoLink.replace(/^//, ''));
+              const link = (header.logoLink || '').trim();
+              if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
+                window.location.assign(link);
+              } else if (link) {
+                onNavigate && onNavigate(link.charAt(0) === '/' ? link.slice(1) : link);
               } else {
                 onNavigate && onNavigate('home');
               }
