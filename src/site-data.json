@@ -30,19 +30,11 @@
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
           "overlayColor": "#000000",
-          "primaryButton": {
-            "link": "",
-            "text": ""
-          },
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
-          "secondaryButton": {
-            "link": "https://www.lifeint.org/#",
-            "text": "Learn More"
-          },
           "backgroundPosition": {
-            "x": 47,
-            "y": 45
+            "x": 29,
+            "y": 22
           }
         },
         {
@@ -112,7 +104,7 @@
       "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
-    "primaryCTA": "Get Started Today",
+    "primaryCTA": "",
     "subheading": "Serving Christ Through Healthcare",
     "imageOverlay": 50,
     "secondaryCTA": "Learn More",
@@ -331,10 +323,6 @@
             "layoutVariant": "gallery-carousel",
             "paddingBottom": "small"
           }
-        },
-        {
-          "type": "marquee",
-          "title": "Premium Quality • Expert Service • Outstanding Results"
         },
         {
           "body": "<div style=\"text-align: center;\"><b style=\"color: rgb(0, 0, 0); font-size: medium; font-family: inherit;\">We Believe:</b></div><ul><li><font size=\"3\" color=\"#000000\"><b>In one God eternally existing in three persons: Father, Son, and Holy Spirit. </b></font></li></ul><div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus Christ is the only begotten Son of the Father, conceived of the Holy Ghost, and born of the Virgin Mary. </b></font></li></ul></div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus was crucified, buried, and raised from the dead; that He ascended to heaven and is today at the right hand of the Father as the Intercessor.</b></font></li></ul></div><div><font size=\"3\" color=\"#000000\"><b><ul><li>In the personality of the Holy Spirit, and that as promised, He came down from Heaven on the day of Pentecost, to dwell permanently in each believer, and that He is the efficient power for godly living, Christian service, and spiritual worship.</li></ul><ul style=\"\"><li>In the Divine inspiration and authority of the Holy Scriptures.\n</li><li>That all have sinned and come short of the glory of God.         \n</li><li>That justification and sanctification of the believer through the finished work of Christ.\n</li><li>In water baptism by immersion, and all who repent should be baptized in the name of the Father, and of the Son and of the Holy Spirit.</li><li>In the Lord’s Supper.</li><li>In the baptism of the Holy Spirit for believers.</li><li>In Divine healing provided for all in the atonement.</li><li>That God wonderfully and immutably creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God. Rejection of one’s biological sex is a rejection of the image of God within that person.</li><li>In a marriage between one man and one woman in a single, exclusive union. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other.&nbsp;</li><li>We believe that God has commanded that no intimate sexual activity be engaged in outside of marriage between a man and a woman.</li><li>That all human life is sacred and created in His image. That human life is of priceless worth in all its dimensions, including pre-born babies, the aged, the physically or mentally challenged, and every other stage or condition from conception through natural death, That we are therefore called to defend, protect and value all human life.</li><li>That any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God.</li><li>In the second coming of Jesus Christ.</li><li>In the bodily resurrection; eternal life for the righteous and eternal punishment for the wicked.</li><li>In the millennial reign of Jesus Christ and in the new heavens and new earth.</li></ul></b></font><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"></span></div></div>",
@@ -1100,7 +1088,7 @@
       "showOnMobile": false,
       "backgroundColor": "#1F2937"
     },
-    "logoLink": "/",
+    "logoLink": "https://www.lifeint.org/",
     "navItems": [
       {
         "href": "/hero",
@@ -1119,14 +1107,14 @@
             "label": "Who We Are"
           },
           {
-            "href": "/our-leadership",
-            "type": "page",
-            "label": "Our Leadership"
-          },
-          {
             "href": "/our-mission",
             "type": "page",
             "label": "Our Mission"
+          },
+          {
+            "href": "/our-leadership",
+            "type": "page",
+            "label": "Our Leadership"
           }
         ]
       },
@@ -1149,9 +1137,10 @@
         ]
       },
       {
-        "href": "/our-mission",
-        "type": "page",
+        "href": "#",
+        "type": "external",
         "label": "Missions",
+        "newTab": true,
         "children": [
           {
             "href": "#",
