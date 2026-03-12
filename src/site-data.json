@@ -1010,6 +1010,7 @@
           "type": "blank",
           "title": "Privacy Policy",
           "settings": {
+            "hideTitle": true,
             "isVisible": true,
             "textAlign": "left",
             "layoutVariant": "blank-text-only"
@@ -1315,7 +1316,7 @@
         "id": "mega-1773326229578",
         "href": "/privacy-policy",
         "type": "simple-dropdown",
-        "label": "Quick Links1",
+        "label": "Quick Links",
         "children": [
           {
             "href": "/terms",
