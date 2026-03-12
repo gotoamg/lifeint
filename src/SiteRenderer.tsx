@@ -590,7 +590,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 ) : null;
               })()}
             </nav>
-            {header?.ctaButton && (
+            {header?.ctaButton && headerSettings?.showCtaButton !== false && (
               <div className="p-6 border-t border-white/10">{header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button></a> : <Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button>}</div>
             )}
           </div>

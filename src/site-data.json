@@ -30,19 +30,11 @@
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
           "overlayColor": "#000000",
-          "primaryButton": {
-            "link": "",
-            "text": ""
-          },
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
-          "secondaryButton": {
-            "link": "https://www.lifeint.org/#",
-            "text": "Learn More"
-          },
           "backgroundPosition": {
-            "x": 41,
-            "y": 16
+            "x": 29,
+            "y": 22
           }
         },
         {
@@ -112,7 +104,7 @@
       "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
-    "primaryCTA": "Get Started Today",
+    "primaryCTA": "",
     "subheading": "Serving Christ Through Healthcare",
     "imageOverlay": 50,
     "secondaryCTA": "Learn More",
@@ -1150,9 +1142,10 @@
         ]
       },
       {
-        "href": "/our-mission",
-        "type": "page",
+        "href": "#",
+        "type": "external",
         "label": "Missions",
+        "newTab": true,
         "children": [
           {
             "href": "#",
@@ -1271,7 +1264,7 @@
         "color": "#1E293B",
         "opacity": 100
       },
-      "fontFamily": "DM Sans",
+      "fontFamily": "Montserrat",
       "hoverColor": "#FBBF24",
       "linkWeight": "semibold",
       "borderColor": "rgba(255,255,255,0.1)",
@@ -1310,7 +1303,7 @@
     },
     "ctaButton": {
       "href": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
-      "text": "Let me donate!"
+      "text": "Donate"
     },
     "megaMenuItems": [
       {
@@ -1360,7 +1353,7 @@
       },
       {
         "id": "Missions",
-        "href": "/our-mission",
+        "href": "#",
         "type": "link",
         "label": "Missions"
       },
