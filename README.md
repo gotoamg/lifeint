@@ -1,6 +1,6 @@
 # LifeInt
 
-We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving ...
+We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. 
 
 ## Development
 
