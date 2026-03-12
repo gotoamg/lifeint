@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
   Star, Quote, ArrowRight, Check, Menu, X, Loader2,
@@ -424,10 +424,10 @@ export function SiteRenderer({ content, businessName }: { content: any; business
 
   const onNavigate = (slug: string) => { setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false); };
 
-  React.useEffect(() => { const onPop = () => { const path = window.location.pathname.slice(1); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
+  useEffect(() => { const onPop = () => { const path = window.location.pathname.slice(1); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
 
   // Dynamic per-page SEO: update document title + meta tags when page changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (!activePage) return;
     const seo = activePage.seo || {};
     const siteName = businessName || 'My Website';
