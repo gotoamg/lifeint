@@ -370,7 +370,10 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [currentPage, setCurrentPage] = useState('');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const path = window.location.pathname.slice(1);
+    return path || '';
+  });
 
   // Multi-page support
   useEffect(() => { if (pages?.length > 0 && !currentPage) { const h = pages.find((p: any) => p.isHome); setCurrentPage(h?.slug || pages[0]?.slug || ''); } }, [pages]);
@@ -414,12 +417,28 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const accentBgStyle = customColors ? { backgroundColor: (customColors.accent || customColors.primary) + '15' } : undefined;
 
   const handleNavClick = (e: any, href: string) => {
-    if (href.startsWith('/')) { e.preventDefault(); setCurrentPage(href.slice(1)); setMobileMenuOpen(false); window.scrollTo(0,0); return; }
+    if (href.startsWith('/')) { e.preventDefault(); const slug = href.slice(1); setCurrentPage(slug); window.history.pushState({}, '', href || '/'); setMobileMenuOpen(false); window.scrollTo(0,0); return; }
     if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); return; }
     setMobileMenuOpen(false);
   };
 
-  const onNavigate = (slug: string) => { setCurrentPage(slug); window.scrollTo(0, 0); setMobileMenuOpen(false); };
+  const onNavigate = (slug: string) => { setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false); };
+
+  React.useEffect(() => { const onPop = () => { const path = window.location.pathname.slice(1); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
+
+  // Dynamic per-page SEO: update document title + meta tags when page changes
+  React.useEffect(() => {
+    if (!activePage) return;
+    const seo = activePage.seo || {};
+    const siteName = businessName || 'My Website';
+    const pageTitle = seo.metaTitle || (activePage.isHome ? siteName : (activePage.title ? activePage.title + ' | ' + siteName : siteName));
+    document.title = pageTitle;
+    const setMeta = (attr: string, key: string, val: string) => { let el = document.querySelector('meta[' + attr + '="' + key + '"]') as HTMLMetaElement; if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); } el.content = val; };
+    if (seo.metaDescription) { setMeta('name', 'description', seo.metaDescription); setMeta('property', 'og:description', seo.metaDescription); setMeta('name', 'twitter:description', seo.metaDescription); }
+    setMeta('property', 'og:title', pageTitle);
+    setMeta('name', 'twitter:title', pageTitle);
+    if (seo.ogImage) { setMeta('property', 'og:image', seo.ogImage); setMeta('name', 'twitter:image', seo.ogImage); }
+  }, [activePage, businessName]);
 
   // Header helpers
   const getStickyClass = () => { if (!headerSettings.isSticky) return 'relative'; if (headerSettings.stickyStyle === 'scroll-up') return scrollDirection === 'up' ? 'sticky top-0' : 'relative -translate-y-full'; if (headerSettings.stickyStyle === 'after-hero') return isScrolled ? 'fixed top-0 w-full' : 'absolute top-0 w-full'; return 'sticky top-0'; };
@@ -1106,12 +1125,12 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               {footer?.linkGroups?.length > 0 ? footer.linkGroups.map((group: any, gi: number) => (
                 <div key={gi} className="lg:col-span-2">
                   <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{group.title}</h4>
-                  <ul className="space-y-3">{group.links.map((link: any, i: number) => <li key={i}><a href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
+                  <ul className="space-y-3">{group.links.map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
                 </div>
               )) : footer?.links?.length > 0 ? (
                 <div className="lg:col-span-2">
                   <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
-                  <ul className="space-y-3">{footer.links.map((link: any, i: number) => <li key={i}><a href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
+                  <ul className="space-y-3">{footer.links.map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
                 </div>
               ) : null}
               <div className="lg:col-span-4">
