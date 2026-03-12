@@ -35,14 +35,14 @@
             "text": ""
           },
           "overlayOpacity": 50,
-          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg",
+          "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
           "secondaryButton": {
             "link": "https://www.lifeint.org/#",
             "text": "Learn More"
           },
           "backgroundPosition": {
-            "x": 28,
-            "y": 59
+            "x": 41,
+            "y": 16
           }
         },
         {
@@ -56,7 +56,7 @@
             "text": "Get Started"
           },
           "overlayOpacity": 50,
-          "backgroundImage": "",
+          "backgroundImage": "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop",
           "backgroundVideo": "\"C:\\Users\\USER\\Downloads\\WhatsApp Video 2022-07-29 at 6.59.00 AM.mp4\"",
           "secondaryButton": {
             "link": "#about",
@@ -107,9 +107,10 @@
       }
     },
     "heading": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
-    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg",
+    "heroImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
     "heroImages": [
-      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM%20(1).jpeg"
+      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
     "primaryCTA": "Get Started Today",
     "subheading": "Serving Christ Through Healthcare",
@@ -133,7 +134,7 @@
             "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
           ],
           "settings": {
-            "fullWidth": true,
+            "fullWidth": false,
             "textAlign": "left"
           }
         },
@@ -143,7 +144,7 @@
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
           "title": "Our Mission",
           "settings": {
-            "fullWidth": true,
+            "fullWidth": false,
             "isVisible": true,
             "textAlign": "left",
             "layoutVariant": "about-image-left"
@@ -1089,7 +1090,7 @@
       "email": "",
       "phone": "",
       "height": "compact",
-      "enabled": true,
+      "enabled": false,
       "textColor": "#E5E7EB",
       "dismissible": false,
       "leftContent": "phone_email",
@@ -1382,61 +1383,136 @@
   },
   "sections": [
     {
-      "body": "LIFE aims to strengthen Christian health care professionals in their walk with God, equip them with the skills to be an evangelist for Christ in healthcare, and provide opportunities for them to be an effective witness of Jesus Christ.",
+      "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
       "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_101509.jpg",
-      "title": "The Mission of LIFE is to share the gospel of Jesus Christ through Healthcare",
-      "settings": {
-        "fullWidth": true,
-        "isVisible": true
-      }
-    },
-    {
-      "type": "gallery",
-      "title": "Gallery",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
+      "title": "About Luke's International Fellowship & Enrichment - LIFE",
       "images": [
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%206.03.55%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2011.02.50%20PM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%205.54.19%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%205.15.21%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%2012.37.25%20AM%20(1).jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.15.58%20AM%20(1).jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2356.JPG",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%2010.00.50%20AM%20(1).jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2372.JPG",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2691.jpg",
-        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4815%20(1).jpg"
+        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
       ],
       "settings": {
-        "fullWidth": true,
-        "isVisible": true,
-        "paddingTop": "small",
-        "layoutVariant": "gallery-carousel",
-        "paddingBottom": "small"
+        "fullWidth": false,
+        "textAlign": "left"
       }
     },
     {
-      "type": "marquee",
-      "title": "Premium Quality • Expert Service • Outstanding Results"
+      "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
+      "title": "Our Mission",
+      "settings": {
+        "fullWidth": false,
+        "isVisible": true,
+        "textAlign": "left",
+        "layoutVariant": "about-image-left"
+      }
     },
     {
-      "body": "<div style=\"text-align: center;\"><b style=\"color: rgb(0, 0, 0); font-size: medium; font-family: inherit;\">We Believe:</b></div><ul><li><font size=\"3\" color=\"#000000\"><b>In one God eternally existing in three persons: Father, Son, and Holy Spirit. </b></font></li></ul><div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus Christ is the only begotten Son of the Father, conceived of the Holy Ghost, and born of the Virgin Mary. </b></font></li></ul></div><div><ul><li><font size=\"3\" color=\"#000000\"><b>That Jesus was crucified, buried, and raised from the dead; that He ascended to heaven and is today at the right hand of the Father as the Intercessor.</b></font></li></ul></div><div><font size=\"3\" color=\"#000000\"><b><ul><li>In the personality of the Holy Spirit, and that as promised, He came down from Heaven on the day of Pentecost, to dwell permanently in each believer, and that He is the efficient power for godly living, Christian service, and spiritual worship.</li></ul><ul style=\"\"><li>In the Divine inspiration and authority of the Holy Scriptures.\n</li><li>That all have sinned and come short of the glory of God.         \n</li><li>That justification and sanctification of the believer through the finished work of Christ.\n</li><li>In water baptism by immersion, and all who repent should be baptized in the name of the Father, and of the Son and of the Holy Spirit.</li><li>In the Lord’s Supper.</li><li>In the baptism of the Holy Spirit for believers.</li><li>In Divine healing provided for all in the atonement.</li><li>That God wonderfully and immutably creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God. Rejection of one’s biological sex is a rejection of the image of God within that person.</li><li>In a marriage between one man and one woman in a single, exclusive union. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other.&nbsp;</li><li>We believe that God has commanded that no intimate sexual activity be engaged in outside of marriage between a man and a woman.</li><li>That all human life is sacred and created in His image. That human life is of priceless worth in all its dimensions, including pre-born babies, the aged, the physically or mentally challenged, and every other stage or condition from conception through natural death, That we are therefore called to defend, protect and value all human life.</li><li>That any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God.</li><li>In the second coming of Jesus Christ.</li><li>In the bodily resurrection; eternal life for the righteous and eternal punishment for the wicked.</li><li>In the millennial reign of Jesus Christ and in the new heavens and new earth.</li></ul></b></font><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"></span></div></div>",
-      "type": "about",
-      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-      "title": "Statement of Faith",
+      "type": "services",
+      "items": [
+        {
+          "name": "Medical Missions",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
+          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+        },
+        {
+          "name": "Spiritual Fellowship",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
+          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+        },
+        {
+          "name": "Medical Education",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
+          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+        }
+      ],
+      "title": "Our Campaigns",
       "settings": {
         "gap": 6,
         "fullWidth": true,
         "isVisible": true,
-        "textAlign": "left",
         "background": {
           "type": "color",
           "value": "#F1F5F9"
         },
-        "paddingTop": "small",
-        "paddingBottom": "small"
+        "paddingTop": "medium",
+        "columnLayout": "3"
       }
+    },
+    {
+      "type": "gallery",
+      "title": "Some glimpses of our medical mission",
+      "images": [
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-27%20at%201.13.18%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%209.35.59%20PM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-25%20at%207.16.01%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-29%20at%202.32.08%20AM.jpeg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_4598.jpg",
+        "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
+      ],
+      "settings": {
+        "galleryStyle": "grid"
+      }
+    },
+    {
+      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+      "type": "cta",
+      "title": "Support us",
+      "settings": {
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#1E293B"
+        },
+        "layoutVariant": "cta-centered"
+      },
+      "buttonLink": "#donate",
+      "buttonText": "Donate!"
+    },
+    {
+      "body": "Duncan Hospital experience",
+      "type": "about",
+      "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
+      "title": "Blog Insights",
+      "settings": {
+        "isVisible": true,
+        "background": {
+          "type": "color",
+          "value": "#F1F5F9"
+        }
+      }
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "answer": "LIFE is a Christ-centered mission with a primary focus on medical outreach and compassionate care. We organize medical camps, health support initiatives, and humanitarian aid for underserved communities, while also providing spiritual encouragement and discipleship. Alongside healthcare outreach, we conduct Bible teaching, mentorship programs, and mission partnerships that bring both physical healing and spiritual hope. Our mission is to serve people holistically — body, mind, and spirit.",
+          "question": "What services does Luke's International Fellowship & Enrichment - LIFE offer?"
+        },
+        {
+          "answer": "You can get involved with LIFE by partnering with our medical outreach and mission programs. Volunteers, healthcare professionals, supporters, and prayer partners are all welcome. Simply reach out through our contact page to join an outreach team, sponsor a project, or participate in our fellowship and training programs. We’ll guide you in finding the best way to serve and make an impact.",
+          "question": "How can I get started?"
+        },
+        {
+          "answer": "What makes LIFE unique is our integration of medical care and Christ-centered mission. We combine practical healthcare support with spiritual mentorship and discipleship. Our outreach is driven by compassion, faith, and long-term community impact — not just short-term aid. We aim to build relationships, restore dignity, and share hope through both healing service and the message of Christ.",
+          "question": "What makes you different?"
+        }
+      ],
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
+      "type": "contact",
+      "title": "Get In Touch",
+      "settings": {
+        "anchorId": "contact"
+      },
+      "buttonText": "Send Message",
+      "contactEmail": "orglife2020@gmail.com",
+      "contactPhone": "(203)918-7574",
+      "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
     }
   ],
   "githubConfig": {
