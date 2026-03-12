@@ -487,13 +487,22 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               )}
             </div>
             <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
-              {header.megaMenuItems && header.megaMenuItems.length > 0 ? (
-              <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
-                  {header.megaMenuItems.map((item: any) =>
-                    item.type === 'simple-dropdown' && item.children?.length > 0 ? (
-                      <SimpleDropdown key={item.id} item={item} headerSettings={headerSettings} onNavigate={(href: string) => { if (href.startsWith('/')) onNavigate(href.slice(1)); else if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); else window.location.href = href; }} linkClasses={getLinkClasses()} textColor={getHeaderTextColor()} />
+              {(() => {
+                const primaryItems = header.navItems || [];
+                const megaItems = header.megaMenuItems || [];
+                const merged = megaItems.length > 0 && primaryItems.length > 0
+                  ? primaryItems.map((nav: any) => {
+                      const match = megaItems.find((m: any) => m.label?.toLowerCase().trim() === nav.label?.toLowerCase().trim());
+                      return match ? { ...match, href: match.href || nav.href } : nav;
+                    })
+                  : primaryItems.length > 0 ? primaryItems : megaItems;
+                return merged.length > 0 ? (
+                <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
+                  {merged.map((item: any, i: number) =>
+                    (item.type === 'simple-dropdown' && item.children?.length > 0) || item.children?.length > 0 ? (
+                      <SimpleDropdown key={item.id || i} item={item} headerSettings={headerSettings} onNavigate={(href: string) => { if (href.startsWith('/')) onNavigate(href.slice(1)); else if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); else window.location.href = href; }} linkClasses={getLinkClasses()} textColor={getHeaderTextColor()} />
                     ) : (
-                      <a key={item.id} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
+                      <a key={item.id || i} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
                         className={cn('rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
                         {item.icon && <DynamicIcon name={item.icon} className="w-4 h-4 mr-1 inline" />}
                         {item.label}
@@ -501,20 +510,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                     )
                   )}
                 </nav>
-              ) : header.navItems ? (
-                <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
-                  {header.navItems.map((item: any, i: number) => (
-                    item.children?.length > 0 ? (
-                      <SimpleDropdown key={i} item={item} headerSettings={headerSettings} onNavigate={(href: string) => { if (href.startsWith('/')) onNavigate(href.slice(1)); else if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); else window.location.href = href; }} linkClasses={getLinkClasses()} textColor={getHeaderTextColor()} />
-                    ) : (
-                      <a key={i} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
-                        className={cn('rounded-md transition-colors', getLinkClasses())} style={navLinkStyle}>
-                        {item.label}
-                      </a>
-                    )
-                  ))}
-                </nav>
-              ) : null}
+                ) : null;
+              })()}
             </div>
             {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="order-4"><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px] order-4">{header.ctaButton.text}</Button>)}
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
@@ -537,20 +534,29 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               <button onClick={() => setMobileMenuOpen(false)} className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center hover:opacity-70 transition-opacity" aria-label="Close menu"><X className="w-6 h-6" /></button>
             </div>
             <nav className="flex flex-col px-6 flex-1 overflow-y-auto">
-              {header?.megaMenuItems?.length > 0 ? (
+              {(() => {
+                const primaryItems = header?.navItems || [];
+                const megaItems = header?.megaMenuItems || [];
+                const merged = megaItems.length > 0 && primaryItems.length > 0
+                  ? primaryItems.map((nav: any) => {
+                      const match = megaItems.find((m: any) => m.label?.toLowerCase().trim() === nav.label?.toLowerCase().trim());
+                      return match ? { ...match, href: match.href || nav.href } : nav;
+                    })
+                  : primaryItems.length > 0 ? primaryItems : megaItems;
+                return merged.length > 0 ? (
                 <Accordion type="single" collapsible className="w-full">
-                  {header.megaMenuItems.map((item: any) =>
+                  {merged.map((item: any, i: number) =>
                     item.children?.length > 0 ? (
-                      <AccordionItem key={item.id} value={item.id} className="border-b border-white/10">
+                      <AccordionItem key={item.id || i} value={item.id || 'nav-' + i} className="border-b border-white/10">
                         <AccordionTrigger className="py-4 text-base sm:text-lg font-medium hover:no-underline opacity-90 hover:opacity-100">
                           <span className="flex items-center gap-2">{item.icon && <DynamicIcon name={item.icon} className="w-5 h-5" />}{item.label}</span>
                         </AccordionTrigger>
                         <AccordionContent className="pb-4">
                           <div className="space-y-1 pl-4">
-                            {item.children.map((child: any, ci: number) => 
+                            {item.children.map((child: any, ci: number) =>
                               child.children?.length > 0 ? (
                                 <Accordion key={ci} type="single" collapsible className="w-full">
-                                  <AccordionItem value={'sub-' + child.id + '-' + ci} className="border-b border-white/5">
+                                  <AccordionItem value={'sub-' + (item.id || i) + '-' + ci} className="border-b border-white/5">
                                     <AccordionTrigger className="py-2.5 text-sm font-medium hover:no-underline opacity-80 hover:opacity-100">
                                       <span className="flex items-center gap-2">{child.icon && <DynamicIcon name={child.icon} className="w-4 h-4" />}{child.label}</span>
                                     </AccordionTrigger>
@@ -575,57 +581,15 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                         </AccordionContent>
                       </AccordionItem>
                     ) : (
-                      <a key={item.id} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
+                      <a key={item.id || i} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
                         className="py-4 text-base sm:text-lg font-medium border-b border-white/10 flex items-center transition-opacity opacity-90 hover:opacity-100">
                         {item.icon && <DynamicIcon name={item.icon} className="w-5 h-5 mr-2" />}{item.label}
                       </a>
                     )
                   )}
                 </Accordion>
-              ) : header?.navItems ? (
-                <Accordion type="single" collapsible className="w-full">
-                  {header.navItems.map((item: any, i: number) =>
-                    item.children?.length > 0 ? (
-                      <AccordionItem key={i} value={'nav-' + i} className="border-b border-white/10">
-                        <AccordionTrigger className="py-4 text-base sm:text-lg font-medium hover:no-underline opacity-90 hover:opacity-100">
-                          <span className="flex items-center gap-2">{item.label}</span>
-                        </AccordionTrigger>
-                        <AccordionContent className="pb-4">
-                          <div className="space-y-1 pl-4">
-                            {item.children.map((child: any, ci: number) =>
-                              child.children?.length > 0 ? (
-                                <Accordion key={ci} type="single" collapsible className="w-full">
-                                  <AccordionItem value={'navsub-' + i + '-' + ci} className="border-b border-white/5">
-                                    <AccordionTrigger className="py-2.5 text-sm font-medium hover:no-underline opacity-80 hover:opacity-100">
-                                      <span className="flex items-center gap-2">{child.label}</span>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="pb-2">
-                                      <div className="space-y-1 pl-4">
-                                        {child.children.map((grandchild: any, gci: number) => (
-                                          <a key={gci} href={grandchild.href} onClick={(e: any) => handleNavClick(e, grandchild.href)} className="block py-2 text-sm opacity-70 hover:opacity-100 transition-opacity">
-                                            {grandchild.label}
-                                          </a>
-                                        ))}
-                                      </div>
-                                    </AccordionContent>
-                                  </AccordionItem>
-                                </Accordion>
-                              ) : (
-                                <a key={ci} href={child.href} onClick={(e: any) => handleNavClick(e, child.href)} className="block py-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity">
-                                  {child.label}
-                                </a>
-                              )
-                            )}
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ) : (
-                      <a key={i} href={item.href || '#'} onClick={(e: any) => handleNavClick(e, item.href || '#')}
-                        className="py-4 text-base sm:text-lg font-medium border-b border-white/10 flex items-center transition-opacity opacity-90 hover:opacity-100">{item.label}</a>
-                    )
-                  )}
-                </Accordion>
-              ) : null}
+                ) : null;
+              })()}
             </nav>
             {header?.ctaButton && (
               <div className="p-6 border-t border-white/10">{header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button></a> : <Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button>}</div>
