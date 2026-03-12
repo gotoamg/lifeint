@@ -440,6 +440,19 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     if (seo.ogImage) { setMeta('property', 'og:image', seo.ogImage); setMeta('name', 'twitter:image', seo.ogImage); }
   }, [activePage, businessName]);
 
+  // Merged navigation (primary nav + mega menu enhancements) — shared by header & footer
+  const mergedNav = React.useMemo(() => {
+    const primaryItems = header?.navItems || [];
+    const megaItems = header?.megaMenuItems || [];
+    if (megaItems.length > 0 && primaryItems.length > 0) {
+      return primaryItems.map((nav: any) => {
+        const match = megaItems.find((m: any) => m.label?.toLowerCase().trim() === nav.label?.toLowerCase().trim());
+        return match ? { ...match, href: match.href || nav.href } : nav;
+      });
+    }
+    return primaryItems.length > 0 ? primaryItems : megaItems;
+  }, [header?.navItems, header?.megaMenuItems]);
+
   // Header helpers
   const getStickyClass = () => { if (!headerSettings.isSticky) return 'relative'; if (headerSettings.stickyStyle === 'scroll-up') return scrollDirection === 'up' ? 'sticky top-0' : 'relative -translate-y-full'; if (headerSettings.stickyStyle === 'after-hero') return isScrolled ? 'fixed top-0 w-full' : 'absolute top-0 w-full'; return 'sticky top-0'; };
   const getHeightClass = () => ({ compact: 'py-2', tall: 'py-6', normal: 'py-4' }[headerSettings.height] || 'py-4');
@@ -488,14 +501,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </div>
             <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
               {(() => {
-                const primaryItems = header.navItems || [];
-                const megaItems = header.megaMenuItems || [];
-                const merged = megaItems.length > 0 && primaryItems.length > 0
-                  ? primaryItems.map((nav: any) => {
-                      const match = megaItems.find((m: any) => m.label?.toLowerCase().trim() === nav.label?.toLowerCase().trim());
-                      return match ? { ...match, href: match.href || nav.href } : nav;
-                    })
-                  : primaryItems.length > 0 ? primaryItems : megaItems;
+                const merged = mergedNav;
                 return merged.length > 0 ? (
                 <nav className="flex items-center" style={{ gap: (headerSettings.itemSpacing ?? 24) + 'px' }}>
                   {merged.map((item: any, i: number) =>
@@ -535,14 +541,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </div>
             <nav className="flex flex-col px-6 flex-1 overflow-y-auto">
               {(() => {
-                const primaryItems = header?.navItems || [];
-                const megaItems = header?.megaMenuItems || [];
-                const merged = megaItems.length > 0 && primaryItems.length > 0
-                  ? primaryItems.map((nav: any) => {
-                      const match = megaItems.find((m: any) => m.label?.toLowerCase().trim() === nav.label?.toLowerCase().trim());
-                      return match ? { ...match, href: match.href || nav.href } : nav;
-                    })
-                  : primaryItems.length > 0 ? primaryItems : megaItems;
+                const merged = mergedNav;
                 return merged.length > 0 ? (
                 <Accordion type="single" collapsible className="w-full">
                   {merged.map((item: any, i: number) =>
@@ -1086,17 +1085,43 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   </div>
                 )}
               </div>
-              {footer?.linkGroups?.length > 0 ? footer.linkGroups.map((group: any, gi: number) => (
-                <div key={gi} className="lg:col-span-2">
-                  <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{group.title}</h4>
-                  <ul className="space-y-3">{group.links.map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
-                </div>
-              )) : footer?.links?.length > 0 ? (
-                <div className="lg:col-span-2">
-                  <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
-                  <ul className="space-y-3">{footer.links.map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
-                </div>
-              ) : null}
+              {(() => {
+                const menuSource = footer?.footerMenuSource;
+                let effectiveLinkGroups = footer?.linkGroups;
+
+                if (menuSource === 'primary' && mergedNav.length > 0) {
+                  const quickLinks: any[] = [];
+                  const groups: any[] = [];
+                  mergedNav.forEach((item: any) => {
+                    if (item.children && item.children.length > 0) {
+                      groups.push({ title: item.label, links: item.children.map((c: any) => ({ label: c.label, href: c.href })) });
+                    } else {
+                      quickLinks.push({ label: item.label, href: item.href });
+                    }
+                  });
+                  if (quickLinks.length > 0) groups.unshift({ title: 'Quick Links', links: quickLinks });
+                  effectiveLinkGroups = groups;
+                } else if (menuSource === 'mega' && footer?.footerMegaMenuId && header?.megaMenuItems?.length) {
+                  const megaItem = (header.megaMenuItems as any[]).find((m: any) => m.id === footer.footerMegaMenuId);
+                  if (megaItem?.type === 'mega-dropdown' && megaItem.columns?.length) {
+                    effectiveLinkGroups = megaItem.columns.map((col: any) => ({ title: col.title || 'Links', links: (col.items || []).map((it: any) => ({ label: it.label, href: it.href })) }));
+                  } else if (megaItem?.type === 'simple-dropdown' && megaItem.children?.length) {
+                    effectiveLinkGroups = [{ title: megaItem.label, links: megaItem.children.map((c: any) => ({ label: c.label, href: c.href })) }];
+                  }
+                }
+
+                return effectiveLinkGroups?.length > 0 ? effectiveLinkGroups.map((group: any, gi: number) => (
+                  <div key={gi} className="lg:col-span-2">
+                    <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{group.title}</h4>
+                    <ul className="space-y-3">{(group.links || []).map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e: any) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
+                  </div>
+                )) : footer?.links?.length > 0 ? (
+                  <div className="lg:col-span-2">
+                    <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul className="space-y-3">{footer.links.map((link: any, i: number) => <li key={i}><a href={link.href} onClick={(e: any) => handleNavClick(e, link.href)} className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"><ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />{link.label}</a></li>)}</ul>
+                  </div>
+                ) : null;
+              })()}
               <div className="lg:col-span-4">
                 <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Get In Touch</h4>
                 <div className="space-y-4">
