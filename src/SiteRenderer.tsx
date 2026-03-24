@@ -1,11 +1,49 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
-  Star, Quote, ArrowRight, Check, Menu, X, Loader2,
+  Star, Quote, ArrowRight, Check, Menu, X, Loader2, Users,
   Facebook, Instagram, Twitter, Linkedin, Youtube, Github, Globe, ExternalLink,
   Mail, Phone, MapPin, ChevronDown, ChevronRight, ZoomIn, icons, type LucideIcon
 } from 'lucide-react';
 import { cn } from './lib/utils';
+
+// ===== Constants for visitor counter & newsletter redirect =====
+const SUPABASE_URL = "https://foemfjmfrulilubshnwn.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvZW1mam1mcnVsaWx1YnNobnduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzMTgwMDgsImV4cCI6MjA4MDg5NDAwOH0.amehmaYIeVMh38QtQmvrLLaoravnPzzn4GUBPvPM_Pg";
+const EXPORTED_SITE_ID = "1769755449367";
+const PLATFORM_SITE_SLUG = "life";
+
+// ===== Inline FooterVisitorCounter =====
+function FooterVisitorCounter({ textColor }: { textColor?: string }) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const siteId = EXPORTED_SITE_ID;
+    if (!siteId) return;
+    const sessionKey = 'ez_visitor_counted_' + siteId;
+    const headers: Record<string,string> = { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' };
+
+    if (!sessionStorage.getItem(sessionKey)) {
+      fetch(SUPABASE_URL + '/rest/v1/rpc/increment_visitor_count', {
+        method: 'POST', headers, body: JSON.stringify({ p_site_id: siteId })
+      }).then(r => r.json()).then(d => { if (typeof d === 'number') { sessionStorage.setItem(sessionKey, '1'); setCount(d); } }).catch(() => {});
+    } else {
+      fetch(SUPABASE_URL + '/rest/v1/site_visitor_counts?site_id=eq.' + siteId + '&select=count', { headers })
+        .then(r => r.json()).then(d => { if (d?.[0]?.count) setCount(d[0].count); }).catch(() => {});
+    }
+  }, []);
+  if (count === 0) return null;
+  return (
+    <span className="inline-flex items-center gap-1.5 text-[13px]" style={{ color: textColor || '#9ca3af' }}>
+      <Users className="w-3.5 h-3.5" />
+      {count.toLocaleString()} visitors
+    </span>
+  );
+}
+
+const PLATFORM_ROUTES = ['newsletter', 'blog'];
+function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
+
+
 
 // ===== Inline Accordion (matches shadcn/ui) =====
 const Accordion = AccordionPrimitive.Root;
@@ -111,18 +149,29 @@ function getShadowClasses(s: string) {
 }
 
 const fontSizeMap: Record<string, string> = { xs: '0.75rem', sm: '0.875rem', base: '1rem', lg: '1.125rem', xl: '1.25rem', '2xl': '1.5rem' };
+const fontWeightMap: Record<string, number> = { normal: 400, medium: 500, semibold: 600, bold: 700 };
 
-function NestedSubmenu({ item, submenuStyle, onNavigate, depth, fontSize }: { item: any; submenuStyle: any; onNavigate: (href: string) => void; depth: number; fontSize?: string }) {
+function getSubTextTransform(linkStyle?: string): React.CSSProperties {
+  switch (linkStyle) {
+    case 'uppercase': return { textTransform: 'uppercase' as const };
+    case 'small-caps': return { fontVariant: 'small-caps' };
+    default: return {};
+  }
+}
+
+function NestedSubmenu({ item, submenuStyle, onNavigate, depth, submenuItemStyle, hoverColor }: { item: any; submenuStyle: any; onNavigate: (href: string) => void; depth: number; submenuItemStyle: React.CSSProperties; hoverColor?: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   return (
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
       <button
         className={cn('w-full px-4 py-2.5 text-left hover:bg-muted/80 flex items-center gap-3 transition-colors text-popover-foreground')}
+        style={submenuItemStyle}
         onClick={(e: any) => { e.preventDefault(); if (item.href) onNavigate(item.href); }}
       >
         {submenuStyle.showIcons && item.icon && <DynamicIcon name={item.icon} className="w-4 h-4 text-muted-foreground flex-shrink-0" />}
         <div className="flex-1 min-w-0">
-          <div className="font-medium" style={{ fontSize: fontSize || undefined }}>{item.label}</div>
+          <div className="font-medium" style={{ fontSize: submenuItemStyle.fontSize }}>{item.label}</div>
           {submenuStyle.showDescriptions && item.description && <div className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{item.description}</div>}
         </div>
         <ChevronRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
@@ -132,13 +181,16 @@ function NestedSubmenu({ item, submenuStyle, onNavigate, depth, fontSize }: { it
           <div className={cn('min-w-44 py-2 border border-border', getBackgroundClasses(submenuStyle.background), getBorderRadiusClasses(submenuStyle.borderRadius), getShadowClasses(submenuStyle.shadow))}>
             {item.children.map((child: any, idx: number) => (
               child.children && child.children.length > 0 && depth < 3 ? (
-                <NestedSubmenu key={idx} item={child} submenuStyle={submenuStyle} onNavigate={onNavigate} depth={depth + 1} fontSize={fontSize} />
+                <NestedSubmenu key={idx} item={child} submenuStyle={submenuStyle} onNavigate={onNavigate} depth={depth + 1} submenuItemStyle={submenuItemStyle} hoverColor={hoverColor} />
               ) : (
                 <button key={idx} onClick={() => onNavigate(child.href)}
-                  className="w-full px-4 py-2.5 text-left hover:bg-muted/80 flex items-center gap-3 transition-colors text-popover-foreground">
+                  onMouseEnter={() => setHoveredIdx(idx)}
+                  onMouseLeave={() => setHoveredIdx(null)}
+                  className="w-full px-4 py-2.5 text-left hover:bg-muted/80 flex items-center gap-3 transition-colors text-popover-foreground"
+                  style={{ ...submenuItemStyle, color: hoveredIdx === idx && hoverColor ? hoverColor : submenuItemStyle.color }}>
                   {submenuStyle.showIcons && child.icon && <DynamicIcon name={child.icon} className="w-4 h-4 text-muted-foreground flex-shrink-0" />}
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium" style={{ fontSize: fontSize || undefined }}>{child.label}</div>
+                    <div className="font-medium" style={{ fontSize: submenuItemStyle.fontSize }}>{child.label}</div>
                     {submenuStyle.showDescriptions && child.description && <div className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{child.description}</div>}
                   </div>
                 </button>
@@ -153,14 +205,38 @@ function NestedSubmenu({ item, submenuStyle, onNavigate, depth, fontSize }: { it
 
 function SimpleDropdown({ item, headerSettings, onNavigate, linkClasses, textColor = 'inherit' }: any) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const submenuStyle = headerSettings?.submenuStyle || defaultSubmenuStyle;
-  const resolvedFontSize = fontSizeMap[headerSettings?.fontSize || 'base'] || fontSizeMap['base'];
+
+  const rootFontSize = fontSizeMap[headerSettings?.fontSize || 'base'] || fontSizeMap['base'];
+  const rootFontFamily = headerSettings?.fontFamily;
+  const subFontFamily = headerSettings?.submenuFontFamily || rootFontFamily;
+  const subFontSize = fontSizeMap[headerSettings?.submenuFontSize || headerSettings?.fontSize || 'base'] || fontSizeMap['base'];
+  const subTextColor = headerSettings?.submenuTextColor;
+  const subHoverColor = headerSettings?.submenuHoverColor || headerSettings?.hoverColor;
+  const subWeight = fontWeightMap[headerSettings?.submenuLinkWeight || 'medium'] || 500;
+  const subTransform = getSubTextTransform(headerSettings?.submenuLinkStyle);
+
+  const submenuItemStyle: React.CSSProperties = {
+    fontFamily: subFontFamily || undefined,
+    fontSize: subFontSize,
+    fontWeight: subWeight,
+    color: subTextColor || undefined,
+    ...subTransform,
+  };
+
+  const rootTriggerStyle: React.CSSProperties = {
+    color: textColor,
+    fontFamily: rootFontFamily || undefined,
+    fontSize: rootFontSize,
+  };
+
   return (
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <button className={cn('flex items-center gap-1.5 transition-colors', linkClasses)} style={{ color: textColor }}
+      <button className={cn('flex items-center gap-1.5 transition-colors', linkClasses)} style={rootTriggerStyle}
         onClick={(e: any) => { e.preventDefault(); if (item.href) onNavigate(item.href); }}>
         {submenuStyle.showIcons && item.icon && <DynamicIcon name={item.icon} className="w-4 h-4" />}
-        <span style={{ fontSize: resolvedFontSize }}>{item.label}</span>
+        <span>{item.label}</span>
         <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isOpen && 'rotate-180')} />
       </button>
       {item.children && item.children.length > 0 && (
@@ -174,13 +250,16 @@ function SimpleDropdown({ item, headerSettings, onNavigate, linkClasses, textCol
           >
             {item.children.map((child: any, idx: number) => (
               child.children && child.children.length > 0 ? (
-                <NestedSubmenu key={idx} item={child} submenuStyle={submenuStyle} onNavigate={onNavigate} depth={1} fontSize={resolvedFontSize} />
+                <NestedSubmenu key={idx} item={child} submenuStyle={submenuStyle} onNavigate={onNavigate} depth={1} submenuItemStyle={submenuItemStyle} hoverColor={subHoverColor} />
               ) : (
                 <button key={idx} onClick={() => { onNavigate(child.href); setIsOpen(false); }}
-                  className="w-full px-4 py-2.5 text-left hover:bg-muted/80 flex items-center gap-3 transition-colors text-popover-foreground">
+                  onMouseEnter={() => setHoveredIdx(idx)}
+                  onMouseLeave={() => setHoveredIdx(null)}
+                  className="w-full px-4 py-2.5 text-left hover:bg-muted/80 flex items-center gap-3 transition-colors text-popover-foreground"
+                  style={{ ...submenuItemStyle, color: hoveredIdx === idx && subHoverColor ? subHoverColor : submenuItemStyle.color }}>
                   {submenuStyle.showIcons && child.icon && <DynamicIcon name={child.icon} className="w-4 h-4 text-muted-foreground flex-shrink-0" />}
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium" style={{ fontSize: resolvedFontSize }}>{child.label}</div>
+                    <div className="font-medium" style={{ fontSize: subFontSize }}>{child.label}</div>
                     {submenuStyle.showDescriptions && child.description && <div className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{child.description}</div>}
                   </div>
                 </button>
@@ -417,12 +496,20 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const accentBgStyle = customColors ? { backgroundColor: (customColors.accent || customColors.primary) + '15' } : undefined;
 
   const handleNavClick = (e: any, href: string) => {
-    if (href.startsWith('/')) { e.preventDefault(); const slug = href.slice(1); setCurrentPage(slug); window.history.pushState({}, '', href || '/'); setMobileMenuOpen(false); window.scrollTo(0,0); return; }
+    if (href.startsWith('/')) {
+      e.preventDefault();
+      const slug = href.slice(1);
+      if (isPlatformRoute(slug)) { window.location.href = 'https://' + PLATFORM_SITE_SLUG + '.ezsiteai.com/' + slug; return; }
+      setCurrentPage(slug); window.history.pushState({}, '', href || '/'); setMobileMenuOpen(false); window.scrollTo(0,0); return;
+    }
     if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); return; }
     setMobileMenuOpen(false);
   };
 
-  const onNavigate = (slug: string) => { setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false); };
+  const onNavigate = (slug: string) => {
+    if (isPlatformRoute(slug)) { window.location.href = 'https://' + PLATFORM_SITE_SLUG + '.ezsiteai.com/' + slug; return; }
+    setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false);
+  };
 
   useEffect(() => { const onPop = () => { const path = window.location.pathname.slice(1); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
 
@@ -1175,6 +1262,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-sm text-gray-500 text-center sm:text-left">{footer?.copyright || ('© ' + new Date().getFullYear() + ' ' + businessName + '. All rights reserved.')}</p>
               <div className="flex items-center gap-6 text-xs text-gray-500">
+                <FooterVisitorCounter textColor="#9ca3af" />
                 <a href="/privacy" className="hover:text-gray-400 transition-colors">Privacy Policy</a>
                 <a href="/terms" className="hover:text-gray-400 transition-colors">Terms of Service</a>
               </div>
