@@ -1082,6 +1082,15 @@
   ],
   "footer": {
     "links": [],
+    "bottomBar": {
+      "fontSize": "13px",
+      "textColor": "#9ca3af",
+      "fontFamily": "inherit",
+      "borderColor": "#1f2937",
+      "showPoweredBy": true,
+      "backgroundColor": "transparent",
+      "showVisitorCounter": true
+    },
     "copyright": "© 2026 Luke's International Fellowship & Enrichment - LIFE. All rights reserved.",
     "linkGroups": [],
     "newsletter": {
@@ -1096,7 +1105,7 @@
       "phone": " (203) 918-7574",
       "address": " P.O. Box 322 Wilmington, MA 01887"
     },
-    "description": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving ...",
+    "description": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission.",
     "socialLinks": [
       {
         "url": "#",
@@ -1278,6 +1287,11 @@
                 "label": "REACH India - 2023"
               }
             ]
+          },
+          {
+            "href": "/the-leprosy-mission",
+            "type": "page",
+            "label": "The Leprosy Mission"
           }
         ]
       },
