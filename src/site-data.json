@@ -1056,7 +1056,8 @@
             "fullWidth": true,
             "isVisible": true,
             "textAlign": "left",
-            "layoutVariant": "about-image-left"
+            "layoutVariant": "about-image-left",
+            "paddingBottom": "none"
           }
         },
         {
@@ -1080,7 +1081,8 @@
           "settings": {
             "fullWidth": true,
             "hideTitle": true,
-            "paddingTop": "none"
+            "paddingTop": "none",
+            "paddingBottom": "none"
           }
         }
       ],
