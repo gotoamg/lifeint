@@ -1437,6 +1437,12 @@
             "icon": "",
             "label": "Privacy",
             "description": ""
+          },
+          {
+            "href": "/books",
+            "icon": "",
+            "label": "Books",
+            "description": ""
           }
         ]
       }
