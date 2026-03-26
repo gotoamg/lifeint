@@ -207,7 +207,7 @@
           "buttonText": "Donate!"
         },
         {
-          "body": "Duncan Hospital experience",
+          "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\">Duncan Hospital experience</a></b>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
           "title": "Blog Insights",
@@ -1556,7 +1556,7 @@
       "buttonText": "Donate!"
     },
     {
-      "body": "Duncan Hospital experience",
+      "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\">Duncan Hospital experience</a></b>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
       "title": "Blog Insights",
