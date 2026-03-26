@@ -1111,6 +1111,29 @@
       "createdAt": "2026-03-26T03:55:49.405Z",
       "isVisible": true,
       "updatedAt": "2026-03-26T03:55:49.405Z"
+    },
+    {
+      "id": "page-1774505396049",
+      "slug": "books",
+      "title": "Books",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<div style=\"text-align: left;\"><font size=\"3\" style=\"\" color=\"#000000\">Spiritual Encounters: Testimonies from Healthcare Professionals A collection of life-transforming testimonies from physicians and healthcare workers encountering God’s presence in their work in the operating room, inpatient ward, outpatient clinic, or community center transforming their lives and the lives of their patients.</font></div><div style=\"text-align: left;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"><br></span></div><div style=\"text-align: center;\"></div><div style=\"text-align: left;\"><b style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Buy on Amazon:</b><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"> </span><a href=\"https://web.archive.org/web/20250123070129/https://www.amazon.com/Spiritual-Encounters-Testimonies-Healthcare-Professionals/dp/B0D9XXRRQM/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"font-size: 0.875rem;\"><b><font color=\"#ef4444\">https://web.archive.org/web/20250123070129/https://www.amazon.com/Spiritual Encounters-Testimonies-Healthcare-Professionals/dp/B0D9XXRRQM/</font></b></a></div><div style=\"text-align: left;\"><br></div><div style=\"text-align: center;\"></div><b><div style=\"text-align: left;\"><b style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Buy on Christianbook:</b><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\"> </span><a href=\"https://web.archive.org/web/20250123070129/https://www.christianbook.com/spiritual-encounters-testimonies-from-healthcare-professionals/9798385026357/pd/026359\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"font-size: 0.875rem;\"><font color=\"#ef4444\">https://web.archive.org/web/20250123070129/https://www.christianbook.com/spiritual encounters-testimonies-from-healthcare-professionals/9798385026357/pd/026359</font></a></div></b>",
+          "type": "about",
+          "image": "https://images.unsplash.com/photo-1644211492216-8a5e874023f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NTM5NjZ8MHwxfHNlYXJjaHw2fHxib29rc3xlbnwwfDJ8fHwxNzc0NTA1Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+          "title": "About Us",
+          "settings": {
+            "fullWidth": true,
+            "hideTitle": true,
+            "isVisible": true,
+            "layoutVariant": "about-image-left"
+          }
+        }
+      ],
+      "createdAt": "2026-03-26T06:09:56.049Z",
+      "isVisible": true,
+      "updatedAt": "2026-03-26T06:09:56.049Z"
     }
   ],
   "footer": {
