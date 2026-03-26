@@ -730,6 +730,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                     <ScrollReveal animation="fade-up" delay={200}>
                       {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
                       <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
+                      {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                     </ScrollReveal>
                   </div>
                 </section>
@@ -745,6 +746,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                         <div>
                           {!section.settings?.hideTitle && <h2 className={'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
                           <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
+                          {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                         </div>
                       </ScrollReveal>
                       {section.image && <ScrollReveal animation="blur-in" delay={200}><img src={section.image} alt={section.title} className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/3]" /></ScrollReveal>}
@@ -785,6 +787,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                       <div className={section.image ? 'text-center lg:text-left' : 'max-w-4xl mx-auto text-center'}>
                         {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
                         <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
+                        {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                       </div>
                     </ScrollReveal>
                     {section.image && isRight && (
@@ -928,9 +931,13 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   <div className="container mx-auto max-w-4xl text-center relative z-10">
                     {!section.settings?.hideTitle && <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">{section.title}</h2>}
                     {section.body && <div className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: section.body }} />}
-                    <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 gap-2 w-full sm:w-auto min-h-[56px] px-10 text-lg font-bold rounded-xl shadow-2xl">
-                      {section.buttonText || 'Get Started'} <ArrowRight className="h-5 w-5" />
-                    </Button>
+                    {(() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (
+                      <a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}>
+                        <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 gap-2 w-full sm:w-auto min-h-[56px] px-10 text-lg font-bold rounded-xl shadow-2xl">
+                          {section.buttonText || section.ctaText || 'Get Started'} <ArrowRight className="h-5 w-5" />
+                        </Button>
+                      </a>
+                    ); })()}
                   </div>
                 </ScrollReveal>
               </section>
@@ -1044,6 +1051,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                       <div className={(() => { const a = section.settings?.textAlign || 'left'; return a === 'center' ? 'text-center' : a === 'right' ? 'text-right' : 'text-left'; })()}>
                         {section.title && !section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + textClass}>{section.title}</h2>}
                         {section.body && <div className={'text-base sm:text-lg leading-relaxed ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} />}
+                        {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                       </div>
                     </ScrollReveal>
                   )}
@@ -1130,6 +1138,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 <div className="container mx-auto max-w-4xl">
                   {section.title && !section.settings?.hideTitle && <ScrollReveal animation="blur-in"><h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + textClass}>{section.title}</h2></ScrollReveal>}
                   {section.body && <ScrollReveal animation="fade-up" delay={100}><div className={'text-base sm:text-lg leading-relaxed ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} /></ScrollReveal>}
+                  {(section.buttonText || section.ctaText) && <ScrollReveal animation="fade-up" delay={150}>{(() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}</ScrollReveal>}
                   {section.image && <ScrollReveal animation="fade-up" delay={200}><div className="mt-8"><img src={section.image} alt={section.title || ''} className="rounded-xl shadow-lg w-full h-auto object-cover" /></div></ScrollReveal>}
                 </div>
               </section>
