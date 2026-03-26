@@ -1355,6 +1355,24 @@
         "href": "/contact",
         "type": "page",
         "label": "Contact"
+      },
+      {
+        "href": "#",
+        "type": "external",
+        "label": "Collectives",
+        "newTab": true,
+        "children": [
+          {
+            "href": "/books",
+            "type": "page",
+            "label": "Books"
+          },
+          {
+            "href": "/the-duncan-hospital-experience",
+            "type": "page",
+            "label": "The Duncan Hospital Experience"
+          }
+        ]
       }
     ],
     "settings": {
@@ -1436,12 +1454,6 @@
             "href": "/privacy-policy",
             "icon": "",
             "label": "Privacy",
-            "description": ""
-          },
-          {
-            "href": "/books",
-            "icon": "",
-            "label": "Books",
             "description": ""
           }
         ]
