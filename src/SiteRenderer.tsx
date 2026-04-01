@@ -929,6 +929,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 style={bgStyle || { background: 'linear-gradient(135deg, ' + (customColors?.primary || '#8B5CF6') + ', ' + (customColors?.secondary || customColors?.primary || '#7C3AED') + ')' }}>
                 <ScrollReveal animation="scale">
                   <div className="container mx-auto max-w-4xl text-center relative z-10">
+                    {section.image && <div className="mb-8 flex justify-center"><img src={section.image} alt={section.title || ''} className="rounded-xl max-h-[400px] w-full object-cover" loading="lazy" /></div>}
                     {!section.settings?.hideTitle && <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">{section.title}</h2>}
                     {section.body && <div className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: section.body }} />}
                     {(() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (
