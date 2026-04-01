@@ -1204,11 +1204,13 @@
     "logoLink": "/",
     "navItems": [
       {
+        "id": "nav-1",
         "href": "/hero",
         "type": "section",
         "label": "Home"
       },
       {
+        "id": "nav-2",
         "href": "#",
         "type": "external",
         "label": "About",
@@ -1232,6 +1234,7 @@
         ]
       },
       {
+        "id": "nav-3",
         "href": "#",
         "type": "external",
         "label": "Fundraising",
@@ -1255,6 +1258,7 @@
         ]
       },
       {
+        "id": "nav-4",
         "href": "#",
         "type": "external",
         "label": "Missions",
@@ -1353,11 +1357,7 @@
         ]
       },
       {
-        "href": "/contact",
-        "type": "page",
-        "label": "Contact"
-      },
-      {
+        "id": "nav-6",
         "href": "#",
         "type": "external",
         "label": "Media",
@@ -1372,6 +1372,26 @@
             "href": "/the-duncan-hospital-experience",
             "type": "page",
             "label": "The Duncan Hospital Experience"
+          }
+        ]
+      },
+      {
+        "id": "mega-1773326229578",
+        "href": "/privacy-policy",
+        "type": "simple-dropdown",
+        "label": "Quick Links",
+        "children": [
+          {
+            "href": "/terms",
+            "icon": "",
+            "label": "Terms",
+            "description": ""
+          },
+          {
+            "href": "/privacy-policy",
+            "icon": "",
+            "label": "Privacy",
+            "description": ""
           }
         ]
       }
