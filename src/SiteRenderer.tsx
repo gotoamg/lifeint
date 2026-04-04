@@ -697,7 +697,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
       {showHero && hero && <MultiSlideHero heroData={hero} />}
 
       {/* Page Title for non-home pages */}
-      {!showHero && activePage && (
+      {!showHero && activePage && !activePage.hideTitle && (
         <section className="py-10 sm:py-12 px-4 sm:px-6 bg-muted/30" style={accentBgStyle}>
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{activePage.title}</h1>
