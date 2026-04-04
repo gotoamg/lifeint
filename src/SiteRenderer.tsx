@@ -1229,7 +1229,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 ) : null;
               })()}
               <div className="lg:col-span-4">
-                <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Get In Touch</h4>
+                <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{footer?.contactSectionTitle || 'Get In Touch'}</h4>
                 <div className="space-y-4">
                   <a href={'mailto:' + (footer?.contactInfo?.email || 'contact@example.com')} className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><Mail className="w-4 h-4" /></div>
