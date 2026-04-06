@@ -3,7 +3,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
   Star, Quote, ArrowRight, Check, Menu, X, Loader2, Users,
   Facebook, Instagram, Twitter, Linkedin, Youtube, Github, Globe, ExternalLink,
-  Mail, Phone, MapPin, ChevronDown, ChevronRight, ZoomIn, icons, type LucideIcon
+  Mail, Phone, MapPin, ChevronDown, ChevronLeft, ChevronRight, ZoomIn, icons, type LucideIcon
 } from 'lucide-react';
 import { cn } from './lib/utils';
 
@@ -379,8 +379,8 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
       </div>
       {navigation.showArrows && !isSingle && (
         <>
-          <button onClick={prev} className="absolute top-1/2 -translate-y-1/2 left-0 mx-4 z-20 bg-black/20 hover:bg-black/40 text-white h-12 w-12 rounded-full flex items-center justify-center"><ChevronDown className="h-8 w-8 -rotate-90" /></button>
-          <button onClick={next} className="absolute top-1/2 -translate-y-1/2 right-0 mx-4 z-20 bg-black/20 hover:bg-black/40 text-white h-12 w-12 rounded-full flex items-center justify-center"><ChevronDown className="h-8 w-8 rotate-90" /></button>
+          <button onClick={prev} className="absolute top-1/2 -translate-y-1/2 left-0 mx-4 z-20 bg-black/20 hover:bg-black/40 text-white h-12 w-12 rounded-full flex items-center justify-center"><ChevronLeft className="h-8 w-8" /></button>
+          <button onClick={next} className="absolute top-1/2 -translate-y-1/2 right-0 mx-4 z-20 bg-black/20 hover:bg-black/40 text-white h-12 w-12 rounded-full flex items-center justify-center"><ChevronRight className="h-8 w-8" /></button>
         </>
       )}
       {navigation.showDots && !isSingle && (
@@ -443,6 +443,10 @@ const slugify = (text?: string): string => { if (!text) return ''; return text.t
 // ===== MAIN SiteRenderer =====
 export function SiteRenderer({ content, businessName }: { content: any; businessName: string }) {
   const { header, footer, hero, sections: rawSections, pages, globalStyles } = content;
+  const footerEmail = footer?.contactInfo?.email?.trim();
+  const footerPhone = footer?.contactInfo?.phone?.trim();
+  const hasVisibleFooterEmail = Boolean(footerEmail && footerEmail.toLowerCase() !== 'contact@example.com');
+  const hasVisibleFooterPhone = Boolean(footerPhone && footerPhone !== '(555) 123-4567');
   const defaultHeaderSettings = { isSticky: true, stickyStyle: 'always', height: 'normal', background: { type: 'solid', color: '#1F2937', opacity: 95 }, scrolledBackground: { type: 'blur', color: '#1F2937', blurAmount: 12, opacity: 95 }, borderBottom: true, shadow: 'lg', scrollTransition: true, animationDuration: 300, mobileBreakpoint: 'lg', hoverEffect: 'color', linkWeight: 'medium', linkStyle: 'normal' };
   const headerSettings = { ...defaultHeaderSettings, ...header?.headerSettings, ...header?.settings };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -450,7 +454,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [lastScrollY, setLastScrollY] = useState(0);
   const [currentPage, setCurrentPage] = useState(() => {
-    const path = window.location.pathname.slice(1);
+    let path = window.location.pathname.replace(/^\/+|\/$/, '').trim().toLowerCase();
     return path || '';
   });
 
@@ -459,7 +463,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
 
   const { activeSections, showHero, activePage } = useMemo(() => {
     if (pages && pages.length > 0) {
-      const page = pages.find((p: any) => p.slug === currentPage) || pages.find((p: any) => p.isHome);
+      const normalizedCurrent = (currentPage || '').trim().toLowerCase();
+      const page = pages.find((p: any) => (p.slug || '').trim().toLowerCase() === normalizedCurrent) || pages.find((p: any) => p.isHome);
       if (page) return { activePage: page, activeSections: page.sections || [], showHero: page.isHome };
     }
     return { activePage: null, activeSections: rawSections || [], showHero: true };
@@ -511,7 +516,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false);
   };
 
-  useEffect(() => { const onPop = () => { const path = window.location.pathname.slice(1); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
+  useEffect(() => { const onPop = () => { const path = window.location.pathname.replace(/^/+|/$/, '').trim().toLowerCase(); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
 
   // Dynamic per-page SEO: update document title + meta tags when page changes
   useEffect(() => {
@@ -712,7 +717,19 @@ export function SiteRenderer({ content, businessName }: { content: any; business
         const textClass = isImageBg ? 'text-white' : '';
         const sectionId = section.settings?.anchorId || section.anchorId || slugify(section.title) || (section.type + '-' + index);
 
-
+        // AI-custom sections: render saved customHtml directly via iframe (matches platform preview)
+        if (section.settings?.layoutVariant === 'ai-custom' && section.settings?.customHtml) {
+          const iframeId = 'ai-section-' + section.type + '-' + index;
+          const resizeScript = '<script>function _getH(){var b=document.body,d=document.documentElement,h=Math.max(b.scrollHeight||0,b.offsetHeight||0,d.scrollHeight||0,d.offsetHeight||0);var els=document.body.querySelectorAll("*");for(var i=0;i<els.length;i++){var r=els[i].getBoundingClientRect();var bot=r.bottom;if(bot>h)h=Math.ceil(bot)}return Math.ceil(h)}function _postH(){window.parent.postMessage({type:"iframe-resize",height:_getH(),id:"' + iframeId + '"},"*")}window.addEventListener("load",function(){_postH();setTimeout(_postH,500);setTimeout(_postH,1500)});new ResizeObserver(_postH).observe(document.body);document.addEventListener("DOMContentLoaded",_postH)<\/script>';
+          return (
+            <section key={index} id={sectionId}>
+              <iframe id={iframeId}
+                srcDoc={'<!DOCTYPE html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script src="https://cdn.tailwindcss.com"><\/script><style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;overflow-x:hidden}*{box-sizing:border-box}img{max-width:100%;height:auto}</style></head><body>' + section.settings.customHtml + resizeScript + '</body></html>'}
+                className="w-full border-0" style={{ overflow: 'hidden', minHeight: '200px' }}
+                sandbox="allow-scripts allow-same-origin allow-popups" title={section.type + ' section'} scrolling="no" />
+            </section>
+          );
+        }
 
         switch (section.type) {
           case 'about': {
@@ -952,8 +969,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                   {section.body && <div className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: section.body }} />}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                     <div className="space-y-5 sm:space-y-6 order-1 lg:order-2">
-                      <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Email</h4><p className="text-muted-foreground text-sm sm:text-base">{footer?.contactInfo?.email || 'contact@example.com'}</p></div></div>
-                      <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Phone</h4><p className="text-muted-foreground text-sm sm:text-base">{footer?.contactInfo?.phone || ''}</p></div></div>
+                      {hasVisibleFooterEmail && <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Email</h4><p className="text-muted-foreground text-sm sm:text-base">{footerEmail}</p></div></div>}
+                      {hasVisibleFooterPhone && <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Phone</h4><p className="text-muted-foreground text-sm sm:text-base">{footerPhone}</p></div></div>}
                       <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Location</h4><p className="text-muted-foreground text-sm sm:text-base">{[footer?.contactInfo?.address, footer?.contactInfo?.city].filter(Boolean).join(', ') || ''}</p></div></div>
                     </div>
                     <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm order-2 lg:order-1">
@@ -1108,7 +1125,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                       {tabs[activeTab] && (
                         <div className="p-4 sm:p-6 bg-card border border-border rounded-xl">
                           {tabs[activeTab].title && <h3 className="text-xl font-semibold mb-3">{tabs[activeTab].title}</h3>}
-                          {tabs[activeTab].body && <div className="text-muted-foreground prose max-w-none" dangerouslySetInnerHTML={{ __html: tabs[activeTab].body }} />}
+                          {(tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description) && <div className="text-muted-foreground prose max-w-none" dangerouslySetInnerHTML={{ __html: tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description }} />}
                           {tabs[activeTab].image && <img src={tabs[activeTab].image} alt={tabs[activeTab].title || ''} className="rounded-lg mt-4 w-full object-cover" />}
                         </div>
                       )}
@@ -1231,14 +1248,14 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               <div className="lg:col-span-4">
                 <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{footer?.contactSectionTitle || 'Get In Touch'}</h4>
                 <div className="space-y-4">
-                  <a href={'mailto:' + (footer?.contactInfo?.email || 'contact@example.com')} className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><Mail className="w-4 h-4" /></div>
-                    <div><p className="text-xs text-gray-500 mb-0.5">Email Us</p><p className="text-sm group-hover:text-white transition-colors">{footer?.contactInfo?.email || 'contact@example.com'}</p></div>
-                  </a>
-                  <a href={'tel:' + (footer?.contactInfo?.phone || '(555) 123-4567').replace(/[^0-9+]/g, '')} className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><Phone className="w-4 h-4" /></div>
-                    <div><p className="text-xs text-gray-500 mb-0.5">Call Us</p><p className="text-sm group-hover:text-white transition-colors">{footer?.contactInfo?.phone || '(555) 123-4567'}</p></div>
-                  </a>
+                  {hasVisibleFooterEmail && <a href={'mailto:' + footerEmail} className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
+                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><Mail className="w-4 h-4" /></div>
+                     <div><p className="text-xs text-gray-500 mb-0.5">Email Us</p><p className="text-sm group-hover:text-white transition-colors">{footerEmail}</p></div>
+                   </a>}
+                   {hasVisibleFooterPhone && <a href={'tel:' + footerPhone.replace(/[^0-9+]/g, '')} className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
+                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><Phone className="w-4 h-4" /></div>
+                     <div><p className="text-xs text-gray-500 mb-0.5">Call Us</p><p className="text-sm group-hover:text-white transition-colors">{footerPhone}</p></div>
+                   </a>}
                   {(footer?.contactInfo?.address || footer?.contactInfo?.city) && (
                     <div className="flex items-start gap-3 text-gray-400">
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: customColors?.primary ? customColors.primary + '20' : 'rgba(255,255,255,0.1)' }}><MapPin className="w-4 h-4" /></div>
