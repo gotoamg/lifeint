@@ -1114,9 +1114,15 @@
           "images": [
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775464476776_kvlrgle7.png?v=1775464478861",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775464518487_ouyzk096.jpg?v=1775464519055",
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop"
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775465301837_r76ct5at.jpg?v=1775465303413",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775465550355_u4rxgo14.jpg?v=1775465552288"
           ],
           "settings": {
+            "fullWidth": true,
+            "background": {
+              "type": "color",
+              "value": "#F8FAFC"
+            },
             "paddingTop": "none"
           }
         }
