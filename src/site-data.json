@@ -1128,8 +1128,9 @@
         }
       ],
       "createdAt": "2026-03-26T03:55:49.405Z",
+      "hideTitle": true,
       "isVisible": true,
-      "updatedAt": "2026-03-26T03:55:49.405Z"
+      "updatedAt": "2026-04-08T20:29:06.891Z"
     },
     {
       "id": "page-1774505396049",
@@ -1281,7 +1282,7 @@
           {
             "href": "/giving",
             "type": "page",
-            "label": "Giving"
+            "label": "How to Give?"
           },
           {
             "href": "#",
