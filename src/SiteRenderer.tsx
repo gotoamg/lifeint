@@ -454,7 +454,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [lastScrollY, setLastScrollY] = useState(0);
   const [currentPage, setCurrentPage] = useState(() => {
-    let path = window.location.pathname.replace(/^\/+|\/$/, '').trim().toLowerCase();
+    let path = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '').trim().toLowerCase();
     return path || '';
   });
 
@@ -516,7 +516,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false);
   };
 
-  useEffect(() => { const onPop = () => { const path = window.location.pathname.replace(/^/+|/$/, '').trim().toLowerCase(); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
+  useEffect(() => { const onPop = () => { let path = window.location.pathname; path = path.replace(/^\/+/, '').replace(/\/+$/, '').trim().toLowerCase(); setCurrentPage(path || ''); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
 
   // Dynamic per-page SEO: update document title + meta tags when page changes
   useEffect(() => {
