@@ -875,8 +875,19 @@
           "title": "Reaching the unreached",
           "settings": {
             "isVisible": true,
-            "layoutVariant": "about-image-left"
+            "layoutVariant": "about-image-left",
+            "paddingBottom": "medium"
           }
+        },
+        {
+          "body": "<br>",
+          "type": "video",
+          "title": "A Calling to Cambodia - Dr. Dan Smith",
+          "settings": {
+            "paddingTop": "none",
+            "paddingBottom": "none"
+          },
+          "videoUrl": "https://www.youtube.com/embed/H7IgFA90CsI"
         },
         {
           "type": "gallery",
@@ -900,7 +911,7 @@
         {
           "body": "https://www.youtube.com/embed/qWb3cIgjgKc",
           "type": "video",
-          "title": "Watch Our Story",
+          "title": "REACH Cambodia 2022",
           "settings": {
             "isVisible": true
           },
@@ -1351,6 +1362,11 @@
         "label": "Media",
         "newTab": true,
         "children": [
+          {
+            "href": "/lpn-life-prayer-network",
+            "type": "page",
+            "label": "LPN (Life Prayer Network)"
+          },
           {
             "href": "#",
             "type": "external",
