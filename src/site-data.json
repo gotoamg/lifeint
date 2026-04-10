@@ -1089,7 +1089,8 @@
           "title": "The Duncan Hospital Experience",
           "settings": {
             "isVisible": true,
-            "layoutVariant": "blank-text-image"
+            "layoutVariant": "blank-text-image",
+            "paddingBottom": "none"
           }
         },
         {
@@ -1107,7 +1108,8 @@
               "type": "color",
               "value": "#F8FAFC"
             },
-            "paddingTop": "none"
+            "paddingTop": "none",
+            "paddingBottom": "none"
           }
         }
       ],
