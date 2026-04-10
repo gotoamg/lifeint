@@ -296,7 +296,9 @@
           "title": "The Mission of LIFE is to share the gospel of Jesus Christ through Healthcare",
           "settings": {
             "fullWidth": true,
-            "isVisible": true
+            "isVisible": true,
+            "paddingTop": "none",
+            "paddingBottom": "none"
           }
         },
         {
@@ -319,9 +321,9 @@
           "settings": {
             "fullWidth": true,
             "isVisible": true,
-            "paddingTop": "small",
+            "paddingTop": "none",
             "layoutVariant": "gallery-carousel",
-            "paddingBottom": "small"
+            "paddingBottom": "none"
           }
         },
         {
@@ -338,7 +340,7 @@
               "type": "color",
               "value": "#F1F5F9"
             },
-            "paddingTop": "small",
+            "paddingTop": "none",
             "paddingBottom": "small"
           }
         }
@@ -1126,6 +1128,27 @@
       "createdAt": "2026-03-26T06:09:56.049Z",
       "isVisible": true,
       "updatedAt": "2026-03-26T06:09:56.049Z"
+    },
+    {
+      "id": "page-1775833157980",
+      "slug": "lpn-life-prayer-network",
+      "title": "LPN (Life Prayer Network)",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<font size=\"3\" color=\"#000000\">Life Prayer Network is a community of Christian Health care professionals meeting for corporate prayer, to address issues affecting our nation, from health to non health needs, with a desire to see Gods continuing favor impact our Christian communities in rural and urban cities in America and expand its reach to the ends of the earth with an emphasis on the unreached within the Indian subcontinent.</font><div><font size=\"3\" color=\"#3b82f6\"><b style=\"\"><br></b></font></div><div><font size=\"3\" color=\"#3b82f6\"><b style=\"\">We meet Thursday night 10PM EST/9PM CST </b></font></div>",
+          "type": "blank",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775833520631_rpoogjin.jpg?v=1775833521665",
+          "title": "Life Prayer Network",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "blank-text-image"
+          }
+        }
+      ],
+      "createdAt": "2026-04-10T14:59:17.980Z",
+      "isVisible": true,
+      "updatedAt": "2026-04-10T14:59:17.980Z"
     }
   ],
   "footer": {
