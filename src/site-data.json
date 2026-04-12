@@ -880,16 +880,6 @@
           }
         },
         {
-          "body": "<br>",
-          "type": "video",
-          "title": "A Calling to Cambodia - Dr. Dan Smith",
-          "settings": {
-            "paddingTop": "none",
-            "paddingBottom": "none"
-          },
-          "videoUrl": "https://www.youtube.com/embed/H7IgFA90CsI"
-        },
-        {
           "type": "gallery",
           "title": "Gallery",
           "images": [
@@ -974,8 +964,18 @@
           "settings": {
             "hideTitle": true,
             "isVisible": true,
-            "layoutVariant": "about-image-left"
+            "layoutVariant": "about-image-left",
+            "paddingBottom": "none"
           }
+        },
+        {
+          "body": "<br>",
+          "type": "video",
+          "title": "A calling to Cambodia - Dr. Dan Smith MD",
+          "settings": {
+            "paddingTop": "none"
+          },
+          "videoUrl": "https://www.youtube.com/embed/H7IgFA90CsI"
         }
       ],
       "createdAt": "2026-03-06T18:19:41.772Z",
@@ -1269,12 +1269,6 @@
           {
             "href": "#",
             "type": "external",
-            "label": "Get Involved!",
-            "newTab": true
-          },
-          {
-            "href": "#",
-            "type": "external",
             "label": "Strategic Collaboration",
             "newTab": true,
             "children": [
@@ -1355,6 +1349,12 @@
                 "label": "REACH India - 2023"
               }
             ]
+          },
+          {
+            "href": "#",
+            "type": "external",
+            "label": "Get Involved!",
+            "newTab": true
           }
         ]
       },
@@ -1364,11 +1364,6 @@
         "label": "Media",
         "newTab": true,
         "children": [
-          {
-            "href": "/lpn-life-prayer-network",
-            "type": "page",
-            "label": "LPN (Life Prayer Network)"
-          },
           {
             "href": "#",
             "type": "external",
@@ -1386,6 +1381,12 @@
             "href": "/books",
             "type": "page",
             "label": "Books"
+          },
+          {
+            "href": "https://youtube.com/@lifeint-org?si=V7F1aPyAzgCMBN-R",
+            "type": "external",
+            "label": "Channel",
+            "newTab": true
           }
         ]
       },
@@ -1396,9 +1397,9 @@
         "newTab": true,
         "children": [
           {
-            "href": "/giving",
-            "type": "page",
-            "label": "How to Give?"
+            "href": "#",
+            "type": "section",
+            "label": "Life Prayer Network (LPN)"
           },
           {
             "href": "#",
@@ -1417,6 +1418,11 @@
                 "label": "The Leprosy Mission"
               }
             ]
+          },
+          {
+            "href": "/giving",
+            "type": "page",
+            "label": "How to Give?"
           }
         ]
       }
