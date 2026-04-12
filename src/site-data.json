@@ -1397,8 +1397,8 @@
         "newTab": true,
         "children": [
           {
-            "href": "#",
-            "type": "section",
+            "href": "/lpn-life-prayer-network",
+            "type": "page",
             "label": "Life Prayer Network (LPN)"
           },
           {
