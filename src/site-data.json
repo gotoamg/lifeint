@@ -1162,6 +1162,102 @@
       "createdAt": "2026-04-10T14:59:17.980Z",
       "isVisible": true,
       "updatedAt": "2026-04-12T19:00:24.794Z"
+    },
+    {
+      "id": "page-1776248979658",
+      "seo": {
+        "metaTitle": "Blog & Podcast | {siteName}",
+        "metaDescription": "Read articles and listen to podcast episodes from Our Site."
+      },
+      "slug": "mission-kenya",
+      "title": "Mission Kenya",
+      "isHome": false,
+      "sections": [
+        {
+          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and</font></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\">residents passionate about service, faith, and global health.</font></span></div>",
+          "type": "blank",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251563707_wi9x92z4.jpg?v=1776251564157",
+          "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "blank-text-image",
+            "paddingBottom": "none"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Team Behind The Mission",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251427580_u4kaqr7b.jpg?v=1776251428154",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251457273_cof9eyvh.jpg?v=1776251458250",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251470850_1n4wg4kp.jpg?v=1776251470969",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251484425_cho945ja.jpg?v=1776251485455",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251514405_pj8fob48.jpg?v=1776251515125",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251536472_fsouuutk.jpg?v=1776251536538",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251548515_3xrcrwm6.jpg?v=1776251549605"
+          ],
+          "settings": {
+            "fullWidth": true,
+            "textAlign": "center",
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "paddingTop": "none",
+            "paddingBottom": "none"
+          }
+        },
+        {
+          "type": "features",
+          "items": [
+            {
+              "name": "Fully funded travel + accommodation",
+              "description": "<br>"
+            },
+            {
+              "name": "Hands-on exposure in orthopedic care",
+              "description": "<br>"
+            },
+            {
+              "name": "Mentorship under experienced physician",
+              "description": "<br>"
+            },
+            {
+              "name": "Faith-centered mission experience",
+              "description": "<br>"
+            }
+          ],
+          "title": "Key Highlights",
+          "settings": {
+            "fullWidth": false,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
+            "paddingTop": "none",
+            "columnLayout": "4",
+            "paddingBottom": "none"
+          }
+        },
+        {
+          "body": "",
+          "type": "blank",
+          "title": "",
+          "settings": {
+            "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "customHtml": "<div class=\"antialiased text-[#0F172A] bg-[#FFFFFF]\">\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    \n    <section class=\"relative overflow-hidden py-24 md:py-32 lg:py-40\">\n        \n        <div class=\"absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10\">\n            <div class=\"absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-50 opacity-50 blur-[120px]\"></div>\n            <div class=\"absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-amber-50 opacity-50 blur-[120px]\"></div>\n        </div>\n\n        <div class=\"max-w-7xl mx-auto px-6 lg:px-8\">\n            <div class=\"flex flex-col items-center justify-center text-center\">\n                \n                \n                <div class=\"w-20 h-1.5 bg-[#3B82F6] rounded-full mb-12\"></div>\n\n                \n                <div class=\"flex flex-col sm:flex-row items-center gap-6 mt-8\">\n                    \n                    \n                    <a href=\"http://tenwekhospitalcollege.ac.ke/cohs/\" class=\"group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-[#3B82F6] rounded-2xl hover:bg-[#2563EB] hover:shadow-[0_20px_50px_rgba(59,130,246,0.3)] active:scale-95 overflow-hidden\">\n                        <span class=\"relative z-10 flex items-center gap-2 text-lg tracking-tight\">\n                            Apply now\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"w-5 h-5 transition-transform duration-300 group-hover:translate-x-1\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 7l5 5m0 0l-5 5m5-5H6\"></path>\n                            </svg>\n                        </span>\n                        <div class=\"absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700\"></div>\n                    </a>\n\n                    \n                    <a href=\"https://tenwekhosp.org/\" class=\"group inline-flex items-center justify-center px-10 py-5 font-bold text-[#0F172A] transition-all duration-300 bg-white border-2 border-[#64748B]/10 rounded-2xl hover:border-[#3B82F6] hover:text-[#3B82F6] active:scale-95 shadow-sm hover:shadow-xl\">\n                        <span class=\"text-lg tracking-tight\">Learn more</span>\n                    </a>\n\n                </div>\n\n                \n                <div class=\"mt-16 grid grid-cols-1 gap-y-4\">\n                    <p class=\"text-[#64748B] text-sm uppercase tracking-[0.2em] font-semibold\">Empowering Excellence in Healthcare</p>\n                </div>\n\n            </div>\n        </div>\n\n        \n        <div class=\"absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform rotate-180\">\n            <svg class=\"relative block w-full h-[60px]\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\">\n                <path d=\"M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z\" fill=\"#F8FAFC\"></path>\n            </svg>\n        </div>\n    </section>\n</div>",
+            "paddingTop": "none",
+            "layoutVariant": "ai-custom"
+          }
+        }
+      ],
+      "createdAt": "2026-04-15T10:29:39.658Z",
+      "isVisible": true,
+      "updatedAt": "2026-04-15T10:29:39.658Z"
     }
   ],
   "footer": {
