@@ -1410,6 +1410,11 @@
                 "href": "/cambodia",
                 "type": "page",
                 "label": "Cambodia"
+              },
+              {
+                "href": "/mission-kenya",
+                "type": "page",
+                "label": "Mission Kenya"
               }
             ]
           },
