@@ -1239,6 +1239,39 @@
           }
         },
         {
+          "body": "We help you achieve your goals",
+          "type": "about",
+          "title": "Welcome to Our Website",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "hero-minimal"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Get Started"
+        },
+        {
+          "body": "Contact us today.",
+          "type": "cta",
+          "title": "Ready to Get Started?",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "cta-split"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Contact Us"
+        },
+        {
+          "body": "Contact us today.",
+          "type": "cta",
+          "title": "Ready to Get Started?",
+          "settings": {
+            "isVisible": true,
+            "layoutVariant": "cta-centered"
+          },
+          "buttonLink": "#contact",
+          "buttonText": "Contact Us"
+        },
+        {
           "body": "",
           "type": "blank",
           "title": "",
@@ -1304,7 +1337,7 @@
     "contactSectionTitle": "CONTACT"
   },
   "header": {
-    "logo": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/Untitled%20design%20(4)%20(1)%20(2).png",
+    "logo": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776455117787_z6t0s5j3.jpg?v=1776455119053",
     "height": "default",
     "topBar": {
       "email": "",
@@ -1609,7 +1642,7 @@
     ],
     "logoDimensions": {
       "width": "auto",
-      "height": 52,
+      "height": 90,
       "objectFit": "contain"
     },
     "__mergedNavItems": [
