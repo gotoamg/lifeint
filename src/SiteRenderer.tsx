@@ -560,6 +560,15 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const navLinkStyle = { fontSize: resolvedFontSize, fontFamily: navFontFamily } as React.CSSProperties;
   const isCenteredLayout = headerSettings.alignment === 'center' || headerSettings.layout === 'centered';
 
+  // CTA visibility per breakpoint (matches editor's headerSettings.ctaHideOn)
+  const ctaHideOnArr = Array.isArray(headerSettings?.ctaHideOn) ? headerSettings.ctaHideOn : [];
+  const ctaHideClass = [
+    ctaHideOnArr.includes('mobile')  && 'max-md:!hidden',
+    ctaHideOnArr.includes('tablet')  && 'max-lg:md:!hidden',
+    ctaHideOnArr.includes('desktop') && 'lg:!hidden',
+  ].filter(Boolean).join(' ');
+  const ctaHiddenOnMobile = ctaHideOnArr.includes('mobile');
+
   return (
     <div className="min-h-screen site-theme-scope" style={scopedThemeStyles}>
       {/* Header */}
@@ -620,7 +629,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 ) : null;
               })()}
             </div>
-            {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="order-4"><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px] order-4">{header.ctaButton.text}</Button>)}
+            {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-4', ctaHideClass)}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className={cn('font-semibold min-h-[40px] order-4', ctaHideClass)}>{header.ctaButton.text}</Button>)}
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
@@ -691,7 +700,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 ) : null;
               })()}
             </nav>
-            {header?.ctaButton && headerSettings?.showCtaButton !== false && (
+            {header?.ctaButton && headerSettings?.showCtaButton !== false && !ctaHiddenOnMobile && (
               <div className="p-6 border-t border-white/10">{header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button></a> : <Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button>}</div>
             )}
           </div>
@@ -1197,7 +1206,14 @@ export function SiteRenderer({ content, businessName }: { content: any; business
           <div className="py-12 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-4 space-y-5">
-                {header?.logo ? <div className="mb-4"><img src={header.logo} alt={businessName} className="h-12 sm:h-14 w-auto object-contain brightness-0 invert" /></div> : <h3 className="text-xl sm:text-2xl font-bold">{footer?.companyName || businessName}</h3>}
+                {(() => {
+                  const fLogo = footer?.logo || header?.logo;
+                  const fHeight = footer?.logoHeight || 56;
+                  const fInvert = footer?.logoInvert !== false;
+                  return fLogo
+                    ? <div className="mb-4"><img src={fLogo} alt={businessName} style={{ height: fHeight + 'px', width: 'auto', objectFit: 'contain' }} className={fInvert ? 'brightness-0 invert' : ''} /></div>
+                    : <h3 className="text-xl sm:text-2xl font-bold">{footer?.companyName || businessName}</h3>;
+                })()}
                 {footer?.description && <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-sm">{footer.description}</p>}
                 {footer?.socialLinks && footer.socialLinks.length > 0 && (
                   <div className="flex gap-3 pt-2">
