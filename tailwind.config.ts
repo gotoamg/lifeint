@@ -3,6 +3,13 @@ export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  safelist: [
+    "max-md:!hidden",
+    "max-lg:md:!hidden",
+    "lg:!hidden",
+    "!hidden",
+    "hidden",
+  ],
   theme: {
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
