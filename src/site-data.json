@@ -1569,9 +1569,7 @@
       "showLogo": true,
       "alignment": "center",
       "ctaHideOn": [
-        "mobile",
-        "desktop",
-        "tablet"
+        "mobile"
       ],
       "fullWidth": true,
       "linkStyle": "uppercase",
