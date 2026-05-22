@@ -29,12 +29,92 @@
           "title": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
+          "titleStyles": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "color": "#e0c200"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "color": "#e0c200"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "color": "#e0c200"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "color": "#e0c200"
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "color": "#e0c200"
+            },
+            {
+              "color": "#e0c200"
+            },
+            {
+              "color": "#e0c200"
+            },
+            {
+              "color": "#e0c200"
+            }
+          ],
           "overlayColor": "#000000",
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
           "backgroundPosition": {
-            "x": 42,
-            "y": 24
+            "x": 55,
+            "y": 46
           }
         },
         {
@@ -1604,19 +1684,23 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
+      "logoAlignMobile": 49,
       "mobileMenuStyle": "dropdown",
+      "logoAlignDesktop": 0,
       "mobileBreakpoint": "lg",
       "scrollTransition": true,
       "submenuLinkStyle": "uppercase",
       "animationDuration": 250,
       "dropdownTextColor": "#E5E7EB",
       "submenuFontFamily": "Cinzel",
+      "logoPositionMobile": "center",
       "scrolledBackground": {
         "type": "solid",
         "color": "#1F2937",
         "opacity": 95,
         "blurAmount": 12
-      }
+      },
+      "logoPositionDesktop": "left"
     },
     "ctaButton": {
       "href": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
