@@ -43,6 +43,46 @@ function FooterVisitorCounter({ textColor }: { textColor?: string }) {
 const PLATFORM_ROUTES = ['newsletter', 'blog'];
 function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
 
+// ===== Per-letter styled text (color + fontFamily) =====
+function renderStyledText(text: string, styles?: any[]): any {
+  if (!text) return text;
+  const hasAny = Array.isArray(styles) && styles.some((s: any) => s && (s.color || s.fontFamily));
+  if (!hasAny) return text;
+  return text.split('').map((ch: string, i: number) => {
+    const s = styles && styles[i];
+    if (!s || (!s.color && !s.fontFamily)) return ch;
+    return React.createElement('span', { key: i, style: { color: s.color, fontFamily: s.fontFamily } }, ch);
+  });
+}
+
+// Load Google Fonts for unique families referenced by per-letter styles
+function useLetterFontsFromSlides(slides: any[]) {
+  useEffect(() => {
+    if (typeof document === 'undefined' || !Array.isArray(slides)) return;
+    const all: any[] = [];
+    for (const s of slides) {
+      if (Array.isArray(s?.titleStyles)) all.push.apply(all, s.titleStyles);
+      if (Array.isArray(s?.subtitleStyles)) all.push.apply(all, s.subtitleStyles);
+    }
+    const families = new Set<string>();
+    for (const ls of all) {
+      const ff = ls && ls.fontFamily;
+      if (!ff) continue;
+      const m = String(ff).match(/['"]?([^'",]+)['"]?/);
+      if (m && m[1]) families.add(m[1].trim());
+    }
+    families.forEach((family: string) => {
+      const id = 'letter-font-' + family.replace(/\s+/g, '-').toLowerCase();
+      if (document.getElementById(id)) return;
+      const link = document.createElement('link');
+      link.id = id;
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=' + family.replace(/ /g, '+') + ':wght@400;600;700&display=swap';
+      document.head.appendChild(link);
+    });
+  }, [slides]);
+}
+
 
 
 // ===== Inline Accordion (matches shadcn/ui) =====
@@ -309,6 +349,8 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  useLetterFontsFromSlides(slides);
+
   useEffect(() => {
     if (isSingle || !slider.autoplay) return;
     const t = setInterval(() => { if (!isPaused) setCurrentIndex(c => (c + 1) % slides.length); }, slider.autoplaySpeed || 5000);
@@ -362,8 +404,8 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
               <div className="absolute inset-0" style={overlayStyle} />
               <div className={cn('relative z-10 flex flex-col h-full px-4 sm:px-6 lg:px-8', alignH, alignV)} style={{ maxWidth: layout.maxWidth ? layout.maxWidth + 'px' : undefined, margin: '0 auto' }}>
                 <div className={cn('max-w-4xl', isActive ? 'animate-fade-in' : 'opacity-0 translate-y-4')} style={{ animationDelay: (animation.textAnimationDelay || 200) + 'ms', animationFillMode: 'both' }}>
-                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{slide.title}</h1>}
-                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{slide.subtitle}</p>}
+                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{renderStyledText(slide.title, slide.titleStyles)}</h1>}
+                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{renderStyledText(slide.subtitle, slide.subtitleStyles)}</p>}
                   {slide.description && <p className="hero-description text-white/80 mb-8 max-w-2xl">{slide.description}</p>}
                   {(slide.primaryButton || slide.secondaryButton) && (
                     <div className={cn('flex flex-wrap gap-4', layout.contentAlign === 'center' && 'justify-center', layout.contentAlign === 'right' && 'justify-end')}>
@@ -560,6 +602,16 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const navLinkStyle = { fontSize: resolvedFontSize, fontFamily: navFontFamily } as React.CSSProperties;
   const isCenteredLayout = headerSettings.alignment === 'center' || headerSettings.layout === 'centered';
 
+  // Continuous logo alignment (0=far left, 100=far right). Fallback to legacy enum.
+  const enumToAlign = (v?: string) => (v === 'right' ? 100 : v === 'center' ? 50 : 0);
+  const alignDesktop = typeof header?.logoAlignDesktop === 'number'
+    ? Math.max(0, Math.min(100, header.logoAlignDesktop))
+    : enumToAlign(headerSettings.logoPositionDesktop || headerSettings.logoPosition);
+  const alignMobile = typeof header?.logoAlignMobile === 'number'
+    ? Math.max(0, Math.min(100, header.logoAlignMobile))
+    : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
+  const showLogoSpacers = headerSettings.layout !== 'centered' && headerSettings.layout !== 'vertical';
+
   // CTA visibility per breakpoint (matches editor's headerSettings.ctaHideOn)
   const ctaHideOnArr = Array.isArray(headerSettings?.ctaHideOn) ? headerSettings.ctaHideOn : [];
   const ctaHideClass = [
@@ -584,13 +636,13 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               headerSettings.alignment === 'right' ? 'justify-end gap-8' :
               'justify-between'
             )}>
+            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-2')} style={{ flexGrow: alignMobile, flexBasis: 0, flexShrink: 1 }} />}
+            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-2')} style={{ flexGrow: alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
             <div className={cn(
               "flex-shrink-0 cursor-pointer",
               headerSettings.layout === 'centered' && 'order-[3] mx-auto',
               headerSettings.showLogo === false && 'hidden',
-              (headerSettings.logoPosition || 'left') === 'left' && 'order-2',
-              headerSettings.logoPosition === 'center' && 'order-[3] mx-auto',
-              headerSettings.logoPosition === 'right' && 'order-[5]',
+              'order-[3]',
             )} onClick={() => {
               const link = (header.logoLink || '').trim();
               if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
@@ -609,6 +661,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 <span className="text-xl sm:text-2xl font-bold truncate max-w-[180px] sm:max-w-none" style={{ color: 'inherit' }}>{header.logoText || businessName}</span>
               )}
             </div>
+            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4]')} style={{ flexGrow: 100 - alignMobile, flexBasis: 0, flexShrink: 1 }} />}
+            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-[4]')} style={{ flexGrow: 100 - alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
             <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
               {(() => {
                 const merged = mergedNav;
