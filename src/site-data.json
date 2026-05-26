@@ -1353,8 +1353,8 @@
           "settings": {
             "isVisible": true,
             "background": {
-              "type": "gradient",
-              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+              "type": "color",
+              "value": "#F1F5F9"
             },
             "layoutVariant": "about-image-left"
           }
