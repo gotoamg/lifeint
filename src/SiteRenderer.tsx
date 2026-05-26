@@ -604,12 +604,16 @@ export function SiteRenderer({ content, businessName }: { content: any; business
 
   // Continuous logo alignment (0=far left, 100=far right). Fallback to legacy enum.
   const enumToAlign = (v?: string) => (v === 'right' ? 100 : v === 'center' ? 50 : 0);
-  const alignDesktop = typeof header?.logoAlignDesktop === 'number'
-    ? Math.max(0, Math.min(100, header.logoAlignDesktop))
-    : enumToAlign(headerSettings.logoPositionDesktop || headerSettings.logoPosition);
-  const alignMobile = typeof header?.logoAlignMobile === 'number'
-    ? Math.max(0, Math.min(100, header.logoAlignMobile))
-    : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
+  const alignDesktop = typeof headerSettings.logoAlignDesktop === 'number'
+    ? Math.max(0, Math.min(100, headerSettings.logoAlignDesktop))
+    : typeof header?.logoAlignDesktop === 'number'
+      ? Math.max(0, Math.min(100, header.logoAlignDesktop))
+      : enumToAlign(headerSettings.logoPositionDesktop || headerSettings.logoPosition);
+  const alignMobile = typeof headerSettings.logoAlignMobile === 'number'
+    ? Math.max(0, Math.min(100, headerSettings.logoAlignMobile))
+    : typeof header?.logoAlignMobile === 'number'
+      ? Math.max(0, Math.min(100, header.logoAlignMobile))
+      : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
   const showLogoSpacers = headerSettings.layout !== 'centered' && headerSettings.layout !== 'vertical';
 
   // CTA visibility per breakpoint (matches editor's headerSettings.ctaHideOn)
