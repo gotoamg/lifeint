@@ -1391,24 +1391,24 @@
           "items": [
             {
               "name": "Fully funded travel + accommodation",
-              "description": "<br>"
+              "description": "<i>All essential trip and stay expenses covered.</i>"
             },
             {
               "name": "Hands-on exposure in orthopedic care",
-              "description": "<br>"
+              "description": "<i>Gain practical experience through real clinical settings.</i>"
             },
             {
               "name": "Mentorship under experienced physician",
-              "description": "<br>"
+              "description": "<i>Learn directly from skilled medical professionals.</i>"
             },
             {
               "name": "Faith-centered mission experience",
-              "description": "<br>"
+              "description": "<i>Serve communities while growing spiritually.</i>"
             }
           ],
           "title": "Key Highlights",
           "settings": {
-            "fullWidth": false,
+            "fullWidth": true,
             "background": {
               "type": "image",
               "value": "https://unsplash.com/photos/a-blurry-photo-of-a-plane-flying-in-the-sky-oPH_5xuMgQw",
