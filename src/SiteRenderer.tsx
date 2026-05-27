@@ -44,15 +44,36 @@ const PLATFORM_ROUTES = ['newsletter', 'blog'];
 function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
 
 // ===== Per-letter styled text (color + fontFamily) =====
-function renderStyledText(text: string, styles?: any[]): any {
+function renderStyledText(text: string, styles?: any[], logo?: { url?: string; alt?: string; heightEm?: number }): any {
   if (!text) return text;
-  const hasAny = Array.isArray(styles) && styles.some((s: any) => s && (s.color || s.fontFamily));
-  if (!hasAny) return text;
-  return text.split('').map((ch: string, i: number) => {
+  const TOKEN = '{logo}';
+  const hasToken = !!(logo && logo.url) && text.indexOf(TOKEN) !== -1;
+  const hasStyles = Array.isArray(styles) && styles.some((s: any) => s && (s.color || s.fontFamily));
+  if (!hasStyles && !hasToken) return text;
+  const out: any[] = [];
+  let i = 0;
+  let k = 0;
+  while (i < text.length) {
+    if (hasToken && text.substr(i, TOKEN.length) === TOKEN) {
+      out.push(React.createElement('img', {
+        key: 'logo-' + (k++),
+        src: logo!.url,
+        alt: (logo && logo.alt) || '',
+        style: { height: ((logo && logo.heightEm) || 1) + 'em', width: 'auto', display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1em' },
+      }));
+      i += TOKEN.length;
+      continue;
+    }
+    const ch = text[i];
     const s = styles && styles[i];
-    if (!s || (!s.color && !s.fontFamily)) return ch;
-    return React.createElement('span', { key: i, style: { color: s.color, fontFamily: s.fontFamily } }, ch);
-  });
+    if (s && (s.color || s.fontFamily)) {
+      out.push(React.createElement('span', { key: 'c-' + (k++), style: { color: s.color, fontFamily: s.fontFamily } }, ch));
+    } else {
+      out.push(ch);
+    }
+    i++;
+  }
+  return out;
 }
 
 // Load Google Fonts for unique families referenced by per-letter styles
@@ -404,8 +425,8 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
               <div className="absolute inset-0" style={overlayStyle} />
               <div className={cn('relative z-10 flex flex-col h-full px-4 sm:px-6 lg:px-8', alignH, alignV)} style={{ maxWidth: layout.maxWidth ? layout.maxWidth + 'px' : undefined, margin: '0 auto' }}>
                 <div className={cn('max-w-4xl', isActive ? 'animate-fade-in' : 'opacity-0 translate-y-4')} style={{ animationDelay: (animation.textAnimationDelay || 200) + 'ms', animationFillMode: 'both' }}>
-                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{renderStyledText(slide.title, slide.titleStyles)}</h1>}
-                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{renderStyledText(slide.subtitle, slide.subtitleStyles)}</p>}
+                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{renderStyledText(slide.title, slide.titleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight })}</h1>}
+                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{renderStyledText(slide.subtitle, slide.subtitleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight })}</p>}
                   {slide.description && <p className="hero-description text-white/80 mb-8 max-w-2xl">{slide.description}</p>}
                   {(slide.primaryButton || slide.secondaryButton) && (
                     <div className={cn('flex flex-wrap gap-4', layout.contentAlign === 'center' && 'justify-center', layout.contentAlign === 'right' && 'justify-end')}>

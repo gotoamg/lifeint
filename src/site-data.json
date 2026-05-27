@@ -26,7 +26,7 @@
       "slides": [
         {
           "id": "slide-1769758870838-clin69h9v",
-          "title": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
+          "title": "Welcome to Luke's International Fellowship & Enrichment - {logo}",
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
           "titleStyles": [
@@ -199,14 +199,17 @@
             },
             {
               "color": "#ffffff"
-            }
+            },
+            {},
+            {}
           ],
           "overlayColor": "#000000",
+          "inlineLogoUrl": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/8d899164-196e-4bcc-8b6f-7a5b62b61fc8/1769755449367/logo_1776823688878_2e9ke96x.jpg",
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
           "backgroundPosition": {
-            "x": 50,
-            "y": 47
+            "x": 44,
+            "y": 53
           }
         },
         {
@@ -270,7 +273,7 @@
         "preloadFirstSlide": true
       }
     },
-    "heading": "Welcome to Luke's International Fellowship & Enrichment - LIFE",
+    "heading": "Welcome to Luke's International Fellowship & Enrichment - {logo}",
     "heroImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
     "heroImages": [
       "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
