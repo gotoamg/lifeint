@@ -1350,17 +1350,14 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<font color=\"#000000\" size=\"3\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</font>",
+          "body": "<div style=\"text-align: center;\"><p class=\"MsoNormal\"><font color=\"#000000\"><font size=\"5\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</font><font size=\"3\"><o:p></o:p></font></font></p><font size=\"3\" color=\"#000000\">\n</font>\n</div>",
           "type": "about",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776254851329_q90ij7df.jpg?v=1776254852368",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779910159815_kkuzkpx5.jpg?v=1779910159743",
           "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
           "settings": {
+            "fullWidth": true,
             "isVisible": true,
-            "background": {
-              "type": "color",
-              "value": "#F1F5F9"
-            },
-            "layoutVariant": "about-image-left"
+            "layoutVariant": "about-fullwidth"
           }
         },
         {
@@ -1373,7 +1370,8 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251484425_cho945ja.jpg?v=1776251485455",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251514405_pj8fob48.jpg?v=1776251515125",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251536472_fsouuutk.jpg?v=1776251536538",
-            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251548515_3xrcrwm6.jpg?v=1776251549605"
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1776251548515_3xrcrwm6.jpg?v=1776251549605",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779910451144_rxwjhddx.jpg?v=1779910451423"
           ],
           "settings": {
             "fullWidth": true,
