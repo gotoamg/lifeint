@@ -1357,7 +1357,9 @@
           "settings": {
             "fullWidth": true,
             "isVisible": true,
-            "layoutVariant": "about-fullwidth"
+            "paddingTop": "none",
+            "layoutVariant": "about-fullwidth",
+            "paddingBottom": "none"
           }
         },
         {
