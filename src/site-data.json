@@ -1408,15 +1408,15 @@
           ],
           "title": "Key Highlights",
           "settings": {
-            "fullWidth": true,
+            "gap": 6,
+            "fullWidth": false,
+            "hideTitle": true,
             "background": {
-              "type": "image",
-              "value": "https://unsplash.com/photos/a-blurry-photo-of-a-plane-flying-in-the-sky-oPH_5xuMgQw",
-              "overlay": "rgba(0,0,0,0.35)",
-              "overlayOpacity": 35
+              "type": "color",
+              "value": "#475569"
             },
             "paddingTop": "none",
-            "columnLayout": "4",
+            "columnLayout": "2",
             "paddingBottom": "none"
           }
         },
