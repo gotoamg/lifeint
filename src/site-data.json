@@ -1780,7 +1780,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 50,
+      "logoAlignMobile": 74,
       "mobileMenuStyle": "dropdown",
       "logoAlignDesktop": 0,
       "mobileBreakpoint": "lg",
