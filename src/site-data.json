@@ -31,161 +31,161 @@
           "description": "",
           "titleStyles": [
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
-            },
-            {},
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {},
             {
-              "color": "#ffffff"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {},
             {
               "color": "#ffffff"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
-            },
-            {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {},
             {
               "color": "#ffffff"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
-            {},
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
             },
             {},
             {
               "color": "#ffffff"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
             },
             {},
             {
-              "color": "#CD7F32"
+              "color": "#8E5F39"
+            },
+            {},
+            {
+              "color": "#ffffff"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {
+              "color": "#8E5F39"
+            },
+            {},
+            {
+              "color": "#8E5F39"
             },
             {},
             {
@@ -204,12 +204,13 @@
             {}
           ],
           "overlayColor": "#000000",
-          "inlineLogoUrl": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/8d899164-196e-4bcc-8b6f-7a5b62b61fc8/1769755449367/logo_1776823688878_2e9ke96x.jpg",
+          "inlineLogoUrl": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779896667700_bmp9r9il.png?v=1779896668430",
           "overlayOpacity": 50,
           "backgroundImage": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop",
+          "inlineLogoHeight": 0.9,
           "backgroundPosition": {
             "x": 44,
-            "y": 53
+            "y": 55
           }
         },
         {
