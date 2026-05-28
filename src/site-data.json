@@ -26,7 +26,7 @@
       "slides": [
         {
           "id": "slide-1769758870838-clin69h9v",
-          "title": "Welcome to Luke's International Fellowship & Enrichment - {logo}",
+          "title": "Welcome to Luke's International Fellowship & Enrichment\n{logo}",
           "subtitle": "Serving Christ Through Healthcare",
           "description": "",
           "titleStyles": [
@@ -197,20 +197,20 @@
             {
               "color": "#ffffff"
             },
-            {
-              "color": "#ffffff"
-            },
-            {},
             {}
           ],
           "overlayColor": "#000000",
           "inlineLogoUrl": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779896667700_bmp9r9il.png?v=1779896668430",
           "overlayOpacity": 65,
+          "titleLineAlign": [
+            "inherit",
+            "center"
+          ],
           "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779909831720_llpevhcu.jpg?v=1779909832234",
           "inlineLogoHeight": 0.9,
           "backgroundPosition": {
-            "x": 45,
-            "y": 56
+            "x": 48,
+            "y": 47
           }
         },
         {
@@ -274,7 +274,7 @@
         "preloadFirstSlide": true
       }
     },
-    "heading": "Welcome to Luke's International Fellowship & Enrichment - {logo}",
+    "heading": "Welcome to Luke's International Fellowship & Enrichment\n{logo}",
     "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779909831720_llpevhcu.jpg?v=1779909832234",
     "heroImages": [
       "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779909831720_llpevhcu.jpg?v=1779909832234",
