@@ -44,36 +44,48 @@ const PLATFORM_ROUTES = ['newsletter', 'blog'];
 function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
 
 // ===== Per-letter styled text (color + fontFamily) =====
-function renderStyledText(text: string, styles?: any[], logo?: { url?: string; alt?: string; heightEm?: number }): any {
+function renderStyledText(text: string, styles?: any[], logo?: { url?: string; alt?: string; heightEm?: number }, lineAligns?: any[]): any {
   if (!text) return text;
   const TOKEN = '{logo}';
   const hasToken = !!(logo && logo.url) && text.indexOf(TOKEN) !== -1;
   const hasStyles = Array.isArray(styles) && styles.some((s: any) => s && (s.color || s.fontFamily));
-  if (!hasStyles && !hasToken) return text;
-  const out: any[] = [];
+  const hasNewline = text.indexOf('\n') !== -1;
+  const hasLineAligns = Array.isArray(lineAligns) && lineAligns.some((a: any) => a && a !== 'inherit');
+  if (!hasStyles && !hasToken && !hasNewline && !hasLineAligns) return text;
+  const lines: any[][] = [[]];
   let i = 0;
   let k = 0;
   while (i < text.length) {
     if (hasToken && text.substr(i, TOKEN.length) === TOKEN) {
-      out.push(React.createElement('img', {
+      const prevCh = i === 0 ? '\n' : text[i - 1];
+      const nextCh = i + TOKEN.length >= text.length ? '\n' : text[i + TOKEN.length];
+      const isBlock = prevCh === '\n' && nextCh === '\n';
+      lines[lines.length - 1].push(React.createElement('img', {
         key: 'logo-' + (k++),
         src: logo!.url,
         alt: (logo && logo.alt) || '',
-        style: { height: ((logo && logo.heightEm) || 1) + 'em', width: 'auto', display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1em' },
+        style: isBlock
+          ? { height: ((logo && logo.heightEm) || 1.2) + 'em', width: 'auto', display: 'block', margin: '0.4em auto 0' }
+          : { height: ((logo && logo.heightEm) || 1) + 'em', width: 'auto', display: 'inline-block', verticalAlign: 'middle', margin: '0 0.1em' },
       }));
       i += TOKEN.length;
       continue;
     }
     const ch = text[i];
+    if (ch === '\n') { lines.push([]); i++; continue; }
     const s = styles && styles[i];
     if (s && (s.color || s.fontFamily)) {
-      out.push(React.createElement('span', { key: 'c-' + (k++), style: { color: s.color, fontFamily: s.fontFamily } }, ch));
+      lines[lines.length - 1].push(React.createElement('span', { key: 'c-' + (k++), style: { color: s.color, fontFamily: s.fontFamily } }, ch));
     } else {
-      out.push(ch);
+      lines[lines.length - 1].push(ch);
     }
     i++;
   }
-  return out;
+  return lines.map((nodes: any[], idx: number) => {
+    const align = lineAligns && lineAligns[idx];
+    const textAlign = align && align !== 'inherit' ? align : undefined;
+    return React.createElement('span', { key: 'line-' + idx, style: { display: 'block', textAlign } }, nodes.length > 0 ? nodes : '\u00A0');
+  });
 }
 
 // Load Google Fonts for unique families referenced by per-letter styles
@@ -425,8 +437,8 @@ function MultiSlideHero({ heroData }: { heroData: any }) {
               <div className="absolute inset-0" style={overlayStyle} />
               <div className={cn('relative z-10 flex flex-col h-full px-4 sm:px-6 lg:px-8', alignH, alignV)} style={{ maxWidth: layout.maxWidth ? layout.maxWidth + 'px' : undefined, margin: '0 auto' }}>
                 <div className={cn('max-w-4xl', isActive ? 'animate-fade-in' : 'opacity-0 translate-y-4')} style={{ animationDelay: (animation.textAnimationDelay || 200) + 'ms', animationFillMode: 'both' }}>
-                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{renderStyledText(slide.title, slide.titleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight })}</h1>}
-                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{renderStyledText(slide.subtitle, slide.subtitleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight })}</p>}
+                  {slide.title && <h1 className="hero-title font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{renderStyledText(slide.title, slide.titleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight }, slide.titleLineAlign)}</h1>}
+                  {slide.subtitle && <p className="hero-subtitle text-white/90 mb-6" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{renderStyledText(slide.subtitle, slide.subtitleStyles, { url: slide.inlineLogoUrl, alt: slide.inlineLogoAlt, heightEm: slide.inlineLogoHeight }, slide.subtitleLineAlign)}</p>}
                   {slide.description && <p className="hero-description text-white/80 mb-8 max-w-2xl">{slide.description}</p>}
                   {(slide.primaryButton || slide.secondaryButton) && (
                     <div className={cn('flex flex-wrap gap-4', layout.contentAlign === 'center' && 'justify-center', layout.contentAlign === 'right' && 'justify-end')}>
