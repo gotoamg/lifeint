@@ -530,6 +530,18 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const [lastScrollY, setLastScrollY] = useState(0);
   const [currentPage, setCurrentPage] = useState(() => {
     let path = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '').trim().toLowerCase();
+    // Strip any deploy base path segment (e.g. GitHub Pages "/lifeint/...") when the
+    // first path segment does not match a known page slug. This keeps custom-domain
+    // root deploys (Vercel) and subpath deploys (GitHub Pages) on the same code path.
+    try {
+      const first = path.split('/')[0];
+      const knownSlugs = new Set((pages || []).map((p: any) => (p.slug || '').trim().toLowerCase()));
+      if (first && !knownSlugs.has(first) && (pages || []).length > 0) {
+        const rest = path.split('/').slice(1).join('/');
+        if (rest && knownSlugs.has(rest.split('/')[0])) path = rest;
+      }
+    } catch (_e) { /* noop */ }
+    if (path === 'index' || path === 'home') path = '';
     return path || '';
   });
 
