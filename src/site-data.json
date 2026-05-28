@@ -1463,7 +1463,7 @@
     }
   ],
   "footer": {
-    "logo": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/logo_1776852595932_c1nvnr2z.png?v=1776852597050",
+    "logo": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/8d899164-196e-4bcc-8b6f-7a5b62b61fc8/1769755449367/logo_1779934795242_897gw89y.jpg?v=1779934795705",
     "links": [],
     "bottomBar": {
       "fontSize": "13px",
@@ -1476,8 +1476,8 @@
     },
     "copyright": "© 2026 Luke's International Fellowship & Enrichment - LIFE. All rights reserved.",
     "linkGroups": [],
-    "logoHeight": 48,
-    "logoInvert": true,
+    "logoHeight": 64,
+    "logoInvert": false,
     "newsletter": {
       "title": "Stay Updated",
       "enabled": false,
@@ -1491,6 +1491,7 @@
       "address": " P.O. Box 322 Wilmington, MA 01887"
     },
     "description": "We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission.",
+    "layoutAlign": "left",
     "socialLinks": [
       {
         "url": "#",
