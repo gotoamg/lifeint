@@ -649,6 +649,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
 
   // Continuous logo alignment (0=far left, 100=far right). Fallback to legacy enum.
   const enumToAlign = (v?: string) => (v === 'right' ? 100 : v === 'center' ? 50 : 0);
+  const hasNumericAlignDesktop = typeof headerSettings.logoAlignDesktop === 'number' || typeof header?.logoAlignDesktop === 'number';
+  const hasNumericAlignMobile = typeof headerSettings.logoAlignMobile === 'number' || typeof header?.logoAlignMobile === 'number';
   const alignDesktop = typeof headerSettings.logoAlignDesktop === 'number'
     ? Math.max(0, Math.min(100, headerSettings.logoAlignDesktop))
     : typeof header?.logoAlignDesktop === 'number'
@@ -659,7 +661,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     : typeof header?.logoAlignMobile === 'number'
       ? Math.max(0, Math.min(100, header.logoAlignMobile))
       : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
-  const showLogoSpacers = headerSettings.layout !== 'centered' && headerSettings.layout !== 'vertical';
+  const useNumericAlign = hasNumericAlignDesktop || hasNumericAlignMobile;
+  const showLogoSpacers = headerSettings.layout !== 'vertical' && (headerSettings.layout !== 'centered' || useNumericAlign);
 
   // CTA visibility per breakpoint (matches editor's headerSettings.ctaHideOn)
   const ctaHideOnArr = Array.isArray(headerSettings?.ctaHideOn) ? headerSettings.ctaHideOn : [];
@@ -689,7 +692,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-2')} style={{ flexGrow: alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
             <div className={cn(
               "flex-shrink-0 cursor-pointer",
-              headerSettings.layout === 'centered' && 'order-[3] mx-auto',
+              headerSettings.layout === 'centered' && !useNumericAlign && 'order-[3] mx-auto',
               headerSettings.showLogo === false && 'hidden',
               'order-[3]',
             )} onClick={() => {
@@ -712,7 +715,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </div>
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4]')} style={{ flexGrow: 100 - alignMobile, flexBasis: 0, flexShrink: 1 }} />}
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-[4]')} style={{ flexGrow: 100 - alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
-            <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && 'flex-1 justify-center')}>
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center')}>
               {(() => {
                 const merged = mergedNav;
                 return merged.length > 0 ? (
