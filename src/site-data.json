@@ -1460,6 +1460,16 @@
       "createdAt": "2026-04-15T10:29:39.658Z",
       "isVisible": true,
       "updatedAt": "2026-04-15T10:29:39.658Z"
+    },
+    {
+      "id": "page-1780257215492",
+      "slug": "form",
+      "title": "Form",
+      "isHome": false,
+      "sections": [],
+      "createdAt": "2026-05-31T19:53:35.492Z",
+      "isVisible": true,
+      "updatedAt": "2026-05-31T19:53:35.492Z"
     }
   ],
   "footer": {
@@ -1781,7 +1791,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 54,
+      "logoAlignMobile": 100,
       "mobileMenuStyle": "dropdown",
       "logoAlignDesktop": 0,
       "mobileBreakpoint": "lg",
@@ -1790,7 +1800,7 @@
       "animationDuration": 250,
       "dropdownTextColor": "#E5E7EB",
       "submenuFontFamily": "Cinzel",
-      "logoPositionMobile": "center",
+      "logoPositionMobile": "right",
       "scrolledBackground": {
         "type": "solid",
         "color": "#1F2937",
