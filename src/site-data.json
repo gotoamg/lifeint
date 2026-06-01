@@ -1791,7 +1791,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 100,
+      "logoAlignMobile": 57,
       "mobileMenuStyle": "dropdown",
       "logoAlignDesktop": 0,
       "mobileBreakpoint": "lg",
@@ -1800,7 +1800,7 @@
       "animationDuration": 250,
       "dropdownTextColor": "#E5E7EB",
       "submenuFontFamily": "Cinzel",
-      "logoPositionMobile": "right",
+      "logoPositionMobile": "center",
       "scrolledBackground": {
         "type": "solid",
         "color": "#1F2937",
