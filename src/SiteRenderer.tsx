@@ -714,9 +714,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 <span className="text-xl sm:text-2xl font-bold truncate max-w-[180px] sm:max-w-none" style={{ color: 'inherit' }}>{header.logoText || businessName}</span>
               )}
             </div>
-            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4]')} style={{ flexGrow: 100 - alignMobile, flexBasis: 0, flexShrink: 1 }} />}
-            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-[4]')} style={{ flexGrow: 100 - alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
-            <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center')}>
+            {/* Right spacers removed — nav/CTA stay pinned right via flex-1 below */}
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center', useNumericAlign && 'flex-1 justify-end')}>
               {(() => {
                 const merged = mergedNav;
                 return merged.length > 0 ? (
