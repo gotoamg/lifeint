@@ -682,6 +682,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
           <div className="container mx-auto" style={{ padding: (headerSettings.paddingY ?? 8) + 'px ' + (headerSettings.paddingX ?? 24) + 'px' }}>
           <div className={cn('flex items-center',
               ({ compact: 'h-14', tall: 'h-24', normal: 'h-20' }[headerSettings.height] || 'h-20'),
+              useNumericAlign ? 'justify-start gap-4' :
               headerSettings.layout === 'centered' ? 'justify-center gap-8' :
               headerSettings.alignment === 'left' ? 'justify-start gap-8' :
               headerSettings.alignment === 'center' ? 'justify-center gap-8' :
@@ -715,7 +716,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </div>
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4]')} style={{ flexGrow: 100 - alignMobile, flexBasis: 0, flexShrink: 1 }} />}
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-[4]')} style={{ flexGrow: 100 - alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
-            <div className={cn(bpClasses.show, 'items-center gap-6 order-3', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center')}>
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center')}>
               {(() => {
                 const merged = mergedNav;
                 return merged.length > 0 ? (
@@ -735,8 +736,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
                 ) : null;
               })()}
             </div>
-            {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-4', ctaHideClass)}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className={cn('font-semibold min-h-[40px] order-4', ctaHideClass)}>{header.ctaButton.text}</Button>)}
-            <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+            {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[7]', ctaHideClass)}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className={cn('font-semibold min-h-[40px] order-[7]', ctaHideClass)}>{header.ctaButton.text}</Button>)}
+            <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors order-[6]', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
           </div>
