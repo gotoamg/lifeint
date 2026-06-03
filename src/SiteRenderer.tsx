@@ -664,6 +664,17 @@ export function SiteRenderer({ content, businessName }: { content: any; business
   const useNumericAlign = hasNumericAlignDesktop || hasNumericAlignMobile;
   const showLogoSpacers = headerSettings.layout !== 'vertical' && (headerSettings.layout !== 'centered' || useNumericAlign);
 
+  // Continuous nav alignment (0=left, 50=center, 100=right). Default 100 preserves legacy right-aligned menu.
+  const normalizeNavAlign = (v: number) => {
+    const c = Math.max(0, Math.min(100, v));
+    if (c <= 10) return 0;
+    if (c >= 90) return 100;
+    return Math.abs(c - 50) <= 5 ? 50 : c;
+  };
+  const hasNumericNavAlign = typeof headerSettings.navAlignDesktop === 'number';
+  const navAlignDesktop = hasNumericNavAlign ? normalizeNavAlign(headerSettings.navAlignDesktop as number) : 100;
+  const navJustifyClass = navAlignDesktop === 0 ? 'justify-start' : navAlignDesktop === 50 ? 'justify-center' : 'justify-end';
+
   // CTA visibility per breakpoint (matches editor's headerSettings.ctaHideOn)
   const ctaHideOnArr = Array.isArray(headerSettings?.ctaHideOn) ? headerSettings.ctaHideOn : [];
   const ctaHideClass = [
@@ -717,7 +728,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             {/* Right spacers removed — nav/CTA stay pinned right via flex-1 below */}
             {/* Mobile-only right spacer keeps hamburger pinned right (desktop nav with flex-1 is hidden on mobile) */}
             <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4] flex-1')} />
-            <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center', useNumericAlign && 'flex-1 justify-end')}>
+            <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center', useNumericAlign && 'flex-1', useNumericAlign && navJustifyClass)}>
               {(() => {
                 const merged = mergedNav;
                 return merged.length > 0 ? (
