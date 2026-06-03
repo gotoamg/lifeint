@@ -1361,7 +1361,8 @@
             "paddingTop": "none",
             "layoutVariant": "about-fullwidth",
             "paddingBottom": "none"
-          }
+          },
+          "imageWidth": "100"
         },
         {
           "type": "gallery",

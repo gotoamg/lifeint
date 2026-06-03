@@ -855,6 +855,64 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             const isCentered = variant === 'about-centered' || variant === 'hero-centered';
             const isSplit = variant === 'hero-split';
             const isSplitCards = variant === 'about-split-cards';
+            const isFullwidth = variant === 'about-fullwidth';
+
+            // Build per-device responsive image CSS (aspect ratio + fit + max-height).
+            const buildResponsiveImage = (key: string) => {
+              const cls = 'rsi-' + String(key).replace(/[^a-zA-Z0-9_-]/g, '');
+              const ovr = section.settings?.responsiveOverrides || {};
+              const base = { ratio: '16/9', fit: 'cover', maxH: '' };
+              const resolve = (d: any) => ({
+                ratio: (d && d.imageAspectRatio) || base.ratio,
+                fit: (d && d.imageFit) || base.fit,
+                maxH: (d && d.imageMaxHeight) || base.maxH,
+              });
+              const m = resolve(ovr.mobile);
+              const t = resolve(ovr.tablet);
+              const dk = resolve(ovr.desktop);
+              const block = (v: any) => {
+                const wrap = [];
+                const im = [];
+                if (v.ratio && v.ratio !== 'auto') {
+                  wrap.push('aspect-ratio: ' + v.ratio + ';');
+                  im.push('width: 100%; height: 100%;');
+                } else {
+                  wrap.push('aspect-ratio: auto;');
+                  im.push('width: 100%; height: auto;');
+                }
+                if (v.maxH) wrap.push('max-height: ' + v.maxH + ';');
+                im.push('object-fit: ' + v.fit + ';');
+                return '.' + cls + ' { ' + wrap.join(' ') + ' } .' + cls + ' img { ' + im.join(' ') + ' }';
+              };
+              const styleTag = '@media (max-width: 767px) { ' + block(m) + ' } '
+                + '@media (min-width: 768px) and (max-width: 1023px) { ' + block(t) + ' } '
+                + '@media (min-width: 1024px) { ' + block(dk) + ' }';
+              return { cls, styleTag };
+            };
+
+            if (isFullwidth) {
+              const rip = buildResponsiveImage('about-fullwidth-' + index);
+              return (
+                <section key={index} id={sectionId} className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-background" style={bgStyle}>
+                  <div className={'container mx-auto ' + (section.settings?.fullWidth ? 'max-w-none' : 'max-w-4xl')}>
+                    {section.image && (
+                      <ScrollReveal animation="blur-in" delay={100} easing="spring">
+                        <div className={'relative mb-8 sm:mb-12 rounded-2xl overflow-hidden shadow-xl ' + rip.cls}>
+                          <style dangerouslySetInnerHTML={{ __html: rip.styleTag }} />
+                          <img src={section.image} alt={section.title} loading="lazy" sizes="100vw" />
+                        </div>
+                      </ScrollReveal>
+                    )}
+                    <ScrollReveal animation="fade-up" delay={200} easing="ease-out">
+                      <div className={'max-w-3xl mx-auto ' + textClass}>
+                        {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
+                        <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
+                      </div>
+                    </ScrollReveal>
+                  </div>
+                </section>
+              );
+            }
 
             if (isCentered) {
               return (
