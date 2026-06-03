@@ -1795,7 +1795,7 @@
       "dropdownHoverBg": "#374151",
       "logoAlignMobile": 25,
       "mobileMenuStyle": "dropdown",
-      "navAlignDesktop": 0,
+      "navAlignDesktop": 50,
       "logoAlignDesktop": 0,
       "mobileBreakpoint": "lg",
       "scrollTransition": true,
