@@ -715,6 +715,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               )}
             </div>
             {/* Right spacers removed — nav/CTA stay pinned right via flex-1 below */}
+            {/* Mobile-only right spacer keeps hamburger pinned right (desktop nav with flex-1 is hidden on mobile) */}
+            <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4] flex-1')} />
             <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center', useNumericAlign && 'flex-1 justify-end')}>
               {(() => {
                 const merged = mergedNav;
@@ -1286,22 +1288,36 @@ export function SiteRenderer({ content, businessName }: { content: any; business
         if (!ro) return el;
         const scope = 'section-font-' + index;
         const rules: string[] = [];
-        if (ro.desktop?.headingFontSize) rules.push('.' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.desktop.headingFontSize + ' !important; }');
-        if (ro.desktop?.bodyFontSize) rules.push('.' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.desktop.bodyFontSize + ' !important; }');
-        if (ro.tablet?.headingFontSize || ro.tablet?.bodyFontSize) {
-          rules.push('@media (max-width: 1023px) {');
-          if (ro.tablet?.headingFontSize) rules.push('  .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.tablet.headingFontSize + ' !important; }');
-          if (ro.tablet?.bodyFontSize) rules.push('  .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.tablet.bodyFontSize + ' !important; }');
-          rules.push('}');
-        }
-        if (ro.mobile?.headingFontSize || ro.mobile?.bodyFontSize) {
-          rules.push('@media (max-width: 767px) {');
-          if (ro.mobile?.headingFontSize) rules.push('  .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.mobile.headingFontSize + ' !important; }');
-          if (ro.mobile?.bodyFontSize) rules.push('  .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.mobile.bodyFontSize + ' !important; }');
-          rules.push('}');
-        }
-        if (rules.length === 0) return el;
-        return <div key={'font-wrap-' + index} className={scope}><style dangerouslySetInnerHTML={{ __html: rules.join(' ') }} />{el}</div>;
+        if (ro.desktop?.headingFontSize) rules.push('@media (min-width: 1024px) { .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.desktop.headingFontSize + ' !important; } }');
+        if (ro.desktop?.bodyFontSize) rules.push('@media (min-width: 1024px) { .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.desktop.bodyFontSize + ' !important; } }');
+        if (ro.desktop?.maxWidth) rules.push('@media (min-width: 1024px) { .' + scope + ' .container { max-width: ' + ro.desktop.maxWidth + ' !important; } }');
+        if (ro.desktop?.gap) rules.push('@media (min-width: 1024px) { .' + scope + ' .grid, .' + scope + ' .flex { gap: ' + ro.desktop.gap + ' !important; } }');
+        if (ro.tablet?.headingFontSize) rules.push('@media (min-width: 768px) and (max-width: 1023px) { .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.tablet.headingFontSize + ' !important; } }');
+        if (ro.tablet?.bodyFontSize) rules.push('@media (min-width: 768px) and (max-width: 1023px) { .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.tablet.bodyFontSize + ' !important; } }');
+        if (ro.tablet?.maxWidth) rules.push('@media (min-width: 768px) and (max-width: 1023px) { .' + scope + ' .container { max-width: ' + ro.tablet.maxWidth + ' !important; } }');
+        if (ro.tablet?.gap) rules.push('@media (min-width: 768px) and (max-width: 1023px) { .' + scope + ' .grid, .' + scope + ' .flex { gap: ' + ro.tablet.gap + ' !important; } }');
+        if (ro.mobile?.headingFontSize) rules.push('@media (max-width: 767px) { .' + scope + ' h1, .' + scope + ' h2, .' + scope + ' h3 { font-size: ' + ro.mobile.headingFontSize + ' !important; } }');
+        if (ro.mobile?.bodyFontSize) rules.push('@media (max-width: 767px) { .' + scope + ' p, .' + scope + ' li, .' + scope + ' span { font-size: ' + ro.mobile.bodyFontSize + ' !important; } }');
+        if (ro.mobile?.maxWidth) rules.push('@media (max-width: 767px) { .' + scope + ' .container { max-width: ' + ro.mobile.maxWidth + ' !important; } }');
+        if (ro.mobile?.gap) rules.push('@media (max-width: 767px) { .' + scope + ' .grid, .' + scope + ' .flex { gap: ' + ro.mobile.gap + ' !important; } }');
+        const wrapClasses: string[] = [scope];
+        if (ro.mobile?.hidden) wrapClasses.push('max-md:hidden');
+        if (ro.tablet?.hidden) wrapClasses.push('md:max-lg:hidden');
+        if (ro.desktop?.hidden) wrapClasses.push('lg:hidden');
+        if (ro.mobile?.textAlign === 'center') wrapClasses.push('max-md:text-center');
+        else if (ro.mobile?.textAlign === 'right') wrapClasses.push('max-md:text-right');
+        else if (ro.mobile?.textAlign === 'left') wrapClasses.push('max-md:text-left');
+        if (ro.tablet?.textAlign === 'center') wrapClasses.push('md:max-lg:text-center');
+        else if (ro.tablet?.textAlign === 'right') wrapClasses.push('md:max-lg:text-right');
+        else if (ro.tablet?.textAlign === 'left') wrapClasses.push('md:max-lg:text-left');
+        if (ro.desktop?.textAlign === 'center') wrapClasses.push('lg:text-center');
+        else if (ro.desktop?.textAlign === 'right') wrapClasses.push('lg:text-right');
+        else if (ro.desktop?.textAlign === 'left') wrapClasses.push('lg:text-left');
+        if (ro.mobile?.stackColumns) wrapClasses.push('max-md:[&_.grid]:grid-cols-1');
+        if (ro.tablet?.stackColumns) wrapClasses.push('md:max-lg:[&_.grid]:grid-cols-1');
+        const wrapClassName = wrapClasses.join(' ');
+        if (rules.length === 0 && wrapClasses.length === 1) return el;
+        return <div key={'font-wrap-' + index} className={wrapClassName}>{rules.length > 0 ? <style dangerouslySetInnerHTML={{ __html: rules.join(' ') }} /> : null}{el}</div>;
       })}
 
       {/* Footer */}

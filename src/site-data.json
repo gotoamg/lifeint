@@ -1355,6 +1355,7 @@
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779910159815_kkuzkpx5.jpg?v=1779910159743",
           "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
           "settings": {
+            "gap": 5,
             "fullWidth": true,
             "isVisible": true,
             "paddingTop": "none",
