@@ -1356,12 +1356,16 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<p class=\"MsoNormal\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.<o:p></o:p></p>\n\n",
+          "body": "<p class=\"MsoNormal\" style=\"text-align: center;\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</p>\n",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781124881823_x1cf11qc.jpg?v=1781124882784",
           "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
           "settings": {
             "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F8FAFC"
+            },
             "paddingTop": "small",
             "layoutVariant": "about-image-left",
             "paddingBottom": "none"
