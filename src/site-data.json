@@ -206,11 +206,11 @@
             "inherit",
             "center"
           ],
-          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
+          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
           "inlineLogoHeight": 0.9,
           "backgroundPosition": {
             "x": 51,
-            "y": 39
+            "y": 40
           }
         },
         {
@@ -275,9 +275,9 @@
       }
     },
     "heading": "Welcome to Luke's International Fellowship & Enrichment\n{logo}",
-    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
+    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
     "heroImages": [
-      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
+      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
       "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
     "primaryCTA": "",
@@ -864,6 +864,12 @@
           },
           "buttonLink": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
           "buttonText": "DONATE"
+        },
+        {
+          "body": "Fill out the form below and we'll get back to you shortly.",
+          "type": "ezforms",
+          "title": "Application",
+          "formId": "9ad93308-89b0-4df5-b49e-3169d55bcb51"
         }
       ],
       "createdAt": "2026-02-26T07:48:30.554Z",
@@ -1534,7 +1540,7 @@
       "email": "",
       "phone": "",
       "height": "compact",
-      "enabled": false,
+      "enabled": true,
       "textColor": "#E5E7EB",
       "dismissible": false,
       "leftContent": "phone_email",
