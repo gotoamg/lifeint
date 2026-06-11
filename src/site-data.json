@@ -206,11 +206,11 @@
             "inherit",
             "center"
           ],
-          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
+          "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
           "inlineLogoHeight": 0.9,
           "backgroundPosition": {
             "x": 51,
-            "y": 40
+            "y": 39
           }
         },
         {
@@ -275,9 +275,9 @@
       }
     },
     "heading": "Welcome to Luke's International Fellowship & Enrichment\n{logo}",
-    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
+    "heroImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
     "heroImages": [
-      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781121351504_sri84qbd.png?v=1781121352928",
+      "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1780253072429_0pkoumch.jpg?v=1780253073521",
       "https://images.unsplash.com/photo-1615631648086-325025c9e51e?w=800&h=600&fit=crop"
     ],
     "primaryCTA": "",
@@ -1356,21 +1356,19 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<p class=\"MsoNormal\" style=\"text-align: center;\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</p>\n",
+          "body": "<div style=\"text-align: center;\"><p class=\"MsoNormal\"><font color=\"#000000\"><font size=\"5\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</font><font size=\"3\"></font></font></p><font size=\"3\" color=\"#000000\">\n</font>\n</div>",
           "type": "about",
-          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781124881823_x1cf11qc.jpg?v=1781124882784",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779910159815_kkuzkpx5.jpg?v=1779910159743",
           "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
           "settings": {
+            "gap": 5,
             "fullWidth": true,
             "isVisible": true,
-            "background": {
-              "type": "color",
-              "value": "#F8FAFC"
-            },
-            "paddingTop": "small",
-            "layoutVariant": "about-image-left",
+            "paddingTop": "none",
+            "layoutVariant": "about-fullwidth",
             "paddingBottom": "none"
-          }
+          },
+          "imageWidth": "100"
         },
         {
           "type": "gallery",
@@ -1406,6 +1404,10 @@
             {
               "name": "Hands-on exposure in orthopedic care",
               "description": "<i>Gain practical experience through real clinical settings.</i>"
+            },
+            {
+              "name": "Mentorship under experienced physician",
+              "description": "<i>Learn directly from skilled medical professionals.</i>"
             },
             {
               "name": "Faith-centered mission experience",
@@ -1797,7 +1799,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 50,
+      "logoAlignMobile": 15,
       "mobileMenuStyle": "dropdown",
       "navAlignDesktop": 50,
       "logoAlignDesktop": 0,
@@ -1807,7 +1809,7 @@
       "animationDuration": 250,
       "dropdownTextColor": "#E5E7EB",
       "submenuFontFamily": "Cinzel",
-      "logoPositionMobile": "center",
+      "logoPositionMobile": "left",
       "scrolledBackground": {
         "type": "solid",
         "color": "#1F2937",
