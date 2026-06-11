@@ -663,6 +663,21 @@ export function SiteRenderer({ content, businessName }: { content: any; business
       : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
   const useNumericAlign = hasNumericAlignDesktop || hasNumericAlignMobile;
   const showLogoSpacers = headerSettings.layout !== 'vertical' && (headerSettings.layout !== 'centered' || useNumericAlign);
+  const mbp = headerSettings.mobileBreakpoint === 'sm' ? 'sm' : headerSettings.mobileBreakpoint === 'md' ? 'md' : 'lg';
+  const mobileLogoCenterClassMap = {
+    sm: 'absolute left-1/2 -translate-x-1/2 sm:static sm:left-auto sm:translate-x-0',
+    md: 'absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0',
+    lg: 'absolute left-1/2 -translate-x-1/2 lg:static lg:left-auto lg:translate-x-0',
+  } as const;
+  const logoMaxWidthClassMap = {
+    sm: 'max-w-[55vw] sm:max-w-none',
+    md: 'max-w-[55vw] md:max-w-none',
+    lg: 'max-w-[55vw] md:max-w-[40vw] lg:max-w-none',
+  } as const;
+  const mobileLogoCenterClass = alignMobile === 50
+    ? mobileLogoCenterClassMap[mbp]
+    : '';
+  const logoMaxWidthClass = logoMaxWidthClassMap[mbp];
 
   // Continuous nav alignment (0=left, 50=center, 100=right). Default 100 preserves legacy right-aligned menu.
   const normalizeNavAlign = (v: number) => {
@@ -690,8 +705,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
       {header && (
         <header className={cn('z-50 transition-all', getStickyClass(), getShadowClass(), headerSettings.borderBottom && 'border-b border-border')}
           style={{ ...getHeaderBackgroundStyle(), color: getHeaderTextColor(), transitionDuration: (headerSettings.animationDuration || 300) + 'ms' }}>
-          <div className="container mx-auto" style={{ padding: (headerSettings.paddingY ?? 8) + 'px ' + (headerSettings.paddingX ?? 24) + 'px' }}>
-          <div className={cn('flex items-center',
+          <div className="container mx-auto relative" style={{ padding: (headerSettings.paddingY ?? 8) + 'px ' + (headerSettings.paddingX ?? 24) + 'px' }}>
+          <div className={cn('flex items-center relative',
               ({ compact: 'h-14', tall: 'h-24', normal: 'h-20' }[headerSettings.height] || 'h-20'),
               useNumericAlign ? 'justify-start gap-4' :
               headerSettings.layout === 'centered' ? 'justify-center gap-8' :
@@ -707,6 +722,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               headerSettings.layout === 'centered' && !useNumericAlign && 'order-[3] mx-auto',
               headerSettings.showLogo === false && 'hidden',
               'order-[3]',
+              mobileLogoCenterClass,
             )} onClick={() => {
               const link = (header.logoLink || '').trim();
               if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
@@ -718,7 +734,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               }
             }}>
               {header.logo ? (
-                <div style={{ height: getHeaderLogoHeight() + 'px' }}>
+                <div className={logoMaxWidthClass} style={{ height: getHeaderLogoHeight() + 'px' }}>
                   <img src={header.logo} alt={businessName} style={{ height: '100%', width: 'auto', objectFit: 'contain', objectPosition: 'left center', transform: 'scale(1.18)', transformOrigin: 'left center', display: 'block' }} />
                 </div>
               ) : (
