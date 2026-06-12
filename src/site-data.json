@@ -209,8 +209,8 @@
           "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781208354007_apucnqlo.png?v=1781208355135",
           "inlineLogoHeight": 0.9,
           "backgroundPosition": {
-            "x": 47,
-            "y": 45
+            "x": 78,
+            "y": 84
           }
         },
         {
@@ -1799,7 +1799,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 24,
+      "logoAlignMobile": 0,
       "mobileMenuStyle": "dropdown",
       "navAlignDesktop": 50,
       "logoAlignDesktop": 0,
