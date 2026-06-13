@@ -1799,7 +1799,7 @@
       "hamburgerStyle": "bars",
       "activeIndicator": "underline",
       "dropdownHoverBg": "#374151",
-      "logoAlignMobile": 30,
+      "logoAlignMobile": 42,
       "mobileMenuStyle": "dropdown",
       "navAlignDesktop": 50,
       "logoAlignDesktop": 0,
