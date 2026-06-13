@@ -660,23 +660,15 @@ export function SiteRenderer({ content, businessName }: { content: any; business
     ? Math.max(0, Math.min(100, headerSettings.logoAlignMobile))
     : typeof header?.logoAlignMobile === 'number'
       ? Math.max(0, Math.min(100, header.logoAlignMobile))
-      : enumToAlign(headerSettings.logoPositionMobile || headerSettings.logoPosition);
+      : 50;
   const useNumericAlign = hasNumericAlignDesktop || hasNumericAlignMobile;
   const showLogoSpacers = headerSettings.layout !== 'vertical' && (headerSettings.layout !== 'centered' || useNumericAlign);
   const mbp = headerSettings.mobileBreakpoint === 'sm' ? 'sm' : headerSettings.mobileBreakpoint === 'md' ? 'md' : 'lg';
-  const mobileLogoCenterClassMap = {
-    sm: 'absolute left-1/2 -translate-x-1/2 sm:static sm:left-auto sm:translate-x-0',
-    md: 'absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0',
-    lg: 'absolute left-1/2 -translate-x-1/2 lg:static lg:left-auto lg:translate-x-0',
-  } as const;
   const logoMaxWidthClassMap = {
     sm: 'max-w-[55vw] sm:max-w-none',
     md: 'max-w-[55vw] md:max-w-none',
     lg: 'max-w-[55vw] md:max-w-[40vw] lg:max-w-none',
   } as const;
-  const mobileLogoCenterClass = alignMobile === 50
-    ? mobileLogoCenterClassMap[mbp]
-    : '';
   const logoMaxWidthClass = logoMaxWidthClassMap[mbp];
 
   // Continuous nav alignment (0=left, 50=center, 100=right). Default 100 preserves legacy right-aligned menu.
@@ -715,15 +707,15 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               headerSettings.alignment === 'right' ? 'justify-end gap-8' :
               'justify-between'
             )}>
-            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-2')} style={{ flexGrow: alignMobile, flexBasis: 0, flexShrink: 1 }} />}
+            {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.hide, 'order-2')} style={{ flexGrow: Math.max(0, alignMobile), flexBasis: 0, flexShrink: 1 }} />}
             {showLogoSpacers && <div aria-hidden="true" className={cn(bpClasses.show.replace('flex','block'), 'order-2')} style={{ flexGrow: alignDesktop, flexBasis: 0, flexShrink: 1 }} />}
             <div className={cn(
               "flex-shrink-0 cursor-pointer",
               headerSettings.layout === 'centered' && !useNumericAlign && 'order-[3] mx-auto',
               headerSettings.showLogo === false && 'hidden',
               'order-[3]',
-              mobileLogoCenterClass,
-            )} onClick={() => {
+            )}
+            onClick={() => {
               const link = (header.logoLink || '').trim();
               if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
                 window.location.assign(link);
@@ -742,8 +734,8 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               )}
             </div>
             {/* Right spacers removed — nav/CTA stay pinned right via flex-1 below */}
-            {/* Mobile-only right spacer keeps hamburger pinned right (desktop nav with flex-1 is hidden on mobile) */}
-            <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4] flex-1')} />
+            {/* Mobile-only right spacer: sized as (100 - alignMobile) so the logo lands at alignMobile% of the row even when the absolute fallback (mobileLogoStyle) is not applied. */}
+            <div aria-hidden="true" className={cn(bpClasses.hide, 'order-[4]')} style={{ flexGrow: Math.max(1, 100 - alignMobile), flexBasis: 0, flexShrink: 1 }} />
             <div className={cn(bpClasses.show, 'items-center gap-6 order-[5]', isCenteredLayout && !useNumericAlign && 'flex-1 justify-center', useNumericAlign && 'flex-1', useNumericAlign && navJustifyClass)}>
               {(() => {
                 const merged = mergedNav;
