@@ -305,6 +305,8 @@
             "fullWidth": false,
             "isVisible": true,
             "textAlign": "center",
+            "paddingTop": "small",
+            "paddingBottom": "small",
             "responsiveOverrides": {
               "mobile": {
                 "textAlign": "center"
@@ -327,7 +329,9 @@
             "fullWidth": false,
             "isVisible": true,
             "textAlign": "center",
+            "paddingTop": "small",
             "layoutVariant": "about-image-left",
+            "paddingBottom": "small",
             "responsiveOverrides": {
               "mobile": {
                 "textAlign": "center"
@@ -393,7 +397,9 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
           ],
           "settings": {
-            "galleryStyle": "grid"
+            "paddingTop": "small",
+            "galleryStyle": "grid",
+            "paddingBottom": "small"
           }
         },
         {
@@ -406,7 +412,9 @@
               "type": "color",
               "value": "#1E293B"
             },
-            "layoutVariant": "cta-centered"
+            "paddingTop": "small",
+            "layoutVariant": "cta-centered",
+            "paddingBottom": "small"
           },
           "buttonLink": "#donate",
           "buttonText": "Donate!"
@@ -421,7 +429,9 @@
             "background": {
               "type": "color",
               "value": "#F1F5F9"
-            }
+            },
+            "paddingTop": "small",
+            "paddingBottom": "small"
           }
         },
         {
@@ -1934,6 +1944,8 @@
         "fullWidth": false,
         "isVisible": true,
         "textAlign": "center",
+        "paddingTop": "small",
+        "paddingBottom": "small",
         "responsiveOverrides": {
           "mobile": {
             "textAlign": "center"
@@ -1956,7 +1968,9 @@
         "fullWidth": false,
         "isVisible": true,
         "textAlign": "center",
+        "paddingTop": "small",
         "layoutVariant": "about-image-left",
+        "paddingBottom": "small",
         "responsiveOverrides": {
           "mobile": {
             "textAlign": "center"
@@ -2022,7 +2036,9 @@
         "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
       ],
       "settings": {
-        "galleryStyle": "grid"
+        "paddingTop": "small",
+        "galleryStyle": "grid",
+        "paddingBottom": "small"
       }
     },
     {
@@ -2035,7 +2051,9 @@
           "type": "color",
           "value": "#1E293B"
         },
-        "layoutVariant": "cta-centered"
+        "paddingTop": "small",
+        "layoutVariant": "cta-centered",
+        "paddingBottom": "small"
       },
       "buttonLink": "#donate",
       "buttonText": "Donate!"
@@ -2050,7 +2068,9 @@
         "background": {
           "type": "color",
           "value": "#F1F5F9"
-        }
+        },
+        "paddingTop": "small",
+        "paddingBottom": "small"
       }
     },
     {
