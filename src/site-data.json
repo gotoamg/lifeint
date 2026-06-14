@@ -324,17 +324,17 @@
             {
               "name": "Medical Missions",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-              "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+              "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
             },
             {
               "name": "Spiritual Fellowship",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-              "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+              "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </span></div>"
             },
             {
               "name": "Medical Education",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-              "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+              "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</span></div>"
             }
           ],
           "title": "Our Campaigns",
@@ -342,17 +342,23 @@
             "gap": 6,
             "fullWidth": true,
             "isVisible": true,
+            "textAlign": "center",
             "background": {
               "type": "color",
               "value": "#F1F5F9"
             },
             "paddingTop": "medium",
-            "columnLayout": "3"
+            "columnLayout": "3",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
           "type": "gallery",
-          "title": "Some glimpses of our medical mission",
+          "title": "“Making a Difference, One Life at a Time”",
           "images": [
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
@@ -1924,17 +1930,17 @@
         {
           "name": "Medical Missions",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-          "description": "Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. "
+          "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
         },
         {
           "name": "Spiritual Fellowship",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-          "description": "Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. "
+          "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </span></div>"
         },
         {
           "name": "Medical Education",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-          "description": "Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally."
+          "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</span></div>"
         }
       ],
       "title": "Our Campaigns",
@@ -1942,17 +1948,23 @@
         "gap": 6,
         "fullWidth": true,
         "isVisible": true,
+        "textAlign": "center",
         "background": {
           "type": "color",
           "value": "#F1F5F9"
         },
         "paddingTop": "medium",
-        "columnLayout": "3"
+        "columnLayout": "3",
+        "responsiveOverrides": {
+          "desktop": {
+            "textAlign": "center"
+          }
+        }
       }
     },
     {
       "type": "gallery",
-      "title": "Some glimpses of our medical mission",
+      "title": "“Making a Difference, One Life at a Time”",
       "images": [
         "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2358%20(1).JPG",
         "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_094012.jpg",
