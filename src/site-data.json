@@ -381,7 +381,8 @@
                 "textAlign": "center"
               }
             }
-          }
+          },
+          "itemsAlign": "center"
         },
         {
           "type": "gallery",
@@ -2020,7 +2021,8 @@
             "textAlign": "center"
           }
         }
-      }
+      },
+      "itemsAlign": "center"
     },
     {
       "type": "gallery",
