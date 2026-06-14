@@ -294,7 +294,7 @@
       "isHome": true,
       "sections": [
         {
-          "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
+          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</span></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
           "title": "About Luke's International Fellowship & Enrichment - LIFE",
@@ -304,7 +304,7 @@
           "settings": {
             "fullWidth": false,
             "isVisible": true,
-            "textAlign": "left",
+            "textAlign": "center",
             "responsiveOverrides": {
               "desktop": {
                 "textAlign": "center"
@@ -313,14 +313,14 @@
           }
         },
         {
-          "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
+          "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
           "title": "Our Mission",
           "settings": {
             "fullWidth": false,
             "isVisible": true,
-            "textAlign": "left",
+            "textAlign": "center",
             "layoutVariant": "about-image-left",
             "responsiveOverrides": {
               "desktop": {
@@ -1911,7 +1911,7 @@
   },
   "sections": [
     {
-      "body": "<font size=\"3\" color=\"#000000\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font>",
+      "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</span></div>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
       "title": "About Luke's International Fellowship & Enrichment - LIFE",
@@ -1921,7 +1921,7 @@
       "settings": {
         "fullWidth": false,
         "isVisible": true,
-        "textAlign": "left",
+        "textAlign": "center",
         "responsiveOverrides": {
           "desktop": {
             "textAlign": "center"
@@ -1930,14 +1930,14 @@
       }
     },
     {
-      "body": "<p class=\"MsoNormal\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
+      "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
       "title": "Our Mission",
       "settings": {
         "fullWidth": false,
         "isVisible": true,
-        "textAlign": "left",
+        "textAlign": "center",
         "layoutVariant": "about-image-left",
         "responsiveOverrides": {
           "desktop": {
