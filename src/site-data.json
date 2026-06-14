@@ -306,6 +306,12 @@
             "isVisible": true,
             "textAlign": "center",
             "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
               "desktop": {
                 "textAlign": "center"
               }
@@ -323,6 +329,12 @@
             "textAlign": "center",
             "layoutVariant": "about-image-left",
             "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
               "desktop": {
                 "textAlign": "center"
               }
@@ -1923,6 +1935,12 @@
         "isVisible": true,
         "textAlign": "center",
         "responsiveOverrides": {
+          "mobile": {
+            "textAlign": "center"
+          },
+          "tablet": {
+            "textAlign": "center"
+          },
           "desktop": {
             "textAlign": "center"
           }
@@ -1940,6 +1958,12 @@
         "textAlign": "center",
         "layoutVariant": "about-image-left",
         "responsiveOverrides": {
+          "mobile": {
+            "textAlign": "center"
+          },
+          "tablet": {
+            "textAlign": "center"
+          },
           "desktop": {
             "textAlign": "center"
           }
