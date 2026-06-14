@@ -303,7 +303,13 @@
           ],
           "settings": {
             "fullWidth": false,
-            "textAlign": "left"
+            "isVisible": true,
+            "textAlign": "left",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
@@ -315,7 +321,12 @@
             "fullWidth": false,
             "isVisible": true,
             "textAlign": "left",
-            "layoutVariant": "about-image-left"
+            "layoutVariant": "about-image-left",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
@@ -1909,7 +1920,13 @@
       ],
       "settings": {
         "fullWidth": false,
-        "textAlign": "left"
+        "isVisible": true,
+        "textAlign": "left",
+        "responsiveOverrides": {
+          "desktop": {
+            "textAlign": "center"
+          }
+        }
       }
     },
     {
@@ -1921,7 +1938,12 @@
         "fullWidth": false,
         "isVisible": true,
         "textAlign": "left",
-        "layoutVariant": "about-image-left"
+        "layoutVariant": "about-image-left",
+        "responsiveOverrides": {
+          "desktop": {
+            "textAlign": "center"
+          }
+        }
       }
     },
     {
