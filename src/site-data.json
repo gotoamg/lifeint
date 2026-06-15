@@ -349,9 +349,9 @@
           "type": "services",
           "items": [
             {
-              "name": "Medical Missions",
+              "name": "",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-              "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
+              "description": "<h2 style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\">Medical Missions</font></h2><div><font color=\"#262626\"><b><br></b></font></div><div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
             },
             {
               "name": "Spiritual Fellowship",
@@ -1989,9 +1989,9 @@
       "type": "services",
       "items": [
         {
-          "name": "Medical Missions",
+          "name": "",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-          "description": "<div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
+          "description": "<h2 style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\">Medical Missions</font></h2><div><font color=\"#262626\"><b><br></b></font></div><div style=\"text-align: center;\"><span style=\"font-size: 0.875rem; color: rgb(38, 38, 38);\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </span></div>"
         },
         {
           "name": "Spiritual Fellowship",
