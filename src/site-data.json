@@ -508,7 +508,7 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<font color=\"#000000\">LIFE aims to strengthen Christian health care professionals in their walk with God, equip them with the skills to be an evangelist for Christ in healthcare, and provide opportunities for them to be an effective witness of Jesus Christ.</font>",
+          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: 0.875rem;\">LIFE aims to strengthen Christian health care professionals in their walk with God, equip them with the skills to be an evangelist for Christ in healthcare, and provide opportunities for them to be an effective witness of Jesus Christ.</span></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190320_101509.jpg",
           "title": "The Mission of LIFE is to share the gospel of Jesus Christ through Healthcare",
@@ -516,7 +516,18 @@
             "fullWidth": true,
             "isVisible": true,
             "paddingTop": "none",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
