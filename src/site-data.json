@@ -1544,12 +1544,32 @@
       "isHome": false,
       "sections": [
         {
-          "body": "Portal for Medical Students/Residents/ Fellows/Other Medical Professions",
-          "type": "ezforms",
-          "title": "Contact Us",
-          "formId": "d876bd50-eb03-46b9-bc5f-002f5fd7f55f",
+          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><b style=\"\"><font size=\"5\">Portal for Medical Students/Residents/ Fellows/Other Medical Professions</font></b></span></div>",
+          "type": "blank",
+          "title": "",
           "settings": {
-            "hideTitle": true
+            "hideTitle": true,
+            "isVisible": true,
+            "paddingTop": "none",
+            "layoutVariant": "blank-text-image",
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center",
+                "paddingTop": "none",
+                "paddingBottom": "none"
+              },
+              "tablet": {
+                "textAlign": "center",
+                "paddingTop": "none",
+                "paddingBottom": "none"
+              },
+              "desktop": {
+                "textAlign": "center",
+                "paddingTop": "none",
+                "paddingBottom": "none"
+              }
+            }
           }
         }
       ],
