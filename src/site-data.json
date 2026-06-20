@@ -1582,7 +1582,7 @@
           "title": "Please fill out the form and submit it for processing",
           "formId": "bb3b57b7-557a-441f-b19d-2a599b4d3686",
           "settings": {
-            "hideTitle": false
+            "hideTitle": true
           }
         }
       ],
