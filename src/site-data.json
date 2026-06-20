@@ -1579,10 +1579,10 @@
         {
           "body": "",
           "type": "ezforms",
-          "title": "Contact Us",
-          "formId": "d876bd50-eb03-46b9-bc5f-002f5fd7f55f",
+          "title": "Please fill out the form and submit it for processing",
+          "formId": "bb3b57b7-557a-441f-b19d-2a599b4d3686",
           "settings": {
-            "hideTitle": true
+            "hideTitle": false
           }
         }
       ],
