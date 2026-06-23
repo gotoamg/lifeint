@@ -597,6 +597,10 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
   const hasVisibleFooterPhone = Boolean(footerPhone && footerPhone !== '(555) 123-4567');
   const defaultHeaderSettings = { isSticky: true, stickyStyle: 'always', height: 'normal', background: { type: 'solid', color: '#1F2937', opacity: 95 }, scrolledBackground: { type: 'blur', color: '#1F2937', blurAmount: 12, opacity: 95 }, borderBottom: true, shadow: 'lg', scrollTransition: true, animationDuration: 300, mobileBreakpoint: 'lg', hoverEffect: 'color', linkWeight: 'medium', linkStyle: 'normal' };
   const headerSettings = { ...defaultHeaderSettings, ...header?.headerSettings, ...header?.settings };
+  const secondaryBtnStyle: any = {};
+  if (headerSettings.ctaBgColorSecondary) secondaryBtnStyle.backgroundColor = headerSettings.ctaBgColorSecondary;
+  if (headerSettings.ctaTextColorSecondary) secondaryBtnStyle.color = headerSettings.ctaTextColorSecondary;
+  if (headerSettings.ctaBorderColorSecondary) secondaryBtnStyle.borderColor = headerSettings.ctaBorderColorSecondary;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
@@ -830,7 +834,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
               })()}
             </div>
             {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[7]', ctaHideClass)}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className={cn('font-semibold min-h-[40px] order-[7]', ctaHideClass)}>{header.ctaButton.text}</Button>)}
-            {header.ctaButtonSecondary && headerSettings?.showCtaButtonSecondary === true && (header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[8]', ctaHideClass)}><Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold min-h-[40px] ml-2">{header.ctaButtonSecondary.text}</Button></a> : <Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className={cn('font-semibold min-h-[40px] ml-2 order-[8]', ctaHideClass)}>{header.ctaButtonSecondary.text}</Button>)}
+            {header.ctaButtonSecondary && headerSettings?.showCtaButtonSecondary === true && (header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[8]', ctaHideClass)}><Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} style={secondaryBtnStyle} className="font-semibold min-h-[40px] ml-2">{header.ctaButtonSecondary.text}</Button></a> : <Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} style={secondaryBtnStyle} className={cn('font-semibold min-h-[40px] ml-2 order-[8]', ctaHideClass)}>{header.ctaButtonSecondary.text}</Button>)}
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors order-[6]', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
@@ -905,7 +909,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
               <div className="p-6 border-t border-white/10">{header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button></a> : <Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button>}</div>
             )}
             {header?.ctaButtonSecondary && headerSettings?.showCtaButtonSecondary === true && !ctaHiddenOnMobile && (
-              <div className="px-6 pb-6">{header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button></a> : <Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button>}</div>
+              <div className="px-6 pb-6">{header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} style={secondaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button></a> : <Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} style={secondaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button>}</div>
             )}
           </div>
         </>
@@ -1327,6 +1331,27 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
               </section>
             );
 
+          case 'ezforms': {
+            const form = (ezforms || []).find((f: any) => f && f.id === section.formId);
+            return (
+              <section key={index} id={sectionId} className="py-12 sm:py-16 md:py-20 bg-background" style={bgStyle}>
+                <div className="container mx-auto max-w-2xl px-4">
+                  {section.title && !section.settings?.hideTitle && (
+                    <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 ' + textClass}>{section.title}</h2>
+                  )}
+                  {section.body && (
+                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: section.body }} />
+                  )}
+                  {form ? (
+                    <EzFormsEmbedRuntime form={{ ...form, name: '', description: '' }} primaryBtnStyle={primaryBtnStyle} />
+                  ) : (
+                    <p className="text-center text-muted-foreground py-8">Form unavailable.</p>
+                  )}
+                </div>
+              </section>
+            );
+          }
+
           case 'blank':
           case 'welcome':
             return (
@@ -1475,7 +1500,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
       })}
 
       {/* EzForms embeds (from enabled site plugins) */}
-      {(ezforms || []).map((f: any) => (
+      {(ezforms || []).filter((f: any) => f && f.source === 'plugin').map((f: any) => (
         <EzFormsEmbedRuntime key={f.id} form={f} primaryBtnStyle={primaryBtnStyle} />
       ))}
 
