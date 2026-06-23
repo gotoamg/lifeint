@@ -1952,6 +1952,7 @@
         "opacity": 95,
         "blurAmount": 12
       },
+      "ctaBgColorSecondary": "#1e293b",
       "logoPositionDesktop": "left",
       "showCtaButtonSecondary": true
     },
