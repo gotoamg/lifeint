@@ -209,8 +209,8 @@
           "backgroundImage": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1781208354007_apucnqlo.png?v=1781208355135",
           "inlineLogoHeight": 0.9,
           "backgroundPosition": {
-            "x": 78,
-            "y": 84
+            "x": 45,
+            "y": 45
           }
         },
         {
@@ -1589,6 +1589,26 @@
       "createdAt": "2026-06-17T14:51:41.890Z",
       "isVisible": true,
       "updatedAt": "2026-06-20T05:16:24.123Z"
+    },
+    {
+      "id": "page-1782130976647",
+      "slug": "wayanad-hospital",
+      "title": "Wayanad Hospital",
+      "isHome": false,
+      "sections": [
+        {
+          "type": "gallery",
+          "title": "Our Gallery",
+          "images": [
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=300&fit=crop",
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop"
+          ]
+        }
+      ],
+      "createdAt": "2026-06-22T12:22:56.647Z",
+      "isVisible": true,
+      "updatedAt": "2026-06-22T12:22:56.647Z"
     }
   ],
   "footer": {
@@ -1932,7 +1952,8 @@
         "opacity": 95,
         "blurAmount": 12
       },
-      "logoPositionDesktop": "left"
+      "logoPositionDesktop": "left",
+      "showCtaButtonSecondary": true
     },
     "ctaButton": {
       "href": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
@@ -1997,7 +2018,11 @@
         "type": "link",
         "label": "Contact"
       }
-    ]
+    ],
+    "ctaButtonSecondary": {
+      "href": "#",
+      "text": "Join our Network"
+    }
   },
   "styling": {
     "toneOfVoice": "professional",
@@ -2010,7 +2035,7 @@
   },
   "sections": [
     {
-      "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0);\"><font size=\"3\" face=\"Verdana, Geneva, sans-serif\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font></span></div>",
+      "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</span></div>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
       "title": "About Luke's International Fellowship & Enrichment - LIFE",
@@ -2023,7 +2048,7 @@
         "isVisible": true,
         "textAlign": "center",
         "paddingTop": "small",
-        "paddingBottom": "none",
+        "paddingBottom": "small",
         "responsiveOverrides": {
           "mobile": {
             "textAlign": "center"
@@ -2038,7 +2063,7 @@
       }
     },
     {
-      "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font size=\"3\" face=\"Verdana, Geneva, sans-serif\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
+      "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><span style=\"font-size: medium; color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></p>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
       "title": "Our Mission",
@@ -2047,7 +2072,7 @@
         "hideTitle": true,
         "isVisible": true,
         "textAlign": "center",
-        "paddingTop": "none",
+        "paddingTop": "small",
         "layoutVariant": "about-image-left",
         "paddingBottom": "small",
         "responsiveOverrides": {
