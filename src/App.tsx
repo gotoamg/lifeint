@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { SiteRenderer } from './SiteRenderer';
 import siteData from './site-data.json';
+import ezformsData from './ezforms-data.json';
 const businessName = "LifeInt";
 const SITE_ID = "1769755449367";
 const CHECK_URL = "https://foemfjmfrulilubshnwn.supabase.co/functions/v1/check-under-construction";
@@ -27,5 +28,5 @@ export default function App() {
       .catch(() => {});
   }, []);
   if (uc?.active) return <UnderConstructionPage name={uc.name} color={uc.color} />;
-  return <SiteRenderer content={siteData} businessName={businessName} />;
+  return <SiteRenderer content={siteData} businessName={businessName} ezforms={ezformsData as any} />;
 }

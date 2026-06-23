@@ -43,6 +43,79 @@ function FooterVisitorCounter({ textColor }: { textColor?: string }) {
 const PLATFORM_ROUTES = ['newsletter', 'blog'];
 function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
 
+// ===== Inline EzForms embed (mirrors SitePlugins.EzFormsEmbed) =====
+function EzFormsEmbedRuntime({ form, primaryBtnStyle }: { form: any; primaryBtnStyle?: any }) {
+  const [values, setValues] = useState<Record<string, any>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  if (!form || !form.id) return null;
+  const fields: any[] = Array.isArray(form.fields) ? form.fields : [];
+  const setVal = (id: string, v: any) => setValues((s) => ({ ...s, [id]: v }));
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    setErr(null); setSubmitting(true);
+    try {
+      const res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
+        method: 'POST',
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify({ form_id: form.id, user_id: form.user_id, data: values }),
+      });
+      if (!res.ok) throw new Error('Submission failed (' + res.status + ')');
+      setSubmitted(true);
+    } catch (e: any) {
+      setErr(e?.message || 'Submission failed');
+    } finally { setSubmitting(false); }
+  };
+  return (
+    <section className="w-full bg-background py-12 px-4">
+      <div className="w-full max-w-2xl mx-auto">
+        {form.name && <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">{form.name}</h2>}
+        {form.description && <p className="text-center text-muted-foreground mb-6">{form.description}</p>}
+        {submitted ? (
+          <div className="bg-card border border-border rounded-2xl p-8 text-center">
+            <h3 className="text-xl font-semibold mb-2">Thank you!</h3>
+            <p className="text-muted-foreground">Your submission has been received.</p>
+          </div>
+        ) : (
+          <form className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4" onSubmit={onSubmit}>
+            {fields.map((f) => {
+              const id = f.id || f.label;
+              const base = 'flex w-full rounded-md border border-input bg-background px-4 py-2 text-base placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring';
+              if (f.type === 'textarea') return (
+                <div key={id}><label className="block text-sm font-medium mb-1">{f.label}{f.required && ' *'}</label>
+                  <textarea required={f.required} placeholder={f.placeholder} className={base + ' min-h-[120px] resize-y'} value={values[id] || ''} onChange={(e: any) => setVal(id, e.target.value)} /></div>
+              );
+              if (f.type === 'select') return (
+                <div key={id}><label className="block text-sm font-medium mb-1">{f.label}{f.required && ' *'}</label>
+                  <select required={f.required} className={base + ' h-12'} value={values[id] || ''} onChange={(e: any) => setVal(id, e.target.value)}>
+                    <option value="">Select…</option>
+                    {(f.options || []).map((o: string, i: number) => <option key={i} value={o}>{o}</option>)}
+                  </select></div>
+              );
+              if (f.type === 'checkbox') return (
+                <label key={id} className="flex items-center gap-2 text-sm">
+                  <input type="checkbox" required={f.required} checked={!!values[id]} onChange={(e: any) => setVal(id, e.target.checked)} />
+                  {f.label}{f.required && ' *'}
+                </label>
+              );
+              const inputType = f.type === 'email' ? 'email' : f.type === 'phone' ? 'tel' : f.type === 'number' ? 'number' : f.type === 'date' ? 'date' : 'text';
+              return (
+                <div key={id}><label className="block text-sm font-medium mb-1">{f.label}{f.required && ' *'}</label>
+                  <input type={inputType} required={f.required} placeholder={f.placeholder} className={base + ' h-12'} value={values[id] || ''} onChange={(e: any) => setVal(id, e.target.value)} /></div>
+              );
+            })}
+            {err && <p className="text-sm text-red-600">{err}</p>}
+            <button type="submit" disabled={submitting} className="w-full h-12 rounded-md font-semibold text-white disabled:opacity-60" style={primaryBtnStyle || { backgroundColor: '#111827' }}>
+              {submitting ? 'Submitting…' : 'Submit'}
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
 // ===== Per-letter styled text (color + fontFamily) =====
 function renderStyledText(text: string, styles?: any[], logo?: { url?: string; alt?: string; heightEm?: number }, lineAligns?: any[]): any {
   if (!text) return text;
@@ -516,7 +589,7 @@ const hexToRgba = (hex: string, alpha: number) => { if (!hex?.startsWith('#') ||
 const slugify = (text?: string): string => { if (!text) return ''; return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''); };
 
 // ===== MAIN SiteRenderer =====
-export function SiteRenderer({ content, businessName }: { content: any; businessName: string }) {
+export function SiteRenderer({ content, businessName, ezforms }: { content: any; businessName: string; ezforms?: any[] }) {
   const { header, footer, hero, sections: rawSections, pages, globalStyles } = content;
   const footerEmail = footer?.contactInfo?.email?.trim();
   const footerPhone = footer?.contactInfo?.phone?.trim();
@@ -757,6 +830,7 @@ export function SiteRenderer({ content, businessName }: { content: any; business
               })()}
             </div>
             {header.ctaButton && headerSettings?.showCtaButton !== false && (header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[7]', ctaHideClass)}><Button size="sm" style={primaryBtnStyle} className="font-semibold min-h-[40px]">{header.ctaButton.text}</Button></a> : <Button size="sm" style={primaryBtnStyle} className={cn('font-semibold min-h-[40px] order-[7]', ctaHideClass)}>{header.ctaButton.text}</Button>)}
+            {header.ctaButtonSecondary && headerSettings?.showCtaButtonSecondary === true && (header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined} className={cn('order-[8]', ctaHideClass)}><Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold min-h-[40px] ml-2">{header.ctaButtonSecondary.text}</Button></a> : <Button size="sm" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className={cn('font-semibold min-h-[40px] ml-2 order-[8]', ctaHideClass)}>{header.ctaButtonSecondary.text}</Button>)}
             <button className={cn('p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md transition-colors order-[6]', bpClasses.hide)} style={{ color: 'inherit' }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
               <Menu className="w-6 h-6" style={{ color: 'inherit' }} />
             </button>
@@ -829,6 +903,9 @@ export function SiteRenderer({ content, businessName }: { content: any; business
             </nav>
             {header?.ctaButton && headerSettings?.showCtaButton !== false && !ctaHiddenOnMobile && (
               <div className="p-6 border-t border-white/10">{header.ctaButton.href ? <a href={header.ctaButton.href} target={header.ctaButton.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButton.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button></a> : <Button size="lg" style={primaryBtnStyle} className="font-semibold w-full min-h-[52px]">{header.ctaButton.text}</Button>}</div>
+            )}
+            {header?.ctaButtonSecondary && headerSettings?.showCtaButtonSecondary === true && !ctaHiddenOnMobile && (
+              <div className="px-6 pb-6">{header.ctaButtonSecondary.href ? <a href={header.ctaButtonSecondary.href} target={header.ctaButtonSecondary.href.startsWith('http') ? '_blank' : undefined} rel={header.ctaButtonSecondary.href.startsWith('http') ? 'noopener noreferrer' : undefined}><Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button></a> : <Button size="lg" variant={(headerSettings.ctaStyleSecondary || 'outline') === 'outline' ? 'outline' : 'default'} className="font-semibold w-full min-h-[52px]">{header.ctaButtonSecondary.text}</Button>}</div>
             )}
           </div>
         </>
@@ -1396,6 +1473,11 @@ export function SiteRenderer({ content, businessName }: { content: any; business
         if (rules.length === 0 && wrapClasses.length === 1) return el;
         return <div key={'font-wrap-' + index} className={wrapClassName}>{rules.length > 0 ? <style dangerouslySetInnerHTML={{ __html: rules.join(' ') }} /> : null}{el}</div>;
       })}
+
+      {/* EzForms embeds (from enabled site plugins) */}
+      {(ezforms || []).map((f: any) => (
+        <EzFormsEmbedRuntime key={f.id} form={f} primaryBtnStyle={primaryBtnStyle} />
+      ))}
 
       {/* Footer */}
       <footer className="relative bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden">
