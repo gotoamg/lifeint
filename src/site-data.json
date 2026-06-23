@@ -1424,14 +1424,20 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<div style=\"text-align: center;\"><p class=\"MsoNormal\"><font color=\"#000000\"><font size=\"5\">Join an orthopedic mission team serving patients in Kenya. Open to medical students and residents passionate about service, faith, and global health.</font><font size=\"3\"></font></font></p><font size=\"3\" color=\"#000000\">\n</font>\n</div>",
+          "body": "<div style=\"text-align: center;\"><b style=\"font-size: 0.875rem;\"><font size=\"5\" style=\"\" color=\"#3b82f6\">Serve. Learn. Impact.</font></b></div><div style=\"text-align: center;\"><font style=\"\" color=\"#000000\" size=\"3\"><br></font></div><div style=\"text-align: center;\"><font size=\"3\" color=\"#000000\">Fully funded mission trip open to medical students and residents passionate about service, faith, and global health.</font></div><div style=\"text-align: center;\"><font size=\"3\" color=\"#000000\"><b><br></b></font></div><div style=\"text-align: center;\"><font size=\"3\" color=\"#000000\"><b>Specialty Impact:  Orthopedics</b></font></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1779910159815_kkuzkpx5.jpg?v=1779910159743",
           "title": "“Fully Funded Medical Mission to Kenya – Transform Lives While Growing as a Physician”",
           "settings": {
             "gap": 5,
             "fullWidth": true,
+            "hideTitle": true,
             "isVisible": true,
+            "textAlign": "center",
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
             "paddingTop": "none",
             "layoutVariant": "about-fullwidth",
             "paddingBottom": "none"
