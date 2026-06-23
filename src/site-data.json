@@ -1778,6 +1778,11 @@
                 "href": "/wayanad---india",
                 "type": "page",
                 "label": "Wayanad - India"
+              },
+              {
+                "href": "/wayanad-hospital",
+                "type": "page",
+                "label": "Mission Wayanad"
               }
             ]
           },
