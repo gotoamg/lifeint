@@ -1499,7 +1499,12 @@
             },
             "paddingTop": "none",
             "columnLayout": "2",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
