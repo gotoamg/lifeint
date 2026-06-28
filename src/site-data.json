@@ -1508,7 +1508,7 @@
           }
         },
         {
-          "body": "<font size=\"5\"><span data-start=\"88\" data-end=\"276\" style=\"\">“Discover a Christ-centered mission hospital committed to delivering compassionate, high-quality healthcare while transforming lives through medical excellence and spiritual ministry.”</span> </font>",
+          "body": "<div style=\"text-align: center;\"><font color=\"#ffffff\"><span style=\"font-size: 0.875rem;\"><font size=\"3\" style=\"\">“Discover a Christ-centered mission hospital committed to delivering compassionate, high-quality healthcare while transforming lives through medical excellence and spiritual ministry.”</font></span><font size=\"5\" style=\"\"> </font></font></div>",
           "type": "cta",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1777040488647_7y7m1cj5.jpg?v=1777040489437",
           "title": "",
