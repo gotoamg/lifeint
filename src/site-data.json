@@ -294,7 +294,7 @@
       "isHome": true,
       "sections": [
         {
-          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</span></div>",
+          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0);\"><font face=\"Arial, Helvetica, sans-serif\" style=\"\" size=\"3\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font></span></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
           "title": "About Luke's International Fellowship & Enrichment - LIFE",
@@ -322,7 +322,7 @@
           }
         },
         {
-          "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><span style=\"font-size: medium; color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></p>",
+          "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
           "title": "Our Mission",
@@ -353,17 +353,17 @@
             {
               "name": "Medical Missions",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-              "description": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38); font-weight: normal;\"><font size=\"3\" face=\"Verdana, Geneva, sans-serif\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </font></span></h2>"
+              "description": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38); font-weight: normal;\"><font size=\"3\" face=\"Arial, Helvetica, sans-serif\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </font></span></h2>"
             },
             {
               "name": "Spiritual Fellowship",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-              "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Verdana, Geneva, sans-serif\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </font></span></div>"
+              "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Arial, Helvetica, sans-serif\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </font></span></div>"
             },
             {
               "name": "Medical Education",
               "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-              "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Verdana, Geneva, sans-serif\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</font></span></div>"
+              "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Arial, Helvetica, sans-serif\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</font></span></div>"
             }
           ],
           "title": "Our Campaigns",
@@ -400,13 +400,19 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
           ],
           "settings": {
+            "fullWidth": true,
             "paddingTop": "small",
             "galleryStyle": "grid",
-            "paddingBottom": "small"
+            "paddingBottom": "small",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
-          "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+          "body": "<div style=\"text-align: center;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: medium;\"><font color=\"#ffffff\">When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.</font></span></div>",
           "type": "cta",
           "title": "Support us",
           "settings": {
@@ -423,7 +429,7 @@
           "buttonText": "Donate!"
         },
         {
-          "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\">Duncan Hospital experience</a></b>",
+          "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\"><font face=\"Arial, Helvetica, sans-serif\" size=\"3\">Duncan Hospital experience</font></a></b>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
           "title": "Blog Insights",
@@ -456,11 +462,12 @@
           "title": "Frequently Asked Questions"
         },
         {
-          "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
+          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font face=\"Arial, Helvetica, sans-serif\" style=\"\" size=\"3\">Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.</font></span></div>",
           "type": "contact",
           "title": "Contact",
           "settings": {
-            "anchorId": "contact"
+            "anchorId": "contact",
+            "fullWidth": false
           },
           "buttonText": "Send Message",
           "contactEmail": "orglife2020@gmail.com",
@@ -2102,7 +2109,7 @@
   },
   "sections": [
     {
-      "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</span></div>",
+      "body": "<div style=\"text-align: center;\"><font color=\"#000000\" size=\"5\"><b style=\"\">About Luke's International Fellowship &amp; Enrichment - LIFE</b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: medium;\"><br></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0);\"><font face=\"Arial, Helvetica, sans-serif\" style=\"\" size=\"3\">We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. Rooted in Christian values, LIFE engages in medical missions, health education, community outreach, holistic well being and spiritual discipleship — bringing healing, hope, and transformation to individuals and communities worldwide.</font></span></div>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_171905.jpg",
       "title": "About Luke's International Fellowship & Enrichment - LIFE",
@@ -2130,7 +2137,7 @@
       }
     },
     {
-      "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><span style=\"font-size: medium; color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"font-size: medium; color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></p>",
+      "body": "<p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\">Our Mission</b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font color=\"#262626\" style=\"\" size=\"5\"><b style=\"\"><br></b></font></p><p class=\"MsoNormal\" style=\"text-align: center;\"><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><span style=\"color: rgb(38, 38, 38);\">To share the gospel of Jesus Christ through healthcare. It </span><span style=\"color: rgb(38, 38, 38);\">aims to strengthen healthcare professionals in their walk with God, equip them </span><span style=\"color: rgb(38, 38, 38);\">with the skills of an Evangelist, and provide opportunities to be an effective </span><span style=\"color: rgb(38, 38, 38);\">witness of Jesus Christ.</span></font></p>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/WhatsApp%20Image%202022-07-28%20at%205.15.20%20AM.jpeg",
       "title": "Our Mission",
@@ -2161,17 +2168,17 @@
         {
           "name": "Medical Missions",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-26%20at%207.16.42%20AM%20(4).jpeg",
-          "description": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38); font-weight: normal;\"><font size=\"3\" face=\"Verdana, Geneva, sans-serif\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </font></span></h2>"
+          "description": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38); font-weight: normal;\"><font size=\"3\" face=\"Arial, Helvetica, sans-serif\">Local and overseas, bringing clinical services to the poor and undeserved in partnership with communities, hospitals and medical schools. </font></span></h2>"
         },
         {
           "name": "Spiritual Fellowship",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202022-07-28%20at%2012.26.18%20PM.jpeg",
-          "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Verdana, Geneva, sans-serif\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </font></span></div>"
+          "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Arial, Helvetica, sans-serif\">Provide services that encourage, strengthen and foster a community of Christian healthcare professionals. </font></span></div>"
         },
         {
           "name": "Medical Education",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/20190321_093756.jpg",
-          "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Verdana, Geneva, sans-serif\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</font></span></div>"
+          "description": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font size=\"3\" style=\"\" face=\"Arial, Helvetica, sans-serif\">Mentoring through individual and group sessions, seminars for continuing medical education, scholarships and medical training opportunities both locally and internationally.</font></span></div>"
         }
       ],
       "title": "Our Campaigns",
@@ -2208,13 +2215,19 @@
         "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/DSC_2478.JPG"
       ],
       "settings": {
+        "fullWidth": true,
         "paddingTop": "small",
         "galleryStyle": "grid",
-        "paddingBottom": "small"
+        "paddingBottom": "small",
+        "responsiveOverrides": {
+          "desktop": {
+            "textAlign": "center"
+          }
+        }
       }
     },
     {
-      "body": "When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.",
+      "body": "<div style=\"text-align: center;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: medium;\"><font color=\"#ffffff\">When you support us, you’re not just giving – you’re healing, you’re lifting, you’re standing in the gap for those who are unseen and unheard. Your help becomes a hand to the sick, a voice to the voiceless, and hope to the hopeless. Be the miracle someone is praying for today.</font></span></div>",
       "type": "cta",
       "title": "Support us",
       "settings": {
@@ -2231,7 +2244,7 @@
       "buttonText": "Donate!"
     },
     {
-      "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\">Duncan Hospital experience</a></b>",
+      "body": "<b><a href=\"/the-duncan-hospital-experience\" target=\"_blank\" rel=\"noopener noreferrer\"><font face=\"Arial, Helvetica, sans-serif\" size=\"3\">Duncan Hospital experience</font></a></b>",
       "type": "about",
       "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp%20Image%202025-10-13%20at%2011.07.52%20PM%20(1).jpeg",
       "title": "Blog Insights",
@@ -2264,11 +2277,12 @@
       "title": "Frequently Asked Questions"
     },
     {
-      "body": "Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.",
+      "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><font face=\"Arial, Helvetica, sans-serif\" style=\"\" size=\"3\">Ready for a hand with Luke's International Fellowship &amp; Enrichment - LIFE? We'd love to hear from you.</font></span></div>",
       "type": "contact",
       "title": "Contact",
       "settings": {
-        "anchorId": "contact"
+        "anchorId": "contact",
+        "fullWidth": false
       },
       "buttonText": "Send Message",
       "contactEmail": "orglife2020@gmail.com",
