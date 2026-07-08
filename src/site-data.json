@@ -598,12 +598,23 @@
           "type": "team",
           "title": "Executive committee",
           "settings": {
-            "gap": 6,
-            "fullWidth": true,
+            "gap": 3,
+            "fullWidth": false,
             "isVisible": true,
             "paddingTop": "small",
-            "columnLayout": "4",
-            "paddingBottom": "small"
+            "columnLayout": "3",
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "teamMembers": [
             {
@@ -642,10 +653,17 @@
           "type": "team",
           "title": "Board of Directors",
           "settings": {
+            "gap": 3,
             "isVisible": true,
             "paddingTop": "none",
+            "columnLayout": "3",
             "layoutVariant": "team-grid",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "teamMembers": [
             {
@@ -657,12 +675,6 @@
             {
               "bio": "",
               "name": "Neal Varughese, MD",
-              "role": "-",
-              "image": ""
-            },
-            {
-              "bio": "",
-              "name": " Elsa Vadakekut, DO",
               "role": "-",
               "image": ""
             },
@@ -708,10 +720,24 @@
           "type": "team",
           "title": "Prayer Coordinator",
           "settings": {
+            "gap": 3,
+            "fullWidth": false,
             "isVisible": true,
             "paddingTop": "none",
+            "columnLayout": "1",
             "layoutVariant": "team-grid",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "teamMembers": [
             {
@@ -726,10 +752,11 @@
           "type": "team",
           "title": "Board of Advisors",
           "settings": {
+            "gap": 3,
             "fullWidth": true,
             "isVisible": true,
             "paddingTop": "none",
-            "columnLayout": "4",
+            "columnLayout": "3",
             "layoutVariant": "team-grid",
             "paddingBottom": "none"
           },
@@ -776,8 +803,15 @@
           "type": "team",
           "title": "Accounts Management",
           "settings": {
+            "gap": 3,
             "isVisible": true,
-            "layoutVariant": "team-grid"
+            "columnLayout": "1",
+            "layoutVariant": "team-grid",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "teamMembers": [
             {
