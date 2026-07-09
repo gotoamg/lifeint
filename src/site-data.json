@@ -1711,9 +1711,9 @@
         {
           "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><b style=\"\"><font size=\"5\">A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.</font></b></span></div>",
           "type": "video",
-          "title": "Watch Our Story",
+          "title": "A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.",
           "settings": {
-            "hideTitle": true,
+            "hideTitle": false,
             "paddingTop": "none"
           },
           "videoUrl": "https://www.youtube.com/embed/9SDymTAK2bs"
