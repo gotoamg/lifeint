@@ -1063,11 +1063,13 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<div style=\"text-align: center;\"><font size=\"3\"><span style=\"font-family: Arial, Helvetica, sans-serif; color: rgb(38, 38, 38);\">Come, join this opportunity to learn open heart evaluation, management, and surgical techniques with world-renowned Christian mentors!</span><span style=\"color: rgb(38, 38, 38); font-family: Arial, Helvetica, sans-serif;\">&nbsp;</span></font></div><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">When: February 8-21, 2024</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Where: Tenwek Hospital, Bomet, Kenya</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Who: This trip is open to surgical residents, fellows, and attendings</span></div></font>",
+          "body": "<div style=\"text-align: center;\"><font color=\"#262626\" face=\"Arial, Helvetica, sans-serif\" size=\"5\"><b style=\"\">Cardiothoracic Surgery Mission Trip</b></font></div><div style=\"text-align: center;\"><font size=\"3\" face=\"Arial, Helvetica, sans-serif\"><span style=\"color: rgb(38, 38, 38);\"><br></span></font></div><div style=\"text-align: center;\"><font size=\"3\" face=\"Arial, Helvetica, sans-serif\"><span style=\"color: rgb(38, 38, 38);\">Come, join this opportunity to learn open heart evaluation, management, and surgical techniques with world-renowned Christian mentors!</span><span style=\"color: rgb(38, 38, 38);\">&nbsp;</span></font></div><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">When: February 8-21, 2024</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Where: Tenwek Hospital, Bomet, Kenya</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Who: This trip is open to surgical residents, fellows, and attendings</span></div></font>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-2.webp",
           "title": "Cardiothoracic Surgery Mission Trip",
           "settings": {
+            "fullWidth": true,
+            "hideTitle": true,
             "isVisible": true,
             "background": {
               "type": "color",
