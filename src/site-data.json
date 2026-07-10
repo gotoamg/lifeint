@@ -1228,6 +1228,7 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2022-07-25-at-7.15.58-AM-1.webp"
           ],
           "settings": {
+            "fullWidth": true,
             "isVisible": true,
             "paddingTop": "small",
             "layoutVariant": "gallery-carousel",
@@ -1249,7 +1250,18 @@
           "type": "video",
           "title": "REACH Cambodia 2022",
           "settings": {
-            "isVisible": true
+            "isVisible": true,
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "videoUrl": "https://www.youtube.com/embed/qWb3cIgjgKc"
         }
