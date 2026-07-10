@@ -1714,7 +1714,18 @@
           "title": "A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.",
           "settings": {
             "hideTitle": false,
-            "paddingTop": "none"
+            "paddingTop": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "videoUrl": "https://www.youtube.com/embed/9SDymTAK2bs"
         },
@@ -1730,7 +1741,7 @@
             "paddingTop": "none",
             "paddingBottom": "none"
           },
-          "buttonLink": "#Giving",
+          "buttonLink": "https://www.lifeint.org/giving",
           "buttonText": "Donate"
         }
       ],
