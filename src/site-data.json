@@ -1063,7 +1063,7 @@
       "isHome": false,
       "sections": [
         {
-          "body": "Come, join this opportunity to learn open heart evaluation, management, and surgical techniques with world-renowned Christian mentors!\n \nWhen: February 8-21, 2024\nWhere: Tenwek Hospital, Bomet, Kenya\nWho: This trip is open to surgical residents, fellows, and attendings\n",
+          "body": "<div style=\"text-align: center;\"><font size=\"3\"><span style=\"font-family: Arial, Helvetica, sans-serif; color: rgb(38, 38, 38);\">Come, join this opportunity to learn open heart evaluation, management, and surgical techniques with world-renowned Christian mentors!</span><span style=\"color: rgb(38, 38, 38); font-family: Arial, Helvetica, sans-serif;\">&nbsp;</span></font></div><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">When: February 8-21, 2024</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Where: Tenwek Hospital, Bomet, Kenya</span></div><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Who: This trip is open to surgical residents, fellows, and attendings</span></div></font>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-2.webp",
           "title": "Cardiothoracic Surgery Mission Trip",
@@ -1074,7 +1074,18 @@
               "value": "#F1F5F9"
             },
             "layoutVariant": "hero-split",
-            "paddingBottom": "small"
+            "paddingBottom": "small",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "buttonLink": "#contact",
           "buttonText": "Get Started"
@@ -1105,14 +1116,25 @@
       "isHome": false,
       "sections": [
         {
-          "body": "This mission trip was a collaboration with Samaritans Purse in Bomet, Kenya. The hospital's busy services are Orthopedics, Cardiothoracic surgery, General surgery, Critical Care, and In-patient medicine/Pediatric\n\nWhen: Sept 8-17, 2023\nWhere: Tenwek Hospital, Bomet, Kenya\nWho: Trip was opened for Physicians, Fellows, Residents, and Physician Assistants\nCost: $3,500\n",
+          "body": "<div style=\"text-align: center;\"><span style=\"font-family: Arial, Helvetica, sans-serif;\"><font size=\"3\" style=\"\" color=\"#000000\">This mission trip was a collaboration with Samaritans Purse in Bomet, Kenya. The hospital's busy services are Orthopedics, Cardiothoracic surgery, General surgery, Critical Care, and In-patient medicine/Pediatric</font></span></div><font face=\"Arial, Helvetica, sans-serif\" size=\"3\" color=\"#000000\"><div style=\"text-align: center;\"></div><div style=\"text-align: center;\">When: Sept 8-17, 2023</div><div style=\"text-align: center;\">Where: Tenwek Hospital, Bomet, Kenya</div><div style=\"text-align: center;\">Who: Trip was opened for Physicians, Fellows, Residents, and Physician Assistants</div><div style=\"text-align: center;\">Cost: $3,500</div></font>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/6297f5e2-79d4-47b3-b4c4-598427391781%20(1).webp",
           "title": "Impacted Kenya!",
           "settings": {
             "isVisible": true,
             "layoutVariant": "hero-centered",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "buttonLink": "#contact",
           "buttonText": "Get Started"
@@ -1152,6 +1174,17 @@
             "background": {
               "type": "color",
               "value": "#FFFFFF"
+            },
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
             }
           },
           "videoUrl": "https://www.youtube.com/embed/DEl5NMYsyAA?start=134"
@@ -1169,14 +1202,16 @@
       "isHome": false,
       "sections": [
         {
-          "body": "Over the course of four days, we successfully treated over 600 patients. Additionally, we treated 30 abandoned children performed x-ray guided pain procedures, assisted with spine surgery, observed  open-heart surgery, lectured to university medical students and faculty and taught medical students, but above all, we brought the gospel of Christ to the unreached.\n\nHis name be glorified! Christ is All!\n",
+          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><b>Reaching the unreached</b><span style=\"font-size: 0.875rem;\"></span></font></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><br></font></div><div style=\"text-align: center;\"><span style=\"font-size: 0.875rem;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\">Over the course of four days, we successfully treated over 600 patients. Additionally, we treated 30 abandoned children performed x-ray guided pain procedures, assisted with spine surgery, observed&nbsp; open-heart surgery, lectured to university medical students and faculty and taught medical students, but above all, we brought the gospel of Christ to the unreached.</font></span></div><div style=\"text-align: center;\"></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\"><br><span style=\"font-size: 0.875rem;\">His name be glorified! Christ is All!</span></font></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2693_5-scaled.webp",
           "title": "Reaching the unreached",
           "settings": {
+            "hideTitle": true,
             "isVisible": true,
+            "paddingTop": "small",
             "layoutVariant": "about-image-left",
-            "paddingBottom": "medium"
+            "paddingBottom": "none"
           }
         },
         {
@@ -1195,7 +1230,18 @@
           "settings": {
             "isVisible": true,
             "paddingTop": "small",
-            "layoutVariant": "gallery-carousel"
+            "layoutVariant": "gallery-carousel",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
