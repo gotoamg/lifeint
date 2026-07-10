@@ -838,13 +838,25 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<b>Institutions:</b>\nWayanad Community Hospital&nbsp;\n<b>Specialty:</b>\nCommunity Medicine, Primary Care, Paediatrics\n<b>Accessibility:</b>\nCapital\n<b>Stay:</b>\nRetreat Camp - On premises\n<b>Medical Clearance:</b>\nNational Medical Council, Approved NGO, or Medical Institution\n<b>Established:</b>\n2022\n<b>Mission Liason:</b>\nDr. Tony Joseph\n<b>Local Liason:</b>\nDr. Muralidar\n",
+          "body": "<div style=\"text-align: center;\"><b style=\"font-family: Arial, Helvetica, sans-serif; font-size: medium; color: rgb(38, 38, 38);\">Institutions:</b></div><font face=\"Arial, Helvetica, sans-serif\" size=\"3\"><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Wayanad Community Hospital&nbsp;</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Specialty:</b></div></b><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Community Medicine, Primary Care, Paediatrics</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Accessibility:</b></div></b><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Capital</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Stay:</b></div></b><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">Retreat Camp - On premises</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Medical Clearance:</b></div></b><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">National Medical Council, Approved NGO, or Medical Institution</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Established:</b></div></b><div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\">2022</span></div><b><div style=\"text-align: center;\"><b style=\"color: rgb(38, 38, 38);\">Mission Liason:</b></div></b><div style=\"text-align: center;\"><font face=\"Arial, Helvetica, sans-serif\" size=\"3\" style=\"color: rgb(38, 38, 38);\">Dr. Tony Joseph and </font><span style=\"color: rgb(38, 38, 38);\">Dr. Muralidar</span></div></font>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/river-6972165_1920.jpg",
           "title": "Details",
           "settings": {
+            "fullWidth": true,
             "hideTitle": true,
-            "isVisible": true
+            "isVisible": true,
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         }
       ],
