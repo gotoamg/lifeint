@@ -1952,11 +1952,6 @@
             "newTab": true,
             "children": [
               {
-                "href": "/wayanad---india",
-                "type": "page",
-                "label": "Wayanad - India"
-              },
-              {
                 "href": "/wayanad-hospital",
                 "type": "page",
                 "label": "Mission Wayanad"
@@ -1972,32 +1967,32 @@
               {
                 "href": "/wayanad---india",
                 "type": "page",
-                "label": "Wayanad - India"
+                "label": "Mission Wayanad - India"
               },
               {
                 "href": "/uttarakhand---india",
                 "type": "page",
-                "label": "Uttarakhand - India"
+                "label": "Mission Uttarakhand - India"
               },
               {
                 "href": "/bihar---india",
                 "type": "page",
-                "label": "Bihar - India"
+                "label": "Mission Bihar - India"
               },
               {
                 "href": "/dominican-republic",
                 "type": "page",
-                "label": "Dominican Republic"
+                "label": "Mission Dominican Republic"
               },
               {
                 "href": "/kenya",
                 "type": "page",
-                "label": "Kenya"
+                "label": "Mission Kenya"
               },
               {
                 "href": "/cambodia",
                 "type": "page",
-                "label": "Cambodia"
+                "label": "Mission Cambodia"
               },
               {
                 "href": "/mission-kenya",
@@ -2015,27 +2010,27 @@
               {
                 "href": "/reach-kenya---2024",
                 "type": "page",
-                "label": "REACH Kenya - 2024"
+                "label": "Kenya - 2024"
               },
               {
                 "href": "/reach-kenya---2023",
                 "type": "page",
-                "label": "REACH Kenya - 2023"
+                "label": "Kenya - 2023"
               },
               {
                 "href": "/reach-india---2023",
                 "type": "page",
-                "label": "REACH India - 2023"
+                "label": "India - 2023"
               },
               {
                 "href": "/reach-kenya---2022",
                 "type": "page",
-                "label": "REACH Kenya - 2022"
+                "label": "Kenya - 2022"
               },
               {
                 "href": "/reach-cambodia---2022",
                 "type": "page",
-                "label": "REACH Cambodia - 2022"
+                "label": "Cambodia - 2022"
               }
             ]
           },
