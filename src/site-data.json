@@ -1393,6 +1393,7 @@
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/vicky-t-EY3tC81nFt0-unsplash.jpg",
           "title": "About Us",
           "settings": {
+            "fullWidth": true,
             "hideTitle": true,
             "isVisible": true,
             "layoutVariant": "about-image-left",
@@ -1404,9 +1405,56 @@
           "type": "video",
           "title": "A calling to Cambodia - Dr. Dan Smith MD",
           "settings": {
-            "paddingTop": "none"
+            "paddingTop": "none",
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           },
           "videoUrl": "https://www.youtube.com/embed/H7IgFA90CsI"
+        },
+        {
+          "type": "gallery",
+          "title": "Some memories from the last visit",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784361866947_77n4nsep.jpg?v=1784361868178",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784361970490_ycpnty34.jpg?v=1784361971523",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784361888960_lrhi14q1.jpg?v=1784361889744",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784361924754_yjcupv1y.jpg?v=1784361925474",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784361981516_fw1w178z.jpg?v=1784361982793",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784362004463_ksnot8h3.jpg?v=1784362005308",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784362013638_zoj5z01s.jpg?v=1784362014266",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784362072762_x7axjd3b.jpg?v=1784362073777"
+          ],
+          "settings": {
+            "isVisible": true,
+            "textAlign": "center",
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "paddingTop": "none",
+            "layoutVariant": "gallery-grid",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
+          }
         }
       ],
       "createdAt": "2026-03-06T18:19:41.772Z",
