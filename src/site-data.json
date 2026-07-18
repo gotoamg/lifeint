@@ -900,7 +900,47 @@
             "fullWidth": true,
             "hideTitle": true,
             "isVisible": true,
-            "layoutVariant": "about-image-left"
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "layoutVariant": "about-image-left",
+            "paddingBottom": "none"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Some memories from the last visit",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375722159_75bpgj5z.jpg?v=1784375723338",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375823600_ba9j9s2g.jpg?v=1784375824439",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375834615_z1dmln42.jpg?v=1784375835436",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375844889_d6lekfs1.jpg?v=1784375845511",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375854243_m1243g0v.jpg?v=1784375854916",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375865404_zwtrb6sq.jpg?v=1784375866318",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375878560_atjzq80z.jpg?v=1784375879737",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784375888089_y7pfmwur.jpg?v=1784375889099"
+          ],
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "background": {
+              "type": "color",
+              "value": "#F1F5F9"
+            },
+            "paddingTop": "none",
+            "layoutVariant": "gallery-grid",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         }
       ],
