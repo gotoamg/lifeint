@@ -1945,12 +1945,13 @@
           }
         },
         {
-          "body": "<div style=\"text-align: center;\"><span style=\"color: rgb(38, 38, 38);\"><b style=\"\"><font size=\"5\">A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.</font></b></span></div>",
+          "body": "<div style=\"text-align: center;\"><b><font size=\"5\" color=\"#000000\">A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.</font></b></div><div style=\"text-align: center;\"><b><font size=\"5\" color=\"#000000\"><br></font></b></div>",
           "type": "video",
-          "title": "A New Hospital in the Tribal Area of Wayanad, India, in Collaboration with ICPF.",
+          "title": "",
           "settings": {
             "hideTitle": false,
             "paddingTop": "none",
+            "paddingBottom": "none",
             "responsiveOverrides": {
               "mobile": {
                 "textAlign": "center"
@@ -1979,6 +1980,38 @@
           },
           "buttonLink": "https://www.lifeint.org/giving",
           "buttonText": "Donate"
+        },
+        {
+          "body": "<br>",
+          "type": "about",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784403215371_punr6bab.png?v=1784403216980",
+          "title": "",
+          "settings": {
+            "fullWidth": true,
+            "hideTitle": true,
+            "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "paddingTop": "none",
+            "layoutVariant": "about-fullwidth",
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "imageFit": "contain",
+                "textAlign": "center"
+              },
+              "tablet": {
+                "imageFit": "contain",
+                "textAlign": "center"
+              },
+              "desktop": {
+                "imageFit": "contain",
+                "textAlign": "center"
+              }
+            }
+          }
         }
       ],
       "createdAt": "2026-06-22T12:22:56.647Z",
