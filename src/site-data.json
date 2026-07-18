@@ -942,6 +942,43 @@
             "background": {
               "type": "color",
               "value": "#F1F5F9"
+            },
+            "paddingBottom": "none"
+          }
+        },
+        {
+          "type": "gallery",
+          "title": "Some Glimpses",
+          "images": [
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360703521_8r4bndz9.jpg?v=1784360705520",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360725482_pqvv0tqq.jpg?v=1784360726223",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360738125_28xzpcua.jpg?v=1784360739028",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360755012_0jl3h5st.jpg?v=1784360755740",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360775791_qkrvn6sd.jpg?v=1784360776628",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360800282_dmyqw5ae.jpg?v=1784360801370",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360811311_8ba7odnl.jpg?v=1784360812259",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1784360834191_4xkqe731.jpg?v=1784360835041"
+          ],
+          "settings": {
+            "fullWidth": true,
+            "isVisible": true,
+            "textAlign": "center",
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "paddingTop": "none",
+            "layoutVariant": "gallery-grid",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
             }
           }
         }
