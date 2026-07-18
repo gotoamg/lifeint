@@ -924,12 +924,14 @@
           "settings": {
             "fullWidth": true,
             "isVisible": true,
+            "textAlign": "center",
             "background": {
               "type": "color",
               "value": "#F1F5F9"
             },
             "paddingTop": "none",
             "layoutVariant": "gallery-grid",
+            "paddingBottom": "none",
             "responsiveOverrides": {
               "mobile": {
                 "textAlign": "center"
