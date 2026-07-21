@@ -500,8 +500,8 @@
             "hideTitle": true,
             "isVisible": true,
             "background": {
-              "type": "color",
-              "value": "#FFFFFF"
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
             },
             "responsiveOverrides": {
               "desktop": {
@@ -533,6 +533,10 @@
             "fullWidth": true,
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "none",
             "paddingBottom": "none",
             "responsiveOverrides": {
@@ -569,9 +573,24 @@
           "settings": {
             "fullWidth": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "none",
             "layoutVariant": "gallery-carousel",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         },
         {
@@ -1328,8 +1347,8 @@
             "fullWidth": true,
             "isVisible": true,
             "background": {
-              "type": "color",
-              "value": "#FFFFFF"
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
             },
             "responsiveOverrides": {
               "mobile": {
@@ -1358,13 +1377,17 @@
       "isHome": false,
       "sections": [
         {
-          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><b>Reaching the unreached</b><span style=\"font-size: 0.875rem;\"></span></font></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><br></font></div><div style=\"text-align: center;\"><span style=\"font-size: 0.875rem;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\">Over the course of four days, we successfully treated over 600 patients. Additionally, we treated 30 abandoned children performed x-ray guided pain procedures, assisted with spine surgery, observed&nbsp; open-heart surgery, lectured to university medical students and faculty and taught medical students, but above all, we brought the gospel of Christ to the unreached.</font></span></div><div style=\"text-align: center;\"></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\"><br><span style=\"font-size: 0.875rem;\">His name be glorified! Christ is All!</span></font></div>",
+          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><b><font size=\"5\">Reaching the unreached</font></b><span style=\"font-size: 0.875rem;\"></span></font></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\"><br></font></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" style=\"\" size=\"3\">Over the course of four days, we successfully treated over 600 patients. Additionally, we treated 30 abandoned children performed x-ray guided pain procedures, assisted with spine surgery, observed&nbsp; open-heart surgery, lectured to university medical students and faculty and taught medical students, but above all, we brought the gospel of Christ to the unreached.</font></div><div style=\"text-align: center;\"></div><div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\" size=\"3\"><br><b>His name be glorified! Christ is All!</b></font></div>",
           "type": "about",
           "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/IMG_2693_5-scaled.webp",
           "title": "Reaching the unreached",
           "settings": {
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "small",
             "layoutVariant": "about-image-left",
             "paddingBottom": "none"
@@ -1441,6 +1464,10 @@
           "settings": {
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "about-image-left",
             "paddingBottom": "small"
           }
@@ -1491,6 +1518,10 @@
             "fullWidth": true,
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "about-image-left",
             "paddingBottom": "none"
           }
@@ -1616,6 +1647,10 @@
             "hideTitle": true,
             "isVisible": true,
             "textAlign": "left",
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "about-image-left",
             "paddingBottom": "none"
           }
@@ -1630,6 +1665,10 @@
           ],
           "settings": {
             "fullWidth": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "none",
             "paddingBottom": "none"
           }
@@ -1665,6 +1704,10 @@
           "settings": {
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "blank-text-image",
             "paddingBottom": "none"
           }
@@ -1709,8 +1752,23 @@
             "fullWidth": true,
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "about-image-left",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         }
       ],
@@ -1732,6 +1790,10 @@
           "settings": {
             "hideTitle": true,
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "blank-text-image",
             "responsiveOverrides": {
               "mobile": {
@@ -1900,8 +1962,8 @@
             "hideTitle": true,
             "isVisible": true,
             "background": {
-              "type": "color",
-              "value": "#F1F5F9"
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
             },
             "paddingTop": "none",
             "layoutVariant": "blank-text-image",
