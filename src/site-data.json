@@ -1168,12 +1168,28 @@
       "isHome": false,
       "sections": [
         {
-          "body": "Phone: (203)918-7574\nE-mail: orglife2020@gmail.com\n",
+          "body": "<div style=\"text-align: center;\"><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\"><b><font size=\"6\">Get in touch!</font></b></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: 0.875rem;\"><font face=\"Arial, Helvetica, sans-serif\"><br></font></span></div><div style=\"text-align: center;\"><span style=\"color: rgb(0, 0, 0); font-size: 0.875rem;\"><font face=\"Arial, Helvetica, sans-serif\">Phone: (203)918-7574</font></span></div><font color=\"#000000\" face=\"Arial, Helvetica, sans-serif\"><div style=\"text-align: center;\"><span style=\"font-size: 0.875rem;\">E-mail: orglife2020@gmail.com</span></div></font>",
           "type": "about",
           "title": "Get in touch!",
           "settings": {
+            "hideTitle": true,
             "isVisible": true,
-            "layoutVariant": "about-centered"
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
+            "layoutVariant": "about-centered",
+            "responsiveOverrides": {
+              "mobile": {
+                "textAlign": "center"
+              },
+              "tablet": {
+                "textAlign": "center"
+              },
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         }
       ],
