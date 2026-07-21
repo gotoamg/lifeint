@@ -316,6 +316,7 @@
                 "textAlign": "center"
               },
               "desktop": {
+                "imageFit": "contain",
                 "textAlign": "center"
               }
             }
@@ -2451,6 +2452,7 @@
             "textAlign": "center"
           },
           "desktop": {
+            "imageFit": "contain",
             "textAlign": "center"
           }
         }
