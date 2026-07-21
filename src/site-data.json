@@ -1214,8 +1214,8 @@
             "hideTitle": true,
             "isVisible": true,
             "background": {
-              "type": "color",
-              "value": "#F1F5F9"
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
             },
             "layoutVariant": "hero-split",
             "paddingBottom": "small",
@@ -1244,6 +1244,10 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/6297f5e2-79d4-47b3-b4c4-598427391781%20(1).webp"
           ],
           "settings": {
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "small"
           }
         }
@@ -1266,6 +1270,10 @@
           "title": "Impacted Kenya!",
           "settings": {
             "isVisible": true,
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "layoutVariant": "hero-centered",
             "paddingBottom": "none",
             "responsiveOverrides": {
@@ -1293,6 +1301,10 @@
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/WhatsApp-Image-2023-05-08-at-8.23.40-AM-4.webp"
           ],
           "settings": {
+            "background": {
+              "type": "gradient",
+              "value": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            },
             "paddingTop": "small"
           }
         }
