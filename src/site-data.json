@@ -1713,21 +1713,32 @@
         },
         {
           "type": "gallery",
+          "image": "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770063838_vqw1lr74.jpg?v=1785770065576",
           "title": "Some of the memories",
           "images": [
-            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775464476776_kvlrgle7.png?v=1775464478861",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775464518487_ouyzk096.jpg?v=1775464519055",
             "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775465301837_r76ct5at.jpg?v=1775465303413",
-            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775465550355_u4rxgo14.jpg?v=1775465552288"
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1775465550355_u4rxgo14.jpg?v=1775465552288",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770093540_s6gf5qhb.jpg?v=1785770094984",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770109475_fyjnomse.jpg?v=1785770110307",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770122655_g4pi8el3.jpg?v=1785770123637",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770138136_cpsin6i7.jpg?v=1785770138885",
+            "https://foemfjmfrulilubshnwn.supabase.co/storage/v1/object/public/site-images/c0dfc456-5307-4a15-a049-939fba682575/1769755449367/gallery_1785770152671_6i4nle6r.jpg?v=1785770153488"
           ],
           "settings": {
             "fullWidth": true,
+            "textAlign": "center",
             "background": {
               "type": "color",
               "value": "#F8FAFC"
             },
             "paddingTop": "none",
-            "paddingBottom": "none"
+            "paddingBottom": "none",
+            "responsiveOverrides": {
+              "desktop": {
+                "textAlign": "center"
+              }
+            }
           }
         }
       ],
