@@ -2399,7 +2399,15 @@
           {
             "href": "/lpn-life-prayer-network",
             "type": "page",
-            "label": "Life Prayer Network (LPN)"
+            "label": "Life Prayer Network (LPN)",
+            "children": [
+              {
+                "href": "https://www.anushjohn.com/medical-apologetics",
+                "type": "external",
+                "label": "Medical-Apologetics",
+                "newTab": true
+              }
+            ]
           },
           {
             "href": "#",
