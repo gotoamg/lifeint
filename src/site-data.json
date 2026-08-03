@@ -1772,7 +1772,7 @@
               "desktop": {
                 "imageFit": "contain",
                 "textAlign": "center",
-                "imageAspectRatio": "auto"
+                "imageAspectRatio": "3/4"
               }
             }
           }
