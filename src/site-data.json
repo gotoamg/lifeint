@@ -1766,6 +1766,7 @@
                 "textAlign": "center"
               },
               "desktop": {
+                "imageFit": "contain",
                 "textAlign": "center"
               }
             }
