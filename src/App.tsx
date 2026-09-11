@@ -39,7 +39,7 @@ function updateMeta(site: any) {
   const og = site?.seo_settings?.ogImage || site?.content?.hero?.heroImage || '';
   const setTag = (key: string, value: string, isProp = false) => {
     if (!value) return;
-    const selector = (isProp ? 'meta[property="' : 'meta[name="') + key + '"]') as any;
+    const selector = (isProp ? 'meta[property="' : 'meta[name="') + key + '"]' as any;
     let el = document.querySelector(selector) as HTMLMetaElement | null;
     if (!el) { el = document.createElement('meta'); el.setAttribute(isProp ? 'property' : 'name', key); document.head.appendChild(el); }
     el.setAttribute('content', value);
