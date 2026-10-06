@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
-  Star, Quote, ArrowRight, Check, Menu, X, Loader2, Users,
+  Star, Quote, ArrowRight, ArrowLeft, CalendarDays, Check, CheckCircle2, Clock, Menu, X, XCircle, Loader2, Users,
   Facebook, Instagram, Twitter, Linkedin, Youtube, Github, Globe, ExternalLink,
   Mail, Phone, MapPin, ChevronDown, ChevronLeft, ChevronRight, ZoomIn, icons, type LucideIcon
 } from 'lucide-react';
@@ -12,6 +12,7 @@ const SUPABASE_URL = "https://foemfjmfrulilubshnwn.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvZW1mam1mcnVsaWx1YnNobnduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzMTgwMDgsImV4cCI6MjA4MDg5NDAwOH0.amehmaYIeVMh38QtQmvrLLaoravnPzzn4GUBPvPM_Pg";
 const EXPORTED_SITE_ID = "1769755449367";
 const PLATFORM_SITE_SLUG = "life";
+const EVENTS_ACCOUNT_SLUG = "admin-c0dfc4";
 
 // ===== Inline FooterVisitorCounter =====
 function FooterVisitorCounter({ textColor }: { textColor?: string }) {
@@ -40,8 +41,144 @@ function FooterVisitorCounter({ textColor }: { textColor?: string }) {
   );
 }
 
-const PLATFORM_ROUTES = ['newsletter', 'blog'];
+const PLATFORM_ROUTES = ['newsletter', 'blog', 'events'];
 function isPlatformRoute(slug: string) { return PLATFORM_ROUTES.some(r => slug === r || slug.startsWith(r + '/')); }
+function platformRouteUrl(slug: string) {
+  return 'https://' + PLATFORM_SITE_SLUG + '.ezsiteai.com/' + slug;
+}
+
+function EventsSectionRuntime({ accountSlug, limit, layout, onNavigate }: { accountSlug: string; limit: number; layout: string; onNavigate: (slug: string) => void }) {
+  const [events, setEvents] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    let cancelled = false;
+    if (!accountSlug) { setLoading(false); return; }
+    fetch(SUPABASE_URL + '/rest/v1/event_settings?slug=eq.' + encodeURIComponent(accountSlug) + '&select=account_id', { headers: { apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY } })
+      .then(r => r.json())
+      .then(async (rows: any[]) => {
+        const accountId = rows?.[0]?.account_id;
+        if (!accountId) return [];
+        const res = await fetch(SUPABASE_URL + '/rest/v1/events?account_id=eq.' + accountId + '&is_published=eq.true&select=*&order=starts_at.asc&limit=' + limit, { headers: { apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY } });
+        return await res.json();
+      })
+      .then((rows: any[]) => { if (!cancelled) setEvents(rows || []); })
+      .catch(() => { if (!cancelled) setEvents([]); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [accountSlug, limit]);
+  const go = (slug: string) => { onNavigate(slug); window.scrollTo(0, 0); };
+  if (loading) return <div className="py-10 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-primary" /></div>;
+  if (!accountSlug || !events.length) return <p className="rounded-lg border border-dashed py-10 text-center text-sm text-muted-foreground">No published events yet.</p>;
+  return (
+    <div className="space-y-8">
+      <div className={layout === 'list' ? 'grid gap-6 grid-cols-1' : 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'}>
+        {events.map((event: any) => (
+          <a key={event.id} href={'/events/' + accountSlug + '/' + event.slug} onClick={(e) => { e.preventDefault(); go('events/' + accountSlug + '/' + event.slug); }} className={'group overflow-hidden rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow ' + (layout === 'list' ? 'sm:flex' : '')}>
+            {event.image_url && <img src={event.image_url} alt={event.title} className={layout === 'list' ? 'w-full object-cover sm:w-56' : 'aspect-[16/10] w-full object-cover'} />}
+            <div className="space-y-3 p-5">
+              <h3 className="text-lg font-semibold group-hover:text-primary">{event.title}</h3>
+              {event.summary && <p className="text-sm text-muted-foreground">{event.summary}</p>}
+              <p className="flex gap-2 text-sm text-muted-foreground"><CalendarDays className="h-4 w-4 shrink-0 text-primary" />{new Date(event.starts_at).toLocaleString()}</p>
+              <p className="flex gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4 shrink-0 text-primary" />{event.location_type === 'online' ? 'Online' : event.location_name || 'Venue announced soon'}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div className="text-center"><button className="text-sm font-semibold text-primary hover:underline" onClick={() => go('events/' + accountSlug)}>View all events</button></div>
+    </div>
+  );
+}
+
+function EventRuntime({ path, onNavigate }: { path: string; onNavigate: (slug: string) => void }) {
+  const parts = path.split('/').filter(Boolean);
+  const accountSlug = parts[1] || '';
+  const eventSlug = parts[2] || '';
+  const registrationId = new URLSearchParams(window.location.search).get('registration');
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [form, setForm] = useState<any>({ name: '', email: '', phone: '', notes: '', quantities: {}, method: '', answers: {} });
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<any>(null);
+  const apiHeaders = { apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY, 'Content-Type': 'application/json' };
+  const api = (table: string, query: string) => fetch(SUPABASE_URL + '/rest/v1/' + table + '?' + query, { headers: apiHeaders }).then(r => { if (!r.ok) throw new Error('Unable to load events'); return r.json(); });
+  const invoke = (name: string, body: any) => fetch(SUPABASE_URL + '/functions/v1/' + name, { method: 'POST', headers: apiHeaders, body: JSON.stringify(body) }).then(r => r.json().then(d => { if (!r.ok || d?.error) throw new Error(d?.error || 'Request failed'); return d; }));
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    api('event_settings', 'slug=eq.' + encodeURIComponent(accountSlug) + '&select=*')
+      .then(async (settingsRows: any[]) => {
+        const settings = settingsRows?.[0];
+        if (!settings) return null;
+        if (!eventSlug) {
+          const events = await api('events', 'account_id=eq.' + settings.account_id + '&is_published=eq.true&select=*&order=starts_at.asc');
+          return { settings, events };
+        }
+        const eventRows = await api('events', 'account_id=eq.' + settings.account_id + '&slug=eq.' + encodeURIComponent(eventSlug) + '&is_published=eq.true&select=*');
+        const event = eventRows?.[0];
+        if (!event) return null;
+        const rows = await Promise.all([
+          api('event_ticket_types', 'event_id=eq.' + event.id + '&is_active=eq.true&select=*&order=sort_order.asc'),
+          api('event_form_fields', 'account_id=eq.' + settings.account_id + '&is_active=eq.true&select=*&order=sort_order.asc'),
+          fetch(SUPABASE_URL + '/rest/v1/rpc/get_public_event_payment_methods', { method: 'POST', headers: apiHeaders, body: JSON.stringify({ p_account_id: settings.account_id, p_event_id: event.id }) }).then(r => r.json()),
+          fetch(SUPABASE_URL + '/rest/v1/rpc/get_event_seats_left', { method: 'POST', headers: apiHeaders, body: JSON.stringify({ p_event_id: event.id }) }).then(r => r.json()),
+        ]);
+        return { settings, event, tickets: rows[0] || [], fields: rows[1] || [], methods: rows[2] || [], seatsLeft: typeof rows[3] === 'number' ? rows[3] : null };
+      })
+      .then(next => { if (!cancelled) setData(next); })
+      .catch(() => { if (!cancelled) setData(null); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [accountSlug, eventSlug]);
+
+  useEffect(() => {
+    if (!registrationId) return;
+    let stopped = false;
+    const verify = () => invoke('events-verify', { registrationId }).then(d => { if (!stopped) setResult(d.registration || d); }).catch(() => {});
+    verify();
+    const timer = window.setInterval(verify, 4000);
+    const stop = window.setTimeout(() => window.clearInterval(timer), 30000);
+    return () => { stopped = true; window.clearInterval(timer); window.clearTimeout(stop); };
+  }, [registrationId]);
+
+  const go = (slug: string) => { onNavigate(slug); window.scrollTo(0, 0); };
+  if (loading) return <div className="min-h-[50vh] flex items-center justify-center"><Loader2 className="w-7 h-7 animate-spin text-primary" /></div>;
+  if (!data) return <main className="min-h-[50vh] flex items-center justify-center px-4 text-muted-foreground">This event page could not be found.</main>;
+
+  if (!eventSlug) return (
+    <main className="bg-background py-12 sm:py-16"><div className="container mx-auto max-w-5xl px-4 sm:px-6">
+      <header className="mb-10 text-center"><CalendarDays className="mx-auto mb-4 h-9 w-9 text-primary"/><h1 className="text-3xl sm:text-4xl font-bold text-foreground">{data.settings.display_name || 'Upcoming events'}</h1></header>
+      {!data.events?.length ? <p className="py-12 text-center text-muted-foreground">There are no events scheduled right now. Please check back soon.</p> : <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{data.events.map((event: any) => (
+        <a key={event.id} href={'/events/' + accountSlug + '/' + event.slug} onClick={(e) => { e.preventDefault(); go('events/' + accountSlug + '/' + event.slug); }} className="group overflow-hidden rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
+          {event.image_url && <img src={event.image_url} alt={event.title} className="aspect-[16/10] w-full object-cover"/>}<div className="space-y-3 p-5"><h2 className="text-lg font-semibold group-hover:text-primary">{event.title}</h2>{event.summary && <p className="text-sm text-muted-foreground">{event.summary}</p>}<p className="flex gap-2 text-sm text-muted-foreground"><CalendarDays className="h-4 w-4 shrink-0 text-primary"/>{new Date(event.starts_at).toLocaleString()}</p><p className="flex gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4 shrink-0 text-primary"/>{event.location_type === 'online' ? 'Online' : event.location_name || 'Venue announced soon'}</p></div>
+        </a>
+      ))}</div>}
+    </div></main>
+  );
+
+  const event = data.event;
+  if (registrationId) {
+    const status = result?.payment_status || result?.status || 'pending';
+    const paid = status === 'paid'; const failed = status === 'failed' || status === 'cancelled'; const Icon = paid ? CheckCircle2 : failed ? XCircle : Clock;
+    return <main className="bg-background py-20"><div className="container mx-auto max-w-lg px-4 text-center"><Icon className={'mx-auto mb-4 h-12 w-12 ' + (paid ? 'text-primary' : failed ? 'text-destructive' : 'text-muted-foreground')}/><h1 className="text-2xl font-bold">{paid ? 'You are booked in' : failed ? 'Payment was not completed' : 'Waiting for confirmation'}</h1><p className="mt-2 text-muted-foreground">{paid ? data.settings.confirmation_message : failed ? 'Your place is not confirmed. You can try booking again.' : 'Your place is reserved while we confirm your payment.'}</p>{result?.confirmation_number && <p className="mt-3 font-mono text-sm">Confirmation: {result.confirmation_number}</p>}<Button variant="outline" className="mt-6" onClick={() => go('events/' + accountSlug)}><ArrowLeft className="mr-2 h-4 w-4"/>Back to events</Button></div></main>;
+  }
+
+  const total = (data.tickets || []).reduce((sum: number, ticket: any) => sum + Number(ticket.price || 0) * Number(form.quantities[ticket.id] || 0), 0);
+  const submit = async () => {
+    if (!form.name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) { alert('Please enter your full name and a valid email.'); return; }
+    const missing = (data.fields || []).find((field: any) => field.required && !form.answers[field.id]); if (missing) { alert(missing.field_label + ' is required.'); return; }
+    setBusy(true);
+    try {
+      const registered = await invoke('events-register', { eventId: event.id, attendeeName: form.name.trim(), attendeeEmail: form.email.trim(), attendeePhone: form.phone.trim(), notes: form.notes.trim(), items: (data.tickets || []).filter((ticket: any) => Number(form.quantities[ticket.id] || 0) > 0).map((ticket: any) => ({ ticketTypeId: ticket.id, quantity: Number(form.quantities[ticket.id]) })), answers: (data.fields || []).map((field: any) => ({ fieldId: field.id, label: field.field_label, value: String(form.answers[field.id] || '') })) });
+      const id = registered.registration.id; const returnUrl = new URL(window.location.href); returnUrl.searchParams.set('registration', id);
+      if (!registered.requiresPayment) { window.location.href = returnUrl.toString(); return; }
+      const checkout = await invoke('events-create-checkout', { registrationId: id, provider: form.method, returnUrl: returnUrl.toString() });
+      if (checkout.mode === 'redirect' && checkout.url) window.location.href = checkout.url;
+      else alert(checkout.instructions || 'Your place is reserved. Follow the payment instructions to confirm it.');
+    } catch (error: any) { alert(error?.message || 'Booking failed. Please try again.'); } finally { setBusy(false); }
+  };
+  return <main className="bg-background py-10 sm:py-14"><div className="container mx-auto max-w-3xl px-4 sm:px-6"><button className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary" onClick={() => go('events/' + accountSlug)}><ArrowLeft className="h-4 w-4"/>All events</button><div className="space-y-6"><div><h1 className="text-3xl font-bold">{event.title}</h1>{event.summary && <p className="mt-2 text-muted-foreground">{event.summary}</p>}<p className="mt-4 flex gap-2 text-sm text-muted-foreground"><CalendarDays className="h-4 w-4 text-primary"/>{new Date(event.starts_at).toLocaleString()}</p></div>{event.image_url && <img src={event.image_url} alt={event.title} className="w-full rounded-lg object-cover"/>}{event.description && <p className="whitespace-pre-line leading-relaxed">{event.description}</p>}<div className="space-y-5 rounded-lg border p-5">{(data.tickets || []).map((ticket: any) => <label key={ticket.id} className="flex items-center justify-between gap-4 rounded-md border p-3"><span><strong className="block">{ticket.name}</strong><small className="text-muted-foreground">{Number(ticket.price) > 0 ? Number(ticket.price).toLocaleString(undefined,{style:'currency',currency:event.currency || 'USD'}) : 'Free'}</small></span><input className="w-20 rounded-md border bg-background px-3 py-2" type="number" min="0" max={event.allow_multiple ? ticket.per_order_limit : 1} value={form.quantities[ticket.id] || 0} onChange={e => setForm({...form, quantities:{...form.quantities,[ticket.id]:Number(e.target.value)}})}/></label>)}<div className="grid gap-4 sm:grid-cols-2"><input className="rounded-md border bg-background px-3 py-2" placeholder="Full name *" value={form.name} onChange={e=>setForm({...form,name:e.target.value})}/><input className="rounded-md border bg-background px-3 py-2" type="email" placeholder="Email *" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/><input className="rounded-md border bg-background px-3 py-2 sm:col-span-2" placeholder="Phone" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})}/>{(data.fields || []).map((field:any)=><input key={field.id} className="rounded-md border bg-background px-3 py-2" placeholder={field.field_label + (field.required ? ' *' : '')} value={form.answers[field.id] || ''} onChange={e=>setForm({...form,answers:{...form.answers,[field.id]:e.target.value}})}/>)}</div>{event.is_paid && total > 0 && <select className="w-full rounded-md border bg-background px-3 py-2" value={form.method} onChange={e=>setForm({...form,method:e.target.value})}><option value="">Choose payment method</option>{(data.methods || []).map((method:any)=><option key={method.provider} value={method.provider}>{method.display_name}</option>)}</select>}<div className="flex items-center justify-between border-t pt-4"><strong className="text-xl">{total > 0 ? total.toLocaleString(undefined,{style:'currency',currency:event.currency || 'USD'}) : 'Free'}</strong><Button disabled={busy} onClick={submit}>{busy && <Loader2 className="mr-2 h-4 w-4 animate-spin"/>}{event.is_paid && total > 0 ? 'Continue to payment' : 'Complete registration'}</Button></div></div></div></div></main>;
+}
 
 // ===== Inline EzForms embed (mirrors SitePlugins.EzFormsEmbed) =====
 function EzFormsEmbedRuntime({ form, primaryBtnStyle }: { form: any; primaryBtnStyle?: any }) {
@@ -626,6 +763,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
   useEffect(() => { if (pages?.length > 0 && !currentPage) { const h = pages.find((p: any) => p.isHome); setCurrentPage(h?.slug || pages[0]?.slug || ''); } }, [pages]);
 
   const { activeSections, showHero, activePage } = useMemo(() => {
+    if (isPlatformRoute(currentPage)) return { activePage: null, activeSections: [], showHero: false };
     if (pages && pages.length > 0) {
       const normalizedCurrent = (currentPage || '').trim().toLowerCase();
       const page = pages.find((p: any) => (p.slug || '').trim().toLowerCase() === normalizedCurrent) || pages.find((p: any) => p.isHome);
@@ -668,7 +806,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
     if (href.startsWith('/')) {
       e.preventDefault();
       const slug = href.slice(1);
-      if (isPlatformRoute(slug)) { window.location.href = 'https://' + PLATFORM_SITE_SLUG + '.ezsiteai.com/' + slug; return; }
+      if (isPlatformRoute(slug) && !slug.startsWith('events')) { window.location.href = platformRouteUrl(slug); return; }
       setCurrentPage(slug); window.history.pushState({}, '', href || '/'); setMobileMenuOpen(false); window.scrollTo(0,0); return;
     }
     if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); return; }
@@ -676,7 +814,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
   };
 
   const onNavigate = (slug: string) => {
-    if (isPlatformRoute(slug)) { window.location.href = 'https://' + PLATFORM_SITE_SLUG + '.ezsiteai.com/' + slug; return; }
+    if (isPlatformRoute(slug) && !slug.startsWith('events')) { window.location.href = platformRouteUrl(slug); return; }
     setCurrentPage(slug); const newPath = slug && slug !== 'home' ? '/' + slug : '/'; window.history.pushState({}, '', newPath); window.scrollTo(0, 0); setMobileMenuOpen(false);
   };
 
@@ -927,8 +1065,11 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
         </section>
       )}
 
+      {/* Live platform content remains inside the exported website frame. */}
+      {currentPage.startsWith('events/') && <EventRuntime path={currentPage} onNavigate={onNavigate} />}
+
       {/* Dynamic Sections */}
-      {activeSections.map((section: any, index: number) => {
+      {!isPlatformRoute(currentPage) && activeSections.map((section: any, index: number) => {
         const bgStyle = section.settings?.background?.type === 'color' ? { backgroundColor: section.settings.background.value } : section.settings?.background?.type === 'gradient' ? { background: section.settings.background.value } : undefined;
         const isImageBg = section.settings?.background?.type === 'image';
         const textClass = isImageBg ? 'text-white' : '';
@@ -1330,6 +1471,23 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                 </div>
               </section>
             );
+
+          case 'events': {
+            const evLayout = section.settings?.layoutVariant === 'events-list' || section.eventsLayout === 'list' ? 'list' : 'grid';
+            return (
+              <section key={index} id={sectionId} className="py-12 sm:py-16 md:py-20 bg-background" style={bgStyle}>
+                <div className="container mx-auto max-w-6xl px-4">
+                  {section.title && !section.settings?.hideTitle && (
+                    <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 ' + textClass}>{section.title}</h2>
+                  )}
+                  {section.body && (
+                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: section.body }} />
+                  )}
+                  <EventsSectionRuntime accountSlug={section.eventsAccountSlug || EVENTS_ACCOUNT_SLUG} limit={section.eventsLimit || 3} layout={evLayout} onNavigate={onNavigate} />
+                </div>
+              </section>
+            );
+          }
 
           case 'ezforms': {
             const form = (ezforms || []).find((f: any) => f && f.id === section.formId);
