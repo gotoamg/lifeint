@@ -2,17 +2,10 @@
 
 We are a faith-based, non-profit network of Christian healthcare professionals dedicated to serving God and fulfilling the Great Commission. 
 
-## Development
+## Live Site
 
-```bash
-npm install
-npm run dev
-```
+🌐 Deployed to custom domain
 
-## Build & Deploy
+## Last Updated
 
-```bash
-npm run build
-```
-
-Deploy the `dist` folder to Vercel, Netlify, or any static host.
+2026-10-06T18:11:00.516Z

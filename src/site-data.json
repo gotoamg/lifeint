@@ -478,15 +478,6 @@
           "contactEmail": "orglife2020@gmail.com",
           "contactPhone": "(203)918-7574",
           "contactAddress": "P.O. Box 322 Wilmington, MA 01887"
-        },
-        {
-          "body": "",
-          "type": "blank",
-          "title": "",
-          "settings": {
-            "isVisible": true,
-            "layoutVariant": "blank-text-image"
-          }
         }
       ],
       "createdAt": "2026-02-03T07:41:55.321Z",
@@ -2461,7 +2452,9 @@
       "paddingY": 14,
       "showLogo": true,
       "alignment": "center",
-      "ctaHideOn": [],
+      "ctaHideOn": [
+        "mobile"
+      ],
       "fullWidth": true,
       "linkStyle": "uppercase",
       "textColor": "#F8FAFC",
@@ -2517,8 +2510,8 @@
       "showCtaButtonSecondary": true
     },
     "ctaButton": {
-      "href": "https://ezsiteai.com/pay/life/donate",
-      "text": "Donate Now!"
+      "href": "https://www.paypal.com/donate/?hosted_button_id=9G7VC7TLCNEDE",
+      "text": "Donate"
     },
     "megaMenuItems": [
       {
