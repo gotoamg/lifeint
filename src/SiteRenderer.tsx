@@ -106,7 +106,7 @@ function EventRuntime({ path, onNavigate }: { path: string; onNavigate: (slug: s
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    api('event_settings', 'slug=eq.' + encodeURIComponent(accountSlug) + '&select=account_id,slug,display_name,logo_url,button_color,accent_color,background_color,confirmation_message')
+    api('event_settings', 'slug=eq.' + encodeURIComponent(accountSlug) + '&select=*')
       .then(async (settingsRows: any[]) => {
         const settings = settingsRows?.[0];
         if (!settings) return null;
@@ -348,21 +348,6 @@ const AccordionContent = ({ className, children, ...props }: any) => (
 );
 
 // ===== Inline Button =====
-function cleanHtml(input: any): string {
-  const html = input == null ? '' : String(input);
-  if (typeof window === 'undefined' || !html) return html.replace(/<\/?script[^>]*>/gi, '');
-  const doc = new DOMParser().parseFromString('<div>' + html + '</div>', 'text/html');
-  doc.querySelectorAll('script,iframe,object,embed,link,meta,base,form').forEach((el) => el.remove());
-  doc.querySelectorAll('*').forEach((el) => {
-    Array.from(el.attributes).forEach((a) => {
-      const n = a.name.toLowerCase();
-      const v = a.value.replace(/\s+/g, '').toLowerCase();
-      if (n.startsWith('on') || ((n === 'href' || n === 'src' || n === 'xlink:href' || n === 'action' || n === 'formaction') && (v.startsWith('javascript:') || v.startsWith('vbscript:') || v.startsWith('data:text')))) el.removeAttribute(a.name);
-    });
-  });
-  return doc.body.firstElementChild ? doc.body.firstElementChild.innerHTML : '';
-}
-
 function Button({ className, variant, size, style, children, disabled, onClick, type, asChild, ...props }: any) {
   const base = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
   const variants: any = {
@@ -1162,7 +1147,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     <ScrollReveal animation="fade-up" delay={200} easing="ease-out">
                       <div className={'max-w-3xl mx-auto ' + textClass}>
                         {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
-                        <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body || '') }} />
+                        <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
                       </div>
                     </ScrollReveal>
                   </div>
@@ -1177,7 +1162,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     {section.image && <ScrollReveal animation="blur-in" delay={100}><img src={section.image} alt={section.title} className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-video mb-8" /></ScrollReveal>}
                     <ScrollReveal animation="fade-up" delay={200}>
                       {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
-                      <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body || '') }} />
+                      <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
                       {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                     </ScrollReveal>
                   </div>
@@ -1193,7 +1178,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                       <ScrollReveal animation="fade-up" delay={100}>
                         <div>
                           {!section.settings?.hideTitle && <h2 className={'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
-                          <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body || '') }} />
+                          <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
                           {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                         </div>
                       </ScrollReveal>
@@ -1213,7 +1198,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                       {section.image && <ScrollReveal animation="blur-in" delay={100}><div className="bg-card border border-border rounded-2xl overflow-hidden"><img src={section.image} alt={section.title} className="w-full h-full object-cover aspect-[4/3]" /></div></ScrollReveal>}
                       <ScrollReveal animation="fade-up" delay={200}>
                         <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 flex flex-col justify-center h-full">
-                          <div className={'text-base sm:text-lg leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body || '') }} />
+                          <div className={'text-base sm:text-lg leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
                         </div>
                       </ScrollReveal>
                     </div>
@@ -1234,7 +1219,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     <ScrollReveal animation="fade-up" delay={200}>
                       <div className={section.image ? 'text-center lg:text-left' : 'max-w-4xl mx-auto text-center'}>
                         {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 ' + textClass}>{section.title}</h2>}
-                        <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body || '') }} />
+                        <div className={'text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body || '' }} />
                         {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                       </div>
                     </ScrollReveal>
@@ -1256,7 +1241,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                 <div className="container mx-auto max-w-6xl">
                   <ScrollReveal animation="blur-in" duration={800}>
                     {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 ' + textClass}>{section.title}</h2>}
-                    {section.body && <div className={'text-center mb-10 sm:mb-14 max-w-2xl mx-auto text-base sm:text-lg ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                    {section.body && <div className={'text-center mb-10 sm:mb-14 max-w-2xl mx-auto text-base sm:text-lg ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body }} />}
                   </ScrollReveal>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
                     {section.items?.map((item: any, i: number) => (
@@ -1270,7 +1255,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                               </div>
                             )}
                             <h3 className="font-semibold text-lg sm:text-xl mb-3">{item.name || item.title}</h3>
-                            <div className="text-muted-foreground text-sm sm:text-base flex-1 prose prose-sm max-w-none" dangerouslySetInnerHTML={{ __html: cleanHtml(item.description || item.body || '') }} />
+                            <div className="text-muted-foreground text-sm sm:text-base flex-1 prose prose-sm max-w-none" dangerouslySetInnerHTML={{ __html: item.description || item.body || '' }} />
                           </div>
                         </div>
                       </ScrollReveal>
@@ -1349,7 +1334,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                 <div className="container mx-auto max-w-6xl">
                   <ScrollReveal animation="blur-in" duration={800}>
                     {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 ' + textClass}>{section.title}</h2>}
-                    {section.body && <div className={'text-center mb-10 sm:mb-14 max-w-2xl mx-auto text-sm sm:text-base ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                    {section.body && <div className={'text-center mb-10 sm:mb-14 max-w-2xl mx-auto text-sm sm:text-base ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body }} />}
                   </ScrollReveal>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
                     {section.teamMembers?.map((member: any, i: number) => (
@@ -1379,7 +1364,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                   <div className="container mx-auto max-w-4xl text-center relative z-10">
                     {section.image && <div className="mb-8 flex justify-center"><img src={section.image} alt={section.title || ''} className="rounded-xl max-h-[400px] w-full object-cover" loading="lazy" /></div>}
                     {!section.settings?.hideTitle && <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">{section.title}</h2>}
-                    {section.body && <div className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                    {section.body && <div className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: section.body }} />}
                     {(() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (
                       <a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}>
                         <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 gap-2 w-full sm:w-auto min-h-[56px] px-10 text-lg font-bold rounded-xl shadow-2xl">
@@ -1397,7 +1382,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
               <section key={index} id={sectionId} className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-muted/30" style={accentBgStyle}>
                 <div className="container mx-auto max-w-5xl">
                   {!section.settings?.hideTitle && <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4">{section.title || "Contact Us"}</h2>}
-                  {section.body && <div className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                  {section.body && <div className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: section.body }} />}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                     <div className="space-y-5 sm:space-y-6 order-1 lg:order-2">
                       {hasVisibleFooterEmail && <div className="flex items-start gap-4"><div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"><Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /></div><div><h4 className="font-semibold text-base sm:text-lg">Email</h4><p className="text-muted-foreground text-sm sm:text-base">{footerEmail}</p></div></div>}
@@ -1445,7 +1430,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                 <div className="container mx-auto max-w-6xl">
                   <ScrollReveal animation="blur-in" duration={800}>
                     {!section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4 ' + textClass}>{section.title}</h2>}
-                    {section.body && <div className={'text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                    {section.body && <div className={'text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base ' + (isImageBg ? 'text-white/80' : 'text-muted-foreground')} dangerouslySetInnerHTML={{ __html: section.body }} />}
                   </ScrollReveal>
                   <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     {section.items?.map((item: any, i: number) => (
@@ -1496,7 +1481,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 ' + textClass}>{section.title}</h2>
                   )}
                   {section.body && (
-                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />
+                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: section.body }} />
                   )}
                   <EventsSectionRuntime accountSlug={section.eventsAccountSlug || EVENTS_ACCOUNT_SLUG} limit={section.eventsLimit || 3} layout={evLayout} onNavigate={onNavigate} />
                 </div>
@@ -1513,7 +1498,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 ' + textClass}>{section.title}</h2>
                   )}
                   {section.body && (
-                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />
+                    <p className={'text-base sm:text-lg opacity-80 text-center mb-8 ' + textClass} dangerouslySetInnerHTML={{ __html: section.body }} />
                   )}
                   {form ? (
                     <EzFormsEmbedRuntime form={{ ...form, name: '', description: '' }} primaryBtnStyle={primaryBtnStyle} />
@@ -1537,7 +1522,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                     <ScrollReveal animation="fade-up" delay={200}>
                       <div className={(() => { const a = section.settings?.textAlign || 'left'; return a === 'center' ? 'text-center' : a === 'right' ? 'text-right' : 'text-left'; })()}>
                         {section.title && !section.settings?.hideTitle && <h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + textClass}>{section.title}</h2>}
-                        {section.body && <div className={'text-base sm:text-lg leading-relaxed ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} />}
+                        {section.body && <div className={'text-base sm:text-lg leading-relaxed ' + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} />}
                         {(section.buttonText || section.ctaText) && (() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}
                       </div>
                     </ScrollReveal>
@@ -1594,7 +1579,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
                       {tabs[activeTab] && (
                         <div className="p-4 sm:p-6 bg-card border border-border rounded-xl">
                           {tabs[activeTab].title && <h3 className="text-xl font-semibold mb-3">{tabs[activeTab].title}</h3>}
-                          {(tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description) && <div className="text-muted-foreground prose max-w-none" dangerouslySetInnerHTML={{ __html: cleanHtml(tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description) }} />}
+                          {(tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description) && <div className="text-muted-foreground prose max-w-none" dangerouslySetInnerHTML={{ __html: tabs[activeTab].body || tabs[activeTab].content || tabs[activeTab].description }} />}
                           {tabs[activeTab].image && <img src={tabs[activeTab].image} alt={tabs[activeTab].title || ''} className="rounded-lg mt-4 w-full object-cover" />}
                         </div>
                       )}
@@ -1624,7 +1609,7 @@ export function SiteRenderer({ content, businessName, ezforms }: { content: any;
               <section key={index} id={sectionId} className="py-12 sm:py-16 px-4 sm:px-6 bg-background" style={bgStyle}>
                 <div className="container mx-auto max-w-4xl">
                   {section.title && !section.settings?.hideTitle && <ScrollReveal animation="blur-in"><h2 className={'text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + textClass}>{section.title}</h2></ScrollReveal>}
-                  {section.body && <ScrollReveal animation="fade-up" delay={100}><div className={'text-base sm:text-lg leading-relaxed ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: cleanHtml(section.body) }} /></ScrollReveal>}
+                  {section.body && <ScrollReveal animation="fade-up" delay={100}><div className={'text-base sm:text-lg leading-relaxed ' + (section.settings?.textAlign === 'center' ? 'text-center ' : section.settings?.textAlign === 'right' ? 'text-right ' : 'text-left ') + (isImageBg ? 'text-white/90' : 'text-muted-foreground') + ' prose prose-lg max-w-none'} dangerouslySetInnerHTML={{ __html: section.body }} /></ScrollReveal>}
                   {(section.buttonText || section.ctaText) && <ScrollReveal animation="fade-up" delay={150}>{(() => { const btnLink = section.buttonLink || section.ctaLink || '#'; const isExt = btnLink.startsWith('http'); return (<a href={btnLink} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}><Button size="lg" style={primaryBtnStyle} className="mt-6">{section.buttonText || section.ctaText}</Button></a>); })()}</ScrollReveal>}
                   {section.image && <ScrollReveal animation="fade-up" delay={200}><div className="mt-8"><img src={section.image} alt={section.title || ''} className="rounded-xl shadow-lg w-full h-auto object-cover" /></div></ScrollReveal>}
                 </div>
